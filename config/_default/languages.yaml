@@ -3,20 +3,51 @@
 #   Documentation: https://docs.hugoblox.com/reference/language/
 
 # Default language
-en:
-  languageCode: en-us
+es:
+  languageCode: es
   # Uncomment for multi-lingual sites, and move English content into `en` sub-folder.
-  #contentDir: content/en
+  contentDir: content/es
 
 # Uncomment the lines below to configure your website in a second language.
-#zh:
-#  languageCode: zh-Hans
-#  contentDir: content/zh
-#  title: Chinese website title...
-#  params:
-#    description: Site description in Chinese...
-#  menu:
-#    main:
-#      - name: 传
-#        url: '#about'
-#        weight: 1
+en:
+  languageCode: en-gb
+  contentDir: content/en
+  title: CODEC
+  params:
+    description: 'CODEC: Cognitive and Behavioural Sciences research group'
+  menu:
+    main:
+      - name: The research group
+        url: tour
+        weight: 10
+      - name: Labs y Research hotbeds
+        url: post
+        weight: 20
+      - name: "EvoCo: Human Behaviour and Evolution Lab"
+        parent: Labs y Research hotbeds
+        url: post/evoco/
+        weight: 22
+      - name: "LabPsiExp: Experimental Psychology Lab"
+        parent: Labs y Research hotbeds
+        url: post/labpsiexp/
+        weight: 24
+      - name: SexCog (sexual cognition research hotbed)
+        parent: Labs y Research hotbeds
+        url: post/sexcog/
+        weight: 26
+      - name: NeuroGROUP (neuropsychology research hotbed)
+        parent: Labs y Research hotbeds
+        url: post/neurogroup/
+        weight: 28
+      - name: Team
+        url: people
+        weight: 30
+      - name: Events
+        url: event
+        weight: 40
+      - name: Publications
+        url: publication
+        weight: 50
+      - name: Contact
+        url: contact
+        weight: 60
