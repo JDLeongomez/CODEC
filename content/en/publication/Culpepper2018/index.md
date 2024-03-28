@@ -22,9 +22,9 @@ abstract: The emotion of disgust plays a key role in the behavioral immune syste
   in disgust sensitivity.
 authors:
 - Paxton D. Culpepper
-- jh
-- admin
-- scr
+- Jan Havlíček
+- juan-david-leongomez
+- S. Craig Roberts
 date: 2018-08-08 00:00:00
 doi: 10.3389/fpsyg.2018.01397
 featured: false

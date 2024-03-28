@@ -50,10 +50,10 @@ authors:
 - Coralie Chevallier
 - Aycan Kapucu
 - Aslan Karaaslan
-- admin
-- ors
-- ev
-- mva
+- juan-david-leongomez
+- oscar-r.-sanchez
+- Eugenio Valderrama
+- milena-vasquez-amezquita
 - Nandor Hajdu
 - Balazs Aczel
 - Peter Szecsi
@@ -90,7 +90,7 @@ authors:
 - Marietta Papadatou-Pastou
 - Anabel De La Rosa-Gómez
 - Alan E. Barba-Sánchez
-- isaac
+- Isaac G-Santoyo
 - Tsuyueh Hsu
 - Chun-Chia Kung
 - Hsiao-Hsin Wang
@@ -260,15 +260,6 @@ featured: false
 image:
   add_badge: true
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: PDF texto completo (solo lectura)
-    url: https://rdcu.be/ce4zM
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Protocolo Stage 1 (Reporte Registrado)
-    url: https://doi.org/10.6084/m9.figshare.7611443.v1
 math: true
 projects: []
 publication: '*Nature Human Behaviour, 5*, 159–169'

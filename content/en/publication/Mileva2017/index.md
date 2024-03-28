@@ -1,8 +1,8 @@
 ---
 abstract: ''
 authors:
-- vrm
-- admin
+- Viktoria R. Mileva
+- juan-david-leongomez
 date: 2017-06-28 00:00:00
 doi: ''
 featured: false

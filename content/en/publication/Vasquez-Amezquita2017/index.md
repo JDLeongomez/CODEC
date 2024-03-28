@@ -22,8 +22,8 @@ author_notes:
 - ''
 - Supervisión doctoral
 authors:
-- mva
-- admin
+- milena-vasquez-amezquita
+- juan-david-leongomez
 - Michael C. Seto
 - Mauricio Bonilla
 - Alexa Rodríguez-Padilla

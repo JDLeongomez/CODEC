@@ -22,10 +22,10 @@ author_notes:
 - Primer autor conjunto
 - Primer autor conjunto
 authors:
-- admin
-- vrm
+- juan-david-leongomez
+- Viktoria R. Mileva
 - Anthony C. Little
-- scr
+- S. Craig Roberts
 date: 2017-06-14 00:00:00
 doi: 10.1371/journal.pone.0179407
 featured: true

@@ -15,7 +15,7 @@ abstract: El meta-análisis es un método ampliamente utilizado para sintetizar 
   podrán adquirir las habilidades necesarias para realizar meta-análisis de correlaciones
   de manera efectiva en R y obtener resultados confiables.
 authors:
-- admin
+- juan-david-leongomez
 date: 2023-04-07 00:00:00
 doi: 10.31222/osf.io/yaxd4
 featured: false

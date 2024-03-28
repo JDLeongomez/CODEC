@@ -21,8 +21,8 @@ abstract: How to achieve dominance in a group is a recurrent challenge for indiv
 authors:
 - Kelly D. Cobey
 - Mike Nicholls
-- admin
-- scr
+- juan-david-leongomez
+- S. Craig Roberts
 date: 2015-12-13 00:00:00
 doi: 10.1007/s40750-015-0022-8
 featured: false

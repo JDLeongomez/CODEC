@@ -21,17 +21,12 @@ abstract: In the present research we examine the effect of dehumanizing framing 
   in post-conflict societies.
 authors:
 - Cristhian A. Martínez
-- admin
+- juan-david-leongomez
 date: 2024-02-08 00:00:00
 doi: 10.1037/pac0000710
 featured: false
 image:
   focal_point: ''
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Material Suplementario
-    url: https://supp.apa.org/psycarticles/supplemental/pac0000710/pac0000710_supp.html
 math: true
 projects: []
 publication: '*Peace and Conflict: Journal of Peace Psychology*. Advance online publication'

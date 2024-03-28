@@ -30,7 +30,7 @@ authors:
 - Marina Drushlyak
 - Katherine Swainston
 - Yiyun Shou
-- admin
+- juan-david-leongomez
 - Nicola Palena
 - Fitri Ariyanti Abidin
 - mafe
@@ -55,7 +55,7 @@ authors:
 - Ratri Nurwanti
 - Alejandro Estudillo
 - Nataly Beribisky
-- Karel Karsten Himawan
+- Karel Kleisner Karsten Himawan
 - Linda Geven
 - Anne van Hoogmoed
 - Amélie Bret
@@ -166,15 +166,6 @@ doi: 10.5334/jopd.80
 featured: false
 image:
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Materiales Suplementarios
-    url: https://osf.io/r2qvc/
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Proyecto
-    url: https://osf.io/mhg94/
 math: true
 projects: []
 publication: '*Journal of Open Psychology Data, 11*(1)'

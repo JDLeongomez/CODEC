@@ -20,8 +20,8 @@ author_notes:
 - ''
 - Supervisión doctoral
 authors:
-- mva
-- admin
+- milena-vasquez-amezquita
+- juan-david-leongomez
 - Michael C. Seto
 - Alicia Salvador
 date: 2019-01-21 00:00:00

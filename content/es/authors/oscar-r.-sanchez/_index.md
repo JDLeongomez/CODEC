@@ -8,7 +8,7 @@ last_name: Sánchez
 
 # Username (this should match the folder name)
 authors:
-- ors
+- oscar-r.-sanchez
 
 # Is this the primary user of the site?
 superuser: false

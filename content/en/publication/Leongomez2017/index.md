@@ -19,13 +19,13 @@ abstract: Non-verbal behaviours, including voice characteristics during speech, 
   results suggest that people adjust their vocal parameters according to the perceived
   social status of the listener as well as their own self-perceived social status.
 author_notes:
-- Primer autor conjunto
-- Primer autor conjunto
+- Joint first author
+- Joint first author
 authors:
-- admin
-- vrm
+- juan-david-leongomez
+- Viktoria R. Mileva
 - Anthony C. Little
-- scr
+- S. Craig Roberts
 date: 2017-06-14 00:00:00
 doi: 10.1371/journal.pone.0179407
 featured: true

@@ -16,7 +16,7 @@ authors:
 - Shafagh Hadavi
 - Junji Kuroda
 - Taiki Shimozono
-- admin
+- juan-david-leongomez
 - Patrick E. Savage
 date: 2023-08-29 00:00:00
 doi: 10.31234/osf.io/26yg5

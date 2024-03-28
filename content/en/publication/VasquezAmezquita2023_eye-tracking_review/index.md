@@ -17,8 +17,8 @@ author_notes:
 - PhD supervisor
 - ''
 authors:
-- mva
-- admin
+- milena-vasquez-amezquita
+- juan-david-leongomez
 - Alicia Salvador
 - Michael C. Seto
 date: 2023-03-23 00:00:00
@@ -26,11 +26,6 @@ doi: 10.1093/fsr/owad009
 featured: false
 image:
   focal_point: ''
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Material Supplementario
-    url: ttps://oup.silverchair-cdn.com/oup/backfile/Content_public/Journal/fsr/PAP/10.1093_fsr_owad009/2/supplementary_materials_owad009.docx?Expires=1682961163&Signature=pUBXy4jpiPXS9fgHTvoH7-FRq94Ra3ZnMUSEim-CmCk7HekTm5xm4CjqmV-VCbj3nG3q88PxNQw19aL5OzgsjuV1Jr~FxY4EqdcPYDs5ckRXAZLVJg0~-6OcjxLsdfciDnkPcsehXNxk25eigAQFAjW9fbXfiL9GrLkdrwETsYUXJffYZt7Ry9Q88jvowtqBKmdHcWvemCSlW1AlfWMtfyZMbDmCjC8RZN9lonVfWriarHfV7iUPcrsSPGdeNRZSpE9UF7H0pAuzfb4KA5i0oVxJfyLMFrwtBEJmu3grHXnKU-PxEqp66mraAmu36PE4nam2qToJf1YjheqgsEmX2A__&Key-Pair-Id=APKAIE5G5CRDK6RD3PGA
 math: true
 projects: []
 publication: '*Forensic Sciences Research, 8*, 1-15'

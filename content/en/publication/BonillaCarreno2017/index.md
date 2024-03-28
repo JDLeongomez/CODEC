@@ -12,7 +12,7 @@ abstract: La discriminación de las emociones expresadas a nivel facial es impor
   rostros de ira y miedo intensos en comparación con imágenes de rostros neutros.
 authors:
 - Mauricio Bonilla
-- admin
+- juan-david-leongomez
 date: 2017-01-05 00:00:00
 doi: 10.21500/19002386.3100
 featured: false

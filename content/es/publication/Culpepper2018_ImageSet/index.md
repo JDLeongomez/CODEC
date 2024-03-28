@@ -17,9 +17,9 @@ abstract: The Culpepper Disgust Image Set (C-DIS; Culpepper et al., 2018) consis
   reserved)
 authors:
 - Paxton D. Culpepper
-- jh
-- admin
-- scr
+- Jan Havlíček
+- juan-david-leongomez
+- S. Craig Roberts
 date: 2018-08-08 00:00:00
 doi: 10.1037/t75882-000
 featured: false

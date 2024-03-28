@@ -16,8 +16,8 @@ abstract: Romantic mouth-to-mouth kissing is culturally widespread, although not
   among large groups and predicts kissing prevalence in remote societies, this gesture
   may be important in the maintenance of long-term pair bonds in specific environments.
 authors:
-- chrisw
-- admin
+- Christopher D. Watkins
+- juan-david-leongomez
 - Jeanne Bovet
 - Agnieszka Żelaźniewicz
 - Max Korbmacher
@@ -30,11 +30,6 @@ doi: 10.1038/s41598-019-43267-7
 featured: false
 image:
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Pre-registro
-    url: https://osf.io/7j83e/
 math: true
 projects: []
 publication: '*Scientific Reports, 9*, 6698'

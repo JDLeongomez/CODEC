@@ -17,23 +17,23 @@ abstract: 'Body height is a life-history component. It involves important costs 
   mate-choice, and height and waist interact to signal health, its evolutionary consequences,
   including cognitive and behavioural effects, should be addressed in future research.'
 author_notes:
-- Autor de correspondencia
+- Corresponding author
 - ''
 - ''
 - ''
 - ''
 - ''
 - ''
-- Autor de correspondencia
+- Corresponding author
 authors:
-- admin
-- ors
-- mva
-- ev
-- ancc
+- juan-david-leongomez
+- oscar-r.-sanchez
+- milena-vasquez-amezquita
+- Eugenio Valderrama
+- andres-castellanos-chacon
 - linmor
 - Javier Nieto
-- isaac
+- Isaac G-Santoyo
 date: 2020-03-09 00:00:00
 doi: 10.1038/s41598-020-61289-4
 featured: true
@@ -41,15 +41,6 @@ image:
   add_badge: true
   caption: 'Image credit: **Juan David Leongómez 2020**'
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Material Suplementario (código y análisis)
-    url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-020-61289-4/MediaObjects/41598_2020_61289_MOESM1_ESM.pdf
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Poster (versión anterior)
-    url: PosterA0.pdf
 math: true
 projects: []
 publication: '*Scientific Reports, 10*, 4391'

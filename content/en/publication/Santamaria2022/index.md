@@ -30,7 +30,7 @@ authors:
 - Michael Schulte
 - Juan David Páramo
 - Izara Mondragon
-- admin
+- juan-david-leongomez
 - Paula Salomone
 - Juan González-Pacheco
 - Sandra Báez
@@ -43,11 +43,6 @@ image:
   add_badge: true
   caption: ''
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Información Suplementaria
-    url: https://static-content.springer.com/esm/art%3A10.1057%2Fs41599-021-01022-2/MediaObjects/41599_2021_1022_MOESM1_ESM.docx
 math: true
 projects: []
 publication: '*Humanities and Social Sciences Communications, 9*, 15'

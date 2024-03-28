@@ -19,13 +19,13 @@ abstract: 'Studies investigating facial attractiveness in humans have frequently
   on the role of symmetry as one of the key constituents of attractiveness in the
   human face.'
 authors:
-- karel
+- Karel Kleisner
 - Petr Tureček
 - S. Adil Saribay
 - Ondřej Pavlovič
-- admin
-- scr
-- jh
+- juan-david-leongomez
+- S. Craig Roberts
+- Jan Havlíček
 - Jaroslava Varella Valentova
 - Silviu Apostol
 - Robert Mbe Akoko

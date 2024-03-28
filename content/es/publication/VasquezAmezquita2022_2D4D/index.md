@@ -48,9 +48,9 @@ author_notes:
 - ''
 - ''
 authors:
-- mva
+- milena-vasquez-amezquita
 - Alicia Salvador
-- admin
+- juan-david-leongomez
 date: 2022-01-01 00:00:00
 doi: 10.16888/interd.2022.39.1.8
 featured: false

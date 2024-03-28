@@ -12,7 +12,7 @@ abstract: La existencia de la música y su origen continúan siendo un misterio.
   diseñar experimentos y estudios que permitan separar, tanto los aspectos biológicos
   de los culturales, como eventualmente las posibles adaptaciones de las exaptaciones.
 authors:
-- admin
+- juan-david-leongomez
 date: 2015-02-02 00:00:00
 doi: 10.17227/2011804X.15PPO77.86
 featured: false

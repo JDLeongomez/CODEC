@@ -22,8 +22,8 @@ author_notes:
 - Contribución igual
 - Contribución igual
 authors:
-- admin
-- kasia
+- juan-david-leongomez
+- Katarzyna Pisanski
 - David Reby
 - Disa Sauter
 - Nadine Lavan

@@ -11,7 +11,7 @@ abstract: Esta guía práctica acompaña la serie de videos [Poder estadístico 
   está ampliamente basada en [este video](https://youtu.be/ZIjOG8LTTh8) de Daniel
   S. Quintana (2019).
 authors:
-- admin
+- juan-david-leongomez
 date: 2020-08-18 00:00:00
 doi: 10.5281/zenodo.3988777
 featured: false
@@ -19,11 +19,6 @@ image:
   add_badge: true
   caption: 'Image credit: **Juan David Leongómez 2020**'
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: DOI última versión
-    url: https://zenodo.org/doi/10.5281/zenodo.3988776
 math: true
 projects:
 - Poder estadístico

@@ -1,0 +1,27 @@
+# Theme metadata
+name = "Codec_theme"
+
+[light]
+  # Primary
+  primary = "#ffb300"
+
+  # Menu
+  menu_primary = "#ffe680"
+  menu_text = "#333333"
+  menu_text_active = "#333333"
+  menu_title = "#333333"
+
+[dark]
+  # Primary
+  primary = "rgb(255, 230, 128)"
+
+  # Menu
+  menu_primary = "#ffe680"
+  menu_text = "#333333"
+  menu_text_active = "#333333"
+  menu_title = "#333333"
+
+  # Backgrounds
+  background = "#333333"
+  home_section_odd = "#262626"
+  home_section_even = "#525252"

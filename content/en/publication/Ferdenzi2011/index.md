@@ -18,8 +18,8 @@ abstract: 'There is growing evidence that human second-to-fourth digit ratio (or
 authors:
 - Camille Ferdenzi
 - Jean-François Lemaître
-- admin
-- scr
+- juan-david-leongomez
+- S. Craig Roberts
 date: 2011-04-20 00:00:00
 doi: 10.1098/rspb.2011.0544
 featured: false

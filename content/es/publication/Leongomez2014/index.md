@@ -13,13 +13,13 @@ abstract: Speakers modulate their voice when talking to infants but we know litt
   unintelligible. Our results demonstrate that modulating F0 is a critical parameter
   in human courtship, independently of semantic content.
 authors:
-- admin
+- juan-david-leongomez
 - Jakub Binter
 - Lydie Kubicová
 - Petra Stolařová
 - Kateřina Klapilová
-- jh
-- scr
+- Jan Havlíček
+- S. Craig Roberts
 date: 2014-06-13 00:00:00
 doi: 10.1016/j.evolhumbehav.2014.06.008
 featured: true

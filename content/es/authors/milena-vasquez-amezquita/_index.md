@@ -11,7 +11,7 @@ weight: 2
 
 # Username (this should match the folder name)
 authors:
-- mva
+- milena-vasquez-amezquita
 
 # Is this the primary user of the site?
 superuser: false
@@ -71,6 +71,9 @@ social:
 # Enter email to display Gravatar (if Gravatar enabled in Config)
 email: ""
 
+# Highlight the author in author lists? (true/false)
+highlight_name: true
+
 # Organizational groups that you belong to (for People widget)
 #   Set this to `[]` or comment out if you are not using People widget.
 user_groups:
@@ -80,13 +83,3 @@ user_groups:
 ---
 
 Profesora Asociada e investigadora en neurociencia del Laboratorio de Psicología Experimental de la [Universidad El Bosque](https://www.uelbosque.edu.co/). Lidera proyectos de investigación en dos líneas. La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (*eye-tracking*) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
-
-Tuve el honor de co-supervisar primero su doctorado y ahora su postdoctorado.
-
-## **Proyecto PhD (*Summa cum laude*)**  
-
-*Preferencias sexuales típicas y atípicas según sexo y edad de los estímulos: Utilidad de la técnica de rastreo ocular* - [**Abrir proyecto PhD**](https://roderic.uv.es/handle/10550/67639).
-
-Universidad de Valencia, 2015-2018
-
-**Supervisores:** [Alicia Salvador](https://www.uv.es/labnsc/miembros%20individualmente/miembrosaliciasalvadoring.html) y [Juan David Leongómez](/es/#about)

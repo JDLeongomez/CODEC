@@ -16,7 +16,7 @@ abstract: Si la música tiene un origen cultural -como suele asumirse- ¿cómo p
   de este fenómeno -es decir el desarrollo de las estructuras básicas implicadas en
   los procesos musicales- pueda rastrearse teóricamente incluso hasta los reptiles.
 authors:
-- admin
+- juan-david-leongomez
 date: 2008-09-25 00:00:00
 doi: ''
 featured: false

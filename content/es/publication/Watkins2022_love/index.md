@@ -18,10 +18,10 @@ abstract: 'Feeling and expressing love is at the core of romantic relationships,
   sex. Key words: Close relationships, Sex differences, Speech acts, Sex ratio, Attachment,
   Affectionate communication, Error Management Theory.'
 authors:
-- chrisw
+- Christopher D. Watkins
 - Jeanne Bovet
 - Ana Maria Fernandez
-- admin
+- juan-david-leongomez
 - Agnieszka Żelaźniewicz
 - Marco Antônio Corrêa Varella
 - Danielle Wagstaff
@@ -30,11 +30,6 @@ doi: 10.1177/02654075221075264
 featured: false
 image:
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Pre-registro
-    url: https://osf.io/hsvx9/
 math: true
 projects: []
 publication: '*Journal of Social and Personal Relationships, 39*(7), 2134–2153'

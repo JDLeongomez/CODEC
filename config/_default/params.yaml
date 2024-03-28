@@ -6,8 +6,10 @@
 # Appearance
 
 appearance:
-  mode: light
-  color: zinc
+  theme_day:
+  theme_night: codec_theme
+  font: nunito
+  font_size: L
 
 # SEO
 
@@ -59,7 +61,7 @@ header:
 
 footer:
   copyright:
-    notice: '© {year} Juan David Leongómez. This work is licensed under {license}'
+    notice: '© {year} Juan David Leongómez | CODEC. {license}'
     license:
       enable: true
       allow_derivatives: false

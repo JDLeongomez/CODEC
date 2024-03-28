@@ -11,7 +11,7 @@ weight: 3
 
 # Username (this should match the folder name)
 authors:
-- ancc
+- andres-castellanos-chacon
 
 # Is this the primary user of the site?
 superuser: false
@@ -77,4 +77,4 @@ user_groups:
 
 ---
 
-Sus intereses de investigación incluyen los efectos hormonales y de la microbiota en el comportamiento humano. Trabajó en microbiota durante su estancia en la [Universidad Nacional Autónoma de México](https://www.unam.mx/), bajo la supervisión del [Dr. Isaac González-Santoyo](/es/author/isaac-gonzalez-santoyo/), y ha trabajado en neurociencias bajo supervisión de la [Dra. Milena Vásquez-Amézquita](/es/author/milena-vasquez-amezquita/), así como en biología molecular, bajo la supervisión de [Juan Pablo Hernandez](https://scholar.google.es/citations?user=UjKjHNYAAAAJ&hl).
+Sus intereses de investigación incluyen los efectos hormonales y de la microbiota en el comportamiento humano. Trabajó en microbiota durante su estancia en la [Universidad Nacional Autónoma de México](https://www.unam.mx/), bajo la supervisión del [Dr. Isaac G-Santoyo González-Santoyo](/es/author/Isaac G-Santoyo-gonzalez-santoyo/), y ha trabajado en neurociencias bajo supervisión de la [Dra. Milena Vásquez-Amézquita](/es/author/milena-vasquez-amezquita/), así como en biología molecular, bajo la supervisión de [Juan Pablo Hernandez](https://scholar.google.es/citations?user=UjKjHNYAAAAJ&hl).

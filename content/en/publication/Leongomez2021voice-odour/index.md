@@ -17,10 +17,10 @@ abstract: Voice characteristics are important to communicate socially relevant i
   signalling attraction during human courtship, and supporting the idea that vocal
   modulations are context-sensitive.
 authors:
-- admin
-- ors
-- mva
-- scr
+- juan-david-leongomez
+- oscar-r.-sanchez
+- milena-vasquez-amezquita
+- S. Craig Roberts
 date: 2021-10-29 00:00:00
 doi: 10.1016/j.beproc.2021.104531
 featured: true
@@ -28,11 +28,6 @@ image:
   add_badge: true
   caption: 'Image credit: **Juan David Leongómez 2020**'
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Material Suplementario
-    url: https://ars.els-cdn.com/content/image/1-s2.0-S0376635721002151-mmc1.pdf
 math: true
 projects: []
 publication: '*Behavioural Processes, 193*, 104531'

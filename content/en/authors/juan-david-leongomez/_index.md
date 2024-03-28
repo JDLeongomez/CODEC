@@ -6,6 +6,10 @@ title: Juan David Leongómez
 first_name: Juan David
 last_name: Leongómez
 
+# Username (this should match the folder name)
+authors:
+- juan-david-leongomez
+
 # Weight
 weight: 1
 
@@ -92,4 +96,10 @@ user_groups:
 
 ---
 
-Soy Profesor Asociado e investigador en [***EvoCo**: Laboratorio de Evolución y Comportamiento Humano*](/es/team/), de la [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) de la [Universidad El Bosque](https://www.unbosque.edu.co/) en Bogotá, Colombia, y lider del grupo de investigación [***CODEC**: Ciencias Cognitivas y del Comportamiento*](https://investigaciones.unbosque.edu.co/codec) (clasificación [**A1**](https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001446)). También soy soy [recomendador](https://rr.peercommunityin.org/about/recommenders) (editor) de [***PCI Registered Reports***](https://rr.peercommunityin.org/).
+Profesor Asociado e investigador en [**EvoCo**: Laboratorio de Evolución y Comportamiento Humano](/es/team/), de la [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) de la [Universidad El Bosque](https://www.uelbosque.edu.co/) en Bogotá, Colombia, y lider del grupo de investigación **CODEC** (clasificación [**A1**](https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001446)).
+
+[Recomendador](https://rr.peercommunityin.org/about/recommenders) (editor) de [***PCI Registered Reports***](https://rr.peercommunityin.org/).
+
+Sus intereses de investigación incluyen los procesos de selección de pareja y la comunicación vocal en humanos, así como la evolución y desarrollo de la musicalidad. También está interesado en bioacústica y psicoacústica, y en efectos hormonales en el comportamiento humano.
+
+Tiene gran interés por la programación en [R](https://www.r-project.org/about.html) como herramienta para promover la ciencia abierta y la reproducibilidad.

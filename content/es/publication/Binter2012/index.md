@@ -14,7 +14,7 @@ abstract: Speakers modulate their voice when talking to infants but we know litt
   in human courtship, independently of semantic content.
 authors:
 - Jakub Binter
-- admin
+- juan-david-leongomez
 - Nieves Moyano
 - Jaroslava Valentova
 - Lukaš Jouza

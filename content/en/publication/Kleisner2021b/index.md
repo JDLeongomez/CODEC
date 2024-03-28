@@ -18,13 +18,13 @@ abstract: 'The human voice carries information about a vocaliser’s physical st
   needed to uncover consistent and likely interacting acoustic correlates of strength
   in the human voice.'
 author_notes:
-- Autor de correspondencia
-- Autor de correspondencia
-- Autor de correspondencia
+- Corresponding author
+- Corresponding author
+- Corresponding author
 authors:
-- karel
-- admin
-- kasia
+- Karel Kleisner
+- juan-david-leongomez
+- Katarzyna Pisanski
 - Vojtěch Fiala
 - Clément Cornec
 - Agata Groyecka-Bernard
@@ -39,11 +39,6 @@ image:
   add_badge: true
   caption: 'Image credit: **Juan David Leongómez 2021**'
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Material Suplementario
-    url: https://osf.io/kmvub/
 math: true
 projects: []
 publication: '*Philosophical Transactions of the Royal Society B: Biological Sciences,

@@ -22,11 +22,11 @@ authors:
 - Vojtěch Fiala
 - Vít Třebický
 - Farid Pazhoohi
-- admin
+- juan-david-leongomez
 - Petr Tureček
 - S. Adil Saribay
 - Robert Mbe Akoko
-- karel
+- Karel Kleisner
 date: 2021-07-02 00:00:00
 doi: 10.1017/ehs.2021.33
 featured: false

@@ -19,13 +19,13 @@ abstract: Sexual selection, including mate choice and intrasexual competition, i
   sexual selection acting on men, such as stronger intersexual selection for body
   height and more intense intrasexual physical competition, compared with women.
 authors:
-- karel
+- Karel Kleisner
 - Petr Tureček
-- scr
-- jh
+- S. Craig Roberts
+- Jan Havlíček
 - Jaroslava Varella Valentova
 - Robert Mbe Akoko
-- admin
+- juan-david-leongomez
 - Silviu Apostol
 - Marco A. C. Varella
 - S. Adil Saribay
@@ -36,11 +36,6 @@ image:
   add_badge: true
   caption: 'Image credit: **Karel Kleisner 2021**'
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Material Suplementario
-    url: https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-021-85402-3/MediaObjects/41598_2021_85402_MOESM1_ESM.pdf
 math: true
 projects: []
 publication: '*Scientific Reports, 11*, 5978'

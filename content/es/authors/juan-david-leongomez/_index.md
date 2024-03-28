@@ -6,6 +6,10 @@ title: Juan David Leongómez
 first_name: Juan David
 last_name: Leongómez
 
+# Username (this should match the folder name)
+authors:
+- juan-david-leongomez
+
 # Weight
 weight: 1
 

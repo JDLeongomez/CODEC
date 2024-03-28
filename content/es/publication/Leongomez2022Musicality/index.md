@@ -15,23 +15,18 @@ abstract: Studies show that specific vocal modulations, akin to those of infant-
   in infant-directed speech (IDS), as well as some adult-directed speech (ADS) contexts.
 author_notes:
 - Autor de correspondencia
-- Autor de correspondencia
+- ''
 - Autor de correspondencia
 authors:
-- admin
-- jh
-- scr
+- juan-david-leongomez
+- Jan Havlíček
+- S. Craig Roberts
 date: 2022-01-03 00:00:00
 doi: 10.1098/rstb.2020.0391
 featured: true
 image:
   add_badge: true
   focal_point: BottomLeft
-links:
-- !!python/object/new:toml.decoder.DynamicInlineTableDict
-  dictitems:
-    name: Ponencia (4th Brazilian Meeting on Evolution of Human Behavior)
-    url: https://www.youtube.com/watch?v=gK_rl0r4nfs&t=9662s
 math: true
 projects: []
 publication: '*Philosophical Transactions of the Royal Society B: Biological Sciences,

@@ -22,10 +22,10 @@ abstract: 'Objectives: Facial averageness and sexual dimorphism are extensively 
 authors:
 - Dariusz P. Danel
 - Jaroslava Varella Valentova
-- ors
-- admin
+- oscar-r.-sanchez
+- juan-david-leongomez
 - Marco A. C. Varella
-- karel
+- Karel Kleisner
 date: 2018-10-17 00:00:00
 doi: 10.1002/ajhb.23147
 featured: false

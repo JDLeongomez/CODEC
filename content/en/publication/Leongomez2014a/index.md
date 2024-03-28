@@ -27,7 +27,7 @@ abstract: Music and language are both deeply rooted in our biology, but scientis
   a stage in human evolution in which individuals communicated using a music-like
   protolanguage, a hypothesis first suggested by Darwin.
 authors:
-- admin
+- juan-david-leongomez
 date: 2014-07-13 00:00:00
 doi: 10.13140/RG.2.2.36521.39520
 featured: false
