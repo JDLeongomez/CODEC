@@ -1,7 +1,6 @@
 ---
 # Leave the homepage title empty to use the site title
 title:
-date: 2022-10-24
 type: landing
 
 sections:
@@ -14,53 +13,34 @@ sections:
       text: |
         <br>
         
-        El grupo de investigación ***CODEC*: Ciencias Cognitivas y del Comportamiento**, se centra en la comprensión del comportamiento humano desde perspectivas neurocientíficas, neuropsicológicas y evolutivas a partir de las Ciencias básicas y aplicadas.
-  
-  - block: collection
+        El grupo de investigación ***CODEC*: Ciencias Cognitivas y del Comportamiento** se centra en la comprensión del comportamiento humano desde perspectivas neurocientíficas, neuropsicológicas y evolutivas a partir de las Ciencias básicas y aplicadas.
+        
+  - block: hero
     content:
-      title: Latest News
-      subtitle:
-      text:
-      count: 5
-      filters:
-        author: ''
-        category: ''
-        exclude_featured: false
-        publication_type: ''
-        tag: ''
-      offset: 0
-      order: desc
-      page_type: post
-    design:
-      view: card
-      columns: '1'
-  
-  - block: markdown
-    content:
-      title:
-      subtitle: ''
-      text:
-    design:
-      columns: '1'
-      background:
-        image: 
-          filename: coders.jpg
-          filters:
-            brightness: 1
-          parallax: false
-          position: center
-          size: cover
-          text_color_light: true
-      spacing:
-        padding: ['20px', '0', '20px', '0']
-      css_class: fullscreen
-  
-  - block: markdown
-    content:
-      title:
-      subtitle:
+      title: Estructura
+      image:
+        filename: Lineas_CODEC.png
       text: |
-        {{% cta cta_link="./people/" cta_text="Conoce el equipo →" %}}
+        <br>
+        
+        El grupo de investigación ***CODEC*: Ciencias Cognitivas y del Comportamiento** tiene tres líneas de investigación.
+        <br>
+        + Linea 1: Evolución y Comportamiento humano	
+        + Linea 2: Neurociencias cognitivo-afectivas	
+        + Linea 3: Neuropsicología
+        {{% cta cta_link="./tour/" cta_text="Conoce los laboratorios y semilleros de investigación →" %}}
+
+  - block: people
+    content:
+      title: Investigadores
+      # Choose which groups/teams of users to display.
+      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      user_groups:
+          - Investigadoras e investigadores
+      sort_by: .Weight
+      sort_ascending: true
     design:
-      columns: '1'
+      show_interests: false
+      show_role: true
+      show_social: true
 ---

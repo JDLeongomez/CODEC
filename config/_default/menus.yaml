@@ -8,23 +8,23 @@ main:
     url: tour
     weight: 10
   - name: Laboratorios y Semilleros
-    url: post
+    url: group
     weight: 20
   - name: "EvoCo: Laboratorio de Evolución y Comportamiento Humano"
     parent: Laboratorios y Semilleros
-    url: post/evoco/
+    url: evoco/
     weight: 22
   - name: "LabPsiExp: Laboratorio de Psicología Experimental"
     parent: Laboratorios y Semilleros
-    url: post/labpsiexp/
+    url: labpsiexp/
     weight: 24
   - name: SexCog (semillero de investigación en cognición sexual)
     parent: Laboratorios y Semilleros
-    url: post/sexcog/
+    url: sexcog/
     weight: 26
   - name: NeuroGROUP (semillero de investigación en neuropsicología)
     parent: Laboratorios y Semilleros
-    url: post/neurogroup/
+    url: neurogroup/
     weight: 28
   - name: Equipo
     url: people

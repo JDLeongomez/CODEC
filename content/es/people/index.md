@@ -17,7 +17,8 @@ sections:
           - Administration
           - Visitors
           - Alumni
-      sort_by: Params.last_name
+          - EvoCo
+      sort_by: .Weight
       sort_ascending: true
     design:
       show_interests: false

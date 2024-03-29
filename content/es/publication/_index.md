@@ -16,4 +16,4 @@ header:
 
 {{< cta cta_text="<strong>NOTA:</strong> Muchas de las publicaciones son <i>open-access</i> y/o están disponibles como <i>preprint</i>. Sin embargo, si no es así, y deseas una copia de alguna de las publicaciones que aparecen a continuación, por favor <strong>contácvtanos</strong>." cta_link="/es/#contact" cta_new_tab="false" >}}
 
-<span style="color: Tomato;"><i class="fas fa-caret-right"></i></span> Haz clic en cualquier publicación para ver los detalles, incluyendo citas y métricas alternativas
+<span style="color:#FFE680;"><i class="fas fa-caret-right"></i></span> Haz clic en cualquier publicación para ver los detalles, incluyendo citas y métricas alternativas

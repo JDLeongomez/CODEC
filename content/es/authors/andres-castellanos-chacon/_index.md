@@ -74,6 +74,7 @@ highlight_name: true
 user_groups:
 - Researchers
 - Investigadoras e investigadores
+- EvoCo
 
 ---
 

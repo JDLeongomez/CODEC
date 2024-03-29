@@ -10,6 +10,9 @@ last_name: Sánchez
 authors:
 - oscar-r.-sanchez
 
+# Weight
+weight: 2
+
 # Is this the primary user of the site?
 superuser: false
 
@@ -32,7 +35,7 @@ interests:
 
 education:
   courses:
-  - course: MSc in Biology
+  - course: MSc en Biología
     institution: Universidad de Los Andes (Bogotá, Colombia)
     year: 1999
   - course: Biología Marina
@@ -71,6 +74,7 @@ highlight_name: true
 user_groups:
 - Researchers
 - Investigadoras e investigadores
+- EvoCo
 
 ---
 
