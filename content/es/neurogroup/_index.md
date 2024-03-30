@@ -1,5 +1,5 @@
 ---
-title: EvoCo
+title: NEUROGROUP
 type: landing
 
 # Listing view
@@ -7,19 +7,30 @@ view: compact
 
 # Your landing page sections - add as many different content blocks as you like
 sections:
-  - block: markdown
-    id: section-1
+  - block: hero
     content:
-      title: Section 1
-      subtitle: A subtitle
-      text: Add any **markdown** formatted content here - text, images, videos, galleries - and even HTML code!
+      title: '<p style="color:#FFFFFF";><strong><i><a href="../neurogroup/" style="color:#00FFFF";>NEUROGROUP</a></i></strong> (semillero de investigación en neuropsicología)</p>'
+      image:
+        filename: Logo_NEUROGROUP.png
+      text: |
+        <br>
+        
+        ***NEUROGROUP*** es XXXX XXXXX XXXXX.
+  
+  - block: markdown
+    content:
+      title: Objetivo
+      text: '+ Integrar los niveles de análisis y métodos de las Neurociencias básicas y aplicadas a la comprensión de los procesos cognitivos y afectivos que subyacen al comportamiento humano'
+    design:
+      columns: '1'
+  
   - block: people
     content:
-      title: Conoce al equipo
+      title: Investigadores
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:
-          - EvoCo
+          - NEUROGROUP
       sort_by: Params.last_name
       sort_ascending: true
     design:

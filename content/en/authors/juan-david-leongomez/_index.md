@@ -17,7 +17,7 @@ weight: 1
 superuser: true
 
 # Role/position
-role: Lider de grupo<br> Investigador<br> <i>Profesor Asociado</i>
+role: Lider CODEC<br> Investigador EvoCo<br> <i>Profesor Asociado</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,7 +25,8 @@ organizations:
     url: 'https://www.uelbosque.edu.co/'
 
 # Short bio (displayed in user profile at end of posts)
-bio: Mis intereses de investigación incluyen los procesos de selección de pareja y la comunicación vocal en humanos, con una aspiración hacia la comprensión de la musicalidad. También estoy interesado en bioacústica y psicoacústica, así como en estadística y programación en [<i class="fab fa-r-project"></i>](https://www.r-project.org/about.html).
+bio: 'Profesor Asociado, Líder CODEC e investigador EvoCo. Interesado en procesos de selección de pareja, comunicación vocal y la musicalidad, así como en 
+bioacústica, psicoacústica y programación en R.'
 
 interests:
   - Selección de pareja
@@ -36,7 +37,7 @@ interests:
   - Psicoacústica
   - Hormonas
   - Estadística
-  - Programación en <i class="fab fa-r-project"></i>
+  - Programación en R
 
 education:
   courses:
@@ -61,21 +62,16 @@ social:
   - icon: orcid
     icon_pack: ai
     link: https://orcid.org/0000-0002-0092-6298
-  - icon: researchgate
+  - icon: scopus
     icon_pack: ai
-    link: https://www.researchgate.net/profile/Juan_Leongomez
-  - icon: youtube
-    icon_pack: fab
-    link: https://www.youtube.com/@InvestigacionAbierta
-  - icon: osf
-    icon_pack: ai
-    link: https://osf.io/s26ax/
-  - icon: github
-    icon_pack: fab
-    link: https://github.com/JDLeongomez
+    link: https://www.scopus.com/authid/detail.uri?authorId=53877736300
+  - icon: envelope
+    icon_pack: fas
+    link: mailto:jleongomez@unbosque.edu.co 
   - icon: cvlac
     icon_pack: custom
     link: https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001348945
+
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
 # - icon: cv
@@ -93,12 +89,13 @@ highlight_name: true
 user_groups:
 - Researchers
 - Investigadoras e investigadores
+- EvoCo
 
 ---
 
-Profesor Asociado e investigador en [**EvoCo**: Laboratorio de Evolución y Comportamiento Humano](/es/team/), de la [Facultad de Psicología](https://www.unbosque.edu.co/psicologia) de la [Universidad El Bosque](https://www.uelbosque.edu.co/) en Bogotá, Colombia, y lider del grupo de investigación **CODEC** (clasificación [**A1**](https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001446)).
+Profesor Asociado e investigador de [**EvoCo**: Laboratorio de Evolución y Comportamiento Humano](../../evoco/) y lider del grupo de investigación [**CODEC**](../../).
 
-[Recomendador](https://rr.peercommunityin.org/about/recommenders) (editor) de [***PCI Registered Reports***](https://rr.peercommunityin.org/).
+[Recomendador  (editor)](https://rr.peercommunityin.org/about/recommenders) de [***PCI Registered Reports***](https://rr.peercommunityin.org/).
 
 Sus intereses de investigación incluyen los procesos de selección de pareja y la comunicación vocal en humanos, así como la evolución y desarrollo de la musicalidad. También está interesado en bioacústica y psicoacústica, y en efectos hormonales en el comportamiento humano.
 

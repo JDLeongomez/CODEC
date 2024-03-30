@@ -17,37 +17,37 @@ en:
     description: 'CODEC: Cognitive and Behavioural Sciences research group'
   menu:
     main:
-      - name: The research group
-        url: tour
+      - name: Tour
+        url: en/tour
         weight: 10
       - name: Labs y Research hotbeds
-        url: post
+        url: en/post
         weight: 20
       - name: "EvoCo: Human Behaviour and Evolution Lab"
         parent: Labs y Research hotbeds
-        url: post/evoco/
+        url: en/evoco/
         weight: 22
       - name: "LabPsiExp: Experimental Psychology Lab"
         parent: Labs y Research hotbeds
-        url: post/labpsiexp/
+        url: en/labpsiexp/
         weight: 24
       - name: SexCog (sexual cognition research hotbed)
         parent: Labs y Research hotbeds
-        url: post/sexcog/
+        url: en/sexcog/
         weight: 26
       - name: NeuroGROUP (neuropsychology research hotbed)
         parent: Labs y Research hotbeds
-        url: post/neurogroup/
+        url: en/neurogroup/
         weight: 28
       - name: Team
-        url: people
+        url: en/people
         weight: 30
       - name: Events
-        url: event
+        url: en/event
         weight: 40
       - name: Publications
-        url: publication
+        url: en/publication
         weight: 50
       - name: Contact
-        url: contact
+        url: en/contact
         weight: 60

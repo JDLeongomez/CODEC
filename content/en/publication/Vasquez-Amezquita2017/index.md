@@ -25,7 +25,7 @@ authors:
 - milena-vasquez-amezquita
 - juan-david-leongomez
 - Michael C. Seto
-- Mauricio Bonilla
+- fidel-mauricio-bonilla
 - Alexa Rodríguez-Padilla
 - Alicia Salvador
 date: 2019-01-13 00:00:00

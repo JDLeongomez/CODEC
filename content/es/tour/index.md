@@ -9,7 +9,7 @@ sections:
     content:
       slides:
       - title: 👋 Conoce el grupo
-        content: Mira en qué estamos trabajando...
+        content: Un breve resumen de las unidades que lo componen...
         align: center
         background:
           image:

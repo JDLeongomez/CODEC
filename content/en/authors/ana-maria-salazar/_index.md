@@ -1,23 +1,23 @@
 ---
 # Display name
-title: Oscar R. Sánchez
+title: Ana María Salazar
 
 # Full Name (for SEO)
-first_name: Oscar
-last_name: Sánchez
+first_name: Ana María
+last_name: Salazar
+
+# Weight
+weight: 4
 
 # Username (this should match the folder name)
 authors:
-- oscar-r.-sanchez
-
-# Weight
-weight: 3
+- ana-maria-salazar
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Director EvoCo<br>Investigador EvoCo<br><i>Profesor Titular</i>
+role: Docente de apoyo NEUROGROUP<br>Investigadora neuropsicología<br><i>Profesora Asociada</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,22 +25,27 @@ organizations:
   url: "https://www.uelbosque.edu.co/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: 'Profesor Titular, director e investigador EvoCo. Interesado en XXXX XXXXX XXXXX.'
+bio: Profesora Asociada, docente de apoyo NEUROGROUP e investigadora en neuropsicología. Interesada en XXXX.
 
 interests:
-- Ecología comportamental
-- Historia de vida
-- Hormonas
-- Vulnerabilidad y evolución
+- XXXXX
+- XXXXX
+- XXXXX
+- XXXXX
+- XXXXX
+- XXXXX
 
 education:
   courses:
-  - course: MSc en Biología
-    institution: Universidad de Los Andes (Bogotá, Colombia)
-    year: 1999
-  - course: Biología Marina
-    institution: Universidad de Bogotá Jorge Tadeo Lozano (Bogotá, Colombia)
-    year: 1985
+  - course: PhD, Neurociencias (Medinina)
+    institution: Universidad de Granada (Granada, España)
+    year: XXXX
+  - course: MSc en Neurociencias
+    institution: Universidad de Granada (Granada, España)
+    year: XXXX
+  - course: Psicología
+    institution: Universidad El Bosque (Bogota, Colombia)
+    year: 2002
 
 # Social/Academic Networking
 # For available icons, see: https://sourcethemes.com/academic/docs/page-builder/#icons
@@ -49,16 +54,16 @@ education:
 social:
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=T_n3IQkAAAAJ
+  link: https://scholar.google.com/citations?user=YMc6jgoAAAAJ
 - icon: orcid
   icon_pack: ai
-  link: https://orcid.org/0000-0003-1122-9815
+  link: https://orcid.org/0000-0003-1288-1469
 - icon: scopus
   icon_pack: ai
-  link: https://www.scopus.com/authid/detail.uri?authorId=57204241942
+  link: https://www.scopus.com/authid/detail.uri?authorId=57203655630
 - icon: envelope
   icon_pack: fas
-  link: mailto:sanchezoscar@unbosque.edu.co 
+  link: mailto:salazarana@unbosque.edu.co
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -77,8 +82,8 @@ highlight_name: true
 user_groups:
 - Researchers
 - Investigadoras e investigadores
-- EvoCo
+- NEUROGROUP
 
 ---
 
-Profesor Titular, director e investigador de [**EvoCo**: Laboratorio de Evolución y Comportamiento Humano](../../evoco/) Sus intereses de investigación XXXXX XXXXXX XXXXX.
+Profesora Asociada e investigadora en neuropsicología, y docente de apoyo de [NEUROGROUP](../../neurogroup/). XXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXX.

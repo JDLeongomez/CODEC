@@ -14,7 +14,7 @@ abstract: En este estudio se pretendió corroborar el efecto de inversión con e
   es crucial para que se presente el efecto de inversión de rostros, el cual debe
   estar entre 200 y 500 milisegundos.
 authors:
-- Mauricio Bonilla
+- fidel-mauricio-bonilla
 - juan-david-leongomez
 date: 2019-11-20 00:00:00
 doi: 10.21500/19002386.3473

@@ -7,7 +7,7 @@ first_name: Milena
 last_name: Vásquez-Amézquita
 
 # Weight
-weight: 2
+weight: 4
 
 # Username (this should match the folder name)
 authors:
@@ -17,7 +17,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Investigadora<br> <i>Profesora Asociada</i>
+role: Docente de apoyo SEXCOG<br>Investigadora LabPsiExp<br><i>Profesora Asociada</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,7 +25,7 @@ organizations:
   url: "https://www.uelbosque.edu.co/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Profesora Asociada e investigadora en Neurociencia de la Universidad El Bosque. Interesada en investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
+bio: Profesora Asociada, docente de apoyo SEXCOG e investigadora en neurociencia de LabPsiExp. Interesada en investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
 
 interests:
 - Eye-tracking
@@ -54,13 +54,16 @@ education:
 social:
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=XgNEpfgAAAAJ&hl
+  link: https://scholar.google.com/citations?user=XgNEpfgAAAAJ
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0001-7317-8430
-- icon: researchgate
+- icon: scopus
   icon_pack: ai
-  link: https://www.researchgate.net/profile/Milena_Vasquez-Amezquita
+  link: https://www.scopus.com/authid/detail.uri?authorId=57195571822
+- icon: envelope
+  icon_pack: fas
+  link: mailto:mvasquezam@unbosque.edu.co 
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -79,7 +82,9 @@ highlight_name: true
 user_groups:
 - Researchers
 - Investigadoras e investigadores
+- LabPsiExp
+- SEXCOG
 
 ---
 
-Profesora Asociada e investigadora en neurociencia del Laboratorio de Psicología Experimental de la [Universidad El Bosque](https://www.uelbosque.edu.co/). Lidera proyectos de investigación en dos líneas. La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (*eye-tracking*) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
+Profesora Asociada e investigadora en neurociencia de [LabPsiExp](../../labpsiexp/), y  docente de apoyo [SEXCOG](../../sexcog/). Lidera proyectos de investigación en dos líneas. La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (*eye-tracking*) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.

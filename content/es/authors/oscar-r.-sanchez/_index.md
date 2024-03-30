@@ -11,13 +11,13 @@ authors:
 - oscar-r.-sanchez
 
 # Weight
-weight: 2
+weight: 3
 
 # Is this the primary user of the site?
 superuser: false
 
 # Role/position
-role: Director EvoCo<br> Investigador<br> <i>Profesor Titular</i>
+role: Director EvoCo<br>Investigador EvoCo<br><i>Profesor Titular</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,7 +25,7 @@ organizations:
   url: "https://www.uelbosque.edu.co/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: "Profesor e Investigador/Director de ***EvoCo**: Laboratorio de Evolución y Comportamiento Humano* de la Facultad de Psicología de la Universidad El Bosque en Bogotá, Colombia."
+bio: 'Profesor Titular, director e investigador EvoCo. Interesado en XXXX XXXXX XXXXX.'
 
 interests:
 - Ecología comportamental
@@ -49,13 +49,16 @@ education:
 social:
 - icon: google-scholar
   icon_pack: ai
-  link: https://scholar.google.com/citations?user=T_n3IQkAAAAJ&hl
+  link: https://scholar.google.com/citations?user=T_n3IQkAAAAJ
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0003-1122-9815
-- icon: researchgate
+- icon: scopus
   icon_pack: ai
-  link: https://www.researchgate.net/profile/Oscar_Sanchez44
+  link: https://www.scopus.com/authid/detail.uri?authorId=57204241942
+- icon: envelope
+  icon_pack: fas
+  link: mailto:sanchezoscar@unbosque.edu.co 
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -78,4 +81,4 @@ user_groups:
 
 ---
 
-Profesor de la [Facultad de Psicología](https://www.uelbosque.edu.co/psicologia), de la [Universidad El Bosque](https://www.uelbosque.edu.co/), e Investigador/Director de [***EvoCo**: Laboratorio de Evolución y Comportamiento Humano*](/es/team/), en Bogotá, Colombia.
+Profesor Titular, director e investigador de [**EvoCo**: Laboratorio de Evolución y Comportamiento Humano](../../evoco/) Sus intereses de investigación XXXXX XXXXXX XXXXX.

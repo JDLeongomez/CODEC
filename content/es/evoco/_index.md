@@ -21,7 +21,6 @@ sections:
   - block: markdown
     content:
       title: Objetivo
-      subtitle: texto
       text: '+ Aportar a la comprensión del comportamiento y la cognición humana, a partir de modelos que incorporan perspectivas evolutivas y consideran los contextos socioculturales específicos de las poblaciones estudiadas'
     design:
       columns: '1'

@@ -4,7 +4,7 @@
 #   The weight parameter defines the order that the links will appear in.
 
 main:
-  - name: El grupo de investigación
+  - name: Tour
     url: tour
     weight: 10
   - name: Laboratorios y Semilleros
@@ -18,11 +18,11 @@ main:
     parent: Laboratorios y Semilleros
     url: labpsiexp/
     weight: 24
-  - name: SexCog (semillero de investigación en cognición sexual)
+  - name: SEXCOG (semillero de investigación en cognición sexual)
     parent: Laboratorios y Semilleros
     url: sexcog/
     weight: 26
-  - name: NeuroGROUP (semillero de investigación en neuropsicología)
+  - name: NEUROGROUP (semillero de investigación en neuropsicología)
     parent: Laboratorios y Semilleros
     url: neurogroup/
     weight: 28

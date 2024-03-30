@@ -7,7 +7,7 @@ first_name: Andrés
 last_name: Castellanos-Chacón
 
 # Weight
-weight: 3
+weight: 6
 
 # Username (this should match the folder name)
 authors:
@@ -17,7 +17,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Investigador<br> <i>Instructor Asistente</i>
+role: Investigador EvoCo<br> <i>Instructor Asistente</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,7 +25,7 @@ organizations:
   url: "https://www.uelbosque.edu.co/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Asistente de investigación en el Laboratorio de Evolución y Comportamiento Humano desde 2019, y practicante de investigación entre 2017 y 2018.
+bio: Instructor Asistente e investigador EvoCo. Interesado en XXXX.
 
 interests:
 - Hormonas y Comportamiento
@@ -53,9 +53,12 @@ social:
 - icon: orcid
   icon_pack: ai
   link: https://orcid.org/0000-0003-1684-9319
-- icon: researchgate
+- icon: scopus
   icon_pack: ai
-  link: https://www.researchgate.net/profile/Andres_Castellanos_Chacon
+  link: https://www.scopus.com/authid/detail.uri?authorId=57215596346
+- icon: envelope
+  icon_pack: fas
+  link: mailto:gcastellanos@unbosque.edu.co 
 
 # Link to a PDF of your resume/CV from the About widget.
 # To enable, copy your resume/CV to `static/files/cv.pdf` and uncomment the lines below.
@@ -74,7 +77,8 @@ highlight_name: true
 user_groups:
 - Researchers
 - Investigadoras e investigadores
+- EvoCo
 
 ---
 
-Sus intereses de investigación incluyen los efectos hormonales y de la microbiota en el comportamiento humano. Trabajó en microbiota durante su estancia en la [Universidad Nacional Autónoma de México](https://www.unam.mx/), bajo la supervisión del [Dr. Isaac G-Santoyo](https://scholar.google.com/citations?user=nhsFlxAAAAAJ), y ha trabajado en neurociencias bajo supervisión de la [Dra. Milena Vásquez-Amézquita](/es/author/milena-vasquez-amezquita/), así como en biología molecular, bajo la supervisión de [Juan Pablo Hernandez](https://scholar.google.com/citations?user=UjKjHNYAAAAJ&hl).
+Instructor Asistente e investigador de [**EvoCo**: Laboratorio de Evolución y Comportamiento Humano](../../evoco/). Sus intereses de investigación incluyen los efectos hormonales y de la microbiota en el comportamiento humano. Trabajó en microbiota durante su estancia en la [Universidad Nacional Autónoma de México](https://www.unam.mx/), bajo la supervisión del [Dr. Isaac G-Santoyo González-Santoyo](https://scholar.google.com/citations?user=nhsFlxAAAAAJ), y ha trabajado en neurociencias bajo supervisión de la [Dra. Milena Vásquez-Amézquita](/es/author/milena-vasquez-amezquita/), así como en biología molecular, bajo la supervisión de [Juan Pablo Hernandez](https://scholar.google.es/citations?user=UjKjHNYAAAAJ&hl).
