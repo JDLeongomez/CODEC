@@ -4,35 +4,26 @@ title:
 type: landing
 
 sections:
-  - block: hero
+
+  - block: about.biography
+    id: about
     content:
-      title: |
-        **CODEC**: Ciencias Cognitivas y del Comportamiento
-      image:
-        filename: Logo_CODEC.png
-      text: |
-        <br>
-        
-        El grupo de investigación ***CODEC*: Ciencias Cognitivas y del Comportamiento** se centra en la comprensión del comportamiento humano desde perspectivas neurocientíficas, neuropsicológicas y evolutivas a partir de las Ciencias básicas y aplicadas.
-        
-  - block: hero
+      title: Acerca del grupo
+      # Choose a user profile to display (a folder name within `content/authors/`)
+      username: codec
+
+  - block: skills
     content:
-      title: Estructura
-      image:
-        filename: Lineas_CODEC.png
-      text: |
-        <br>
-        
-        El grupo de investigación ***CODEC*: Ciencias Cognitivas y del Comportamiento** tiene tres líneas de investigación.
-        <br>
-        + Linea 1: Evolución y Comportamiento humano	
-        + Linea 2: Neurociencias cognitivo-afectivas	
-        + Linea 3: Neuropsicología
-        {{% cta cta_link="./tour/" cta_text="Conoce los laboratorios y semilleros de investigación →" %}}
+      title: 
+      text: ''
+      # Choose a user to display skills from (a folder name within `content/authors/`)
+      username: codec
+    design:
+      columns: '1'
 
   - block: people
     content:
-      title: Investigadores
+      title: Investigadoras e investigadores
       # Choose which groups/teams of users to display.
       #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
       user_groups:
@@ -43,4 +34,40 @@ sections:
       show_interests: false
       show_role: true
       show_social: true
+  
+  - block: portfolio
+    id: projects
+    content:
+      title: Proyectos
+      filters:
+        folders:
+          - project
+      # Default filter index (e.g. 0 corresponds to the first `filter_button` instance below).
+      default_button_index: 0
+      # Filter toolbar (optional).
+      # Add or remove as many filters (`filter_button` instances) as you like.
+      # To show all items, set `tag` to "*".
+      # To filter by a specific tag, set `tag` to an existing tag name.
+      # To remove the toolbar, delete the entire `filter_button` block.
+      buttons:
+        - name: All
+          tag: '*'
+        - name: Deep Learning
+          tag: Deep Learning
+        - name: Other
+          tag: Demo
+    design:
+      # Choose how many columns the section has. Valid values: '1' or '2'.
+      columns: '2'
+      view: showcase
+      # For Showcase view, flip alternate rows?
+      flip_alt_rows: false
+      
+  - block: tag_cloud
+    content:
+      title: Temas populares
+    design:
+      columns: '2'
+      font_size_min: 0.7
+      font_size_max: 1.5
 ---

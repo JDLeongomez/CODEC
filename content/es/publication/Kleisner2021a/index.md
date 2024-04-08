@@ -1,5 +1,35 @@
 ---
-abstract: Sexual selection, including mate choice and intrasexual competition, is
+title: "To Which World Regions Does the Valence-Dominance Model of Social Perception Apply?"
+authors:
+- Karel Kleisner
+- Petr Tureček
+- S. Craig Roberts
+- Jan Havlíček
+- Jaroslava Varella Valentova
+- Robert Mbe Akoko
+- juan-david-leongomez
+- Silviu Apostol
+- Marco A. C. Varella
+- S. Adil Saribay
+author_notes:
+# - "Equal contribution"
+# - "Equal contribution"
+date: "2021-03-16 00:00:00"
+doi: "10.1038/s41598-021-85402-3"
+
+# Schedule page publish date (NOT publication's date).
+publishDate: ""
+
+# Publication type.
+# Accepts a single type but formatted as a YAML list (for Hugo requirements).
+# Enter a publication type from the CSL standard.
+publication_types: ["article-journal"]
+
+# Publication name and optional abbreviated publication name.
+publication: "*Scientific Reports, 11*, 5978"
+publication_short: ""
+
+abstract: "Sexual selection, including mate choice and intrasexual competition, is
   responsible for the evolution of some of the most elaborated and sexually dimorphic
   traits in animals. Although there is sexual dimorphism in the shape of human faces,
   it is not clear whether this is similarly due to mate choice, or whether mate choice
@@ -17,32 +47,11 @@ abstract: Sexual selection, including mate choice and intrasexual competition, i
   components reveals that non-allometric facial dimorphism is preferred in women’s
   faces but not in faces of men. This might be due to different regimes of ongoing
   sexual selection acting on men, such as stronger intersexual selection for body
-  height and more intense intrasexual physical competition, compared with women.
-authors:
-- Karel Kleisner
-- Petr Tureček
-- S. Craig Roberts
-- Jan Havlíček
-- Jaroslava Varella Valentova
-- Robert Mbe Akoko
-- juan-david-leongomez
-- Silviu Apostol
-- Marco A. C. Varella
-- S. Adil Saribay
-date: 2021-03-16 00:00:00
-doi: 10.1038/s41598-021-85402-3
-featured: false
-image:
-  add_badge: true
-  caption: 'Image credit: **Karel Kleisner 2021**'
-  focal_point: BottomLeft
-math: true
-projects: []
-publication: '*Scientific Reports, 11*, 5978'
-publication_short: ''
-publication_types: ["article-journal"]
-slides: ''
-summary: ''
+  height and more intense intrasexual physical competition, compared with women."
+
+# Summary. An optional shortened abstract.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.
+
 tags:
 - Tipicidad sexual
 - Atractivo
@@ -50,15 +59,41 @@ tags:
 - Evolución humana
 - Morfología facial
 - Morfometrías geométricas
-title: How and why patterns of sexual dimorphism in human faces vary across the world
-url_code: https://doi.org/10.17605/OSF.IO/9DYBW
-url_dataset: ''
+
+featured: false
+
+# links:
+# - name: ""
+#   url: ""
 url_pdf: https://www.nature.com/articles/s41598-021-85402-3.pdf
+url_dataset: ''
+url_code: https://doi.org/10.17605/OSF.IO/9DYBW
 url_poster: https://www.researchgate.net/publication/350358417_Sexual_dimorphism_in_human_facial_morphology
 url_preprint: https://psyarxiv.com/7vdmb
 url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+# caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: ''
 ---
 {{< metrics >}}

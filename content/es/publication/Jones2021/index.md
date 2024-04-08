@@ -1,17 +1,5 @@
 ---
-abstract: Over the past 10 years, Oosterhof and Todorov’s valence–dominance model
-  has emerged as the most prominent account of how people evaluate faces on social
-  dimensions. In this model, two dimensions (valence and dominance) underpin social
-  judgements of faces. Because this model has primarily been developed and tested
-  in Western regions, it is unclear whether these findings apply to other regions.
-  We addressed this question by replicating Oosterhof and Todorov’s methodology across
-  11 world regions, 41 countries and 11,570 participants. When we used Oosterhof and
-  Todorov’s original analysis strategy, the valence–dominance model generalized across
-  regions. When we used an alternative methodology to allow for correlated dimensions,
-  we observed much less generalization. Collectively, these results suggest that,
-  while the valence–dominance model generalizes very well across regions when dimensions
-  are forced to be orthogonal, regional differences are revealed when we use different
-  extraction methods and correlate and rotate the dimension reduction solution.
+title: "To Which World Regions Does the Valence-Dominance Model of Social Perception Apply?"
 authors:
 - Benedict C. Jones
 - Lisa M. DeBruine
@@ -254,33 +242,80 @@ authors:
 - Patrick S. Forscher
 - Christopher R. Chartier
 - Nicholas A. Coles
-date: 2021-01-04 00:00:00
-doi: 10.1038/s41562-020-01007-2
-featured: false
-image:
-  add_badge: true
-  focal_point: BottomLeft
-math: true
-projects: []
-publication: '*Nature Human Behaviour, 5*, 159–169'
-publication_short: ''
+author_notes:
+# - "Equal contribution"
+# - "Equal contribution"
+date: "2021-01-04 00:00:00"
+doi: "10.1038/s41562-020-01007-2"
+
+# Schedule page publish date (NOT publication's date).
+publishDate: ""
+
+# Publication type.
+# Accepts a single type but formatted as a YAML list (for Hugo requirements).
+# Enter a publication type from the CSL standard.
 publication_types: ["article-journal"]
-slides: ''
-summary: ''
+
+# Publication name and optional abbreviated publication name.
+publication: "*Nature Human Behaviour, 5*, 159–169"
+publication_short: ""
+
+abstract: "Over the past 10 years, Oosterhof and Todorov’s valence–dominance model
+  has emerged as the most prominent account of how people evaluate faces on social
+  dimensions. In this model, two dimensions (valence and dominance) underpin social
+  judgements of faces. Because this model has primarily been developed and tested
+  in Western regions, it is unclear whether these findings apply to other regions.
+  We addressed this question by replicating Oosterhof and Todorov’s methodology across
+  11 world regions, 41 countries and 11,570 participants. When we used Oosterhof and
+  Todorov’s original analysis strategy, the valence–dominance model generalized across
+  regions. When we used an alternative methodology to allow for correlated dimensions,
+  we observed much less generalization. Collectively, these results suggest that,
+  while the valence–dominance model generalizes very well across regions when dimensions
+  are forced to be orthogonal, regional differences are revealed when we use different
+  extraction methods and correlate and rotate the dimension reduction solution."
+
+# Summary. An optional shortened abstract.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.
+
 tags:
 - Rostro
 - Percepción social
 - Transcultural
-title: To Which World Regions Does the Valence-Dominance Model of Social Perception
-  Apply?
-url_code: https://static-content.springer.com/esm/art%3A10.1038%2Fs41562-020-01007-2/MediaObjects/41562_2020_1007_MOESM1_ESM.pdf
-url_dataset: ''
+
+featured: false
+
+# links:
+# - name: ""
+#   url: ""
 url_pdf: ''
+url_dataset: ''
+url_code: https://static-content.springer.com/esm/art%3A10.1038%2Fs41562-020-01007-2/MediaObjects/41562_2020_1007_MOESM1_ESM.pdf
 url_poster: ''
 url_preprint: https://psyarxiv.com/n26dy/
 url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+# caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: ''
 ---
 {{< metrics >}}

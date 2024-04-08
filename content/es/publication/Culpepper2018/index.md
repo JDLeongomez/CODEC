@@ -1,4 +1,28 @@
 ---
+title: "Visually Activating Pathogen Disgust: A New Instrument for Studying the Behavioral Immune System"
+authors:
+- Paxton D. Culpepper
+- Jan Havlíček
+- juan-david-leongomez
+- S. Craig Roberts
+author_notes:
+# - "Equal contribution"
+# - "Equal contribution"
+date: "2018-08-08 00:00:00"
+doi: "10.3389/fpsyg.2018.01397"
+
+# Schedule page publish date (NOT publication's date).
+publishDate: ""
+
+# Publication type.
+# Accepts a single type but formatted as a YAML list (for Hugo requirements).
+# Enter a publication type from the CSL standard.
+publication_types: ["article-journal"]
+
+# Publication name and optional abbreviated publication name.
+publication: "*Frontiers in Psychology, 9*, 1397"
+publication_short: ""
+
 abstract: The emotion of disgust plays a key role in the behavioral immune system,
   a set of disease-avoidance processes constituting a frontline defense against pathogenic
   threats. In the context of growing research interest in disgust, as well as recognition
@@ -20,39 +44,51 @@ abstract: The emotion of disgust plays a key role in the behavioral immune syste
   suggest that the novel image set is a useful and effective tool for use in future
   research, both in terms of priming disgust and for measuring individual differences
   in disgust sensitivity.
-authors:
-- Paxton D. Culpepper
-- Jan Havlíček
-- juan-david-leongomez
-- S. Craig Roberts
-date: 2018-08-08 00:00:00
-doi: 10.3389/fpsyg.2018.01397
-featured: false
-image:
-  focal_point: ''
-math: true
-projects: []
-publication: '*Frontiers in Psychology, 9*, 1397'
-publication_short: ''
-publication_types: ["article-journal"]
-slides: example-slides
-summary: ''
+
+# Summary. An optional shortened abstract.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.
+
 tags:
 - Sensibilidad al asco
 - Imágenes de asco
 - Estímulos visuales
 - Imprimación de asco
 - Escala de asco
-title: 'Visually Activating Pathogen Disgust: A New Instrument for Studying the Behavioral
-  Immune System'
-url_code: ''
-url_dataset: ''
+
+featured: false
+
+# links:
+# - name: ""
+#   url: ""
 url_pdf: https://www.frontiersin.org/articles/10.3389/fpsyg.2018.01397/pdf
+url_dataset: ''
+url_code: ''
 url_poster: ''
 url_preprint: ''
 url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+# caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: ''
 ---
 {{< metrics >}}

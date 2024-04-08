@@ -29,12 +29,15 @@ main:
   - name: Equipo
     url: people
     weight: 30
+  - name: Proyectos
+    url: project
+    weight: 40
   - name: Eventos
     url: event
-    weight: 40
+    weight: 50
   - name: Publicaciones
     url: publication
-    weight: 50
+    weight: 60
   - name: Contacto
     url: contact
-    weight: 60
+    weight: 70
