@@ -1,5 +1,27 @@
 ---
-abstract: In the present research we examine the effect of dehumanizing framing of
+title: "Dehumanization Effects on Agency Attributions, Retributive Justice judgments, and Resocialization Attitudes towards Former Perpetrators in Post-conflict"
+authors:
+- Cristhian A. Martínez
+- juan-david-leongomez
+author_notes:
+#- Autor de correspondencia
+#- Autor de correspondencia
+date: "2024-02-08 00:00:00"
+doi: "10.1037/pac0000710"
+
+# Schedule page publish date (NOT publication's date).
+publishDate: ""
+
+# Publication type.
+# Accepts a single type but formatted as a YAML list (for Hugo requirements).
+# Enter a publication type from the CSL standard.
+publication_types: ["article-journal"]
+
+# Publication name and optional abbreviated publication name.
+publication: "*Peace and Conflict: Journal of Peace Psychology*. Advance online publication"
+publication_short: ""
+
+abstract: "In the present research we examine the effect of dehumanizing framing of
   ex-perpetrators of violence on participants’ attributions of their agency, punishment
   deservingness, and suitableness for re-socialization in post-conflict. For this
   purpose, we collected data in the aftermath of a peace agreement between the government
@@ -18,22 +40,11 @@ abstract: In the present research we examine the effect of dehumanizing framing 
   more severe retributive judgments, show more negative attitudes towards his re-socialization,
   and express greater social distance. We discuss the implications of these findings
   for the Disarmament, Demobilization, and Reintegration (DDR) process of ex-perpetrators
-  in post-conflict societies.
-authors:
-- Cristhian A. Martínez
-- juan-david-leongomez
-date: 2024-02-08 00:00:00
-doi: 10.1037/pac0000710
-featured: false
-image:
-  focal_point: ''
-math: true
-projects: []
-publication: '*Peace and Conflict: Journal of Peace Psychology*. Advance online publication'
-publication_short: ''
-publication_types: ["article-journal"]
-slides: example-slides
-summary: ''
+  in post-conflict societies."
+
+# Summary. An optional shortened abstract.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.
+
 tags:
 - Encuadre
 - Deshumanización
@@ -41,16 +52,41 @@ tags:
 - Justicia retributiva
 - Resocialización
 - Post-conflicto
-title: Dehumanization Effects on Agency Attributions, Retributive Justice judgments,
-  and Resocialization Attitudes towards Former Perpetrators in Post-conflict
-url_code: https://osf.io/n9wuv/
-url_dataset: https://osf.io/2ca4z/
+
+featured: false
+
+# links:
+# - name: ""
+#   url: ""
 url_pdf: ''
+url_dataset: https://osf.io/2ca4z/
+url_code: https://osf.io/n9wuv/
 url_poster: ''
 url_preprint: https://psyarxiv.com/w5tka
 url_project: https://osf.io/jc6te/
 url_slides: ''
 url_source: ''
 url_video: ''
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+# caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: ''
 ---
 {{< metrics >}}

@@ -1,5 +1,5 @@
 ---
-title: "To Which World Regions Does the Valence-Dominance Model of Social Perception Apply?"
+title: "How and why patterns of sexual dimorphism in human faces vary across the world"
 authors:
 - Karel Kleisner
 - Petr Tureček

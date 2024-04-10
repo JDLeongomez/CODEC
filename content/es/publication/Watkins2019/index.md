@@ -1,5 +1,34 @@
 ---
-abstract: Romantic mouth-to-mouth kissing is culturally widespread, although not a
+title: "National income inequality predicts cultural variation in mouth to mouth kissing"
+authors:
+- Christopher D. Watkins
+- juan-david-leongomez
+- Jeanne Bovet
+- Agnieszka Żelaźniewicz
+- Max Korbmacher
+- Marco Antônio Corrêa Varella
+- Ana Maria Fernandez
+- Danielle Wagstaff
+- Samuela Bolgan
+author_notes:
+#- PhD supervisor
+#- PhD supervisor
+date: "2019-04-11 00:00:00"
+doi: "10.1038/s41598-019-43267-7"
+
+# Schedule page publish date (NOT publication's date).
+publishDate: ""
+
+# Publication type.
+# Accepts a single type but formatted as a YAML list (for Hugo requirements).
+# Enter a publication type from the CSL standard.
+publication_types: ["article-journal"]
+
+# Publication name and optional abbreviated publication name.
+publication: "*Scientific Reports, 9*, 6698"
+publication_short: ""
+
+abstract: "Romantic mouth-to-mouth kissing is culturally widespread, although not a
   human universal, and may play a functional role in assessing partner health and
   maintaining long-term pair bonds. Use and appreciation of kissing may therefore
   vary according to whether the environment places a premium on good health and partner
@@ -14,43 +43,51 @@ abstract: Romantic mouth-to-mouth kissing is culturally widespread, although not
   times the size of the null correlations between income inequality and frequency
   of hugging/cuddling and sex. As social complexity requires monitoring resource competition
   among large groups and predicts kissing prevalence in remote societies, this gesture
-  may be important in the maintenance of long-term pair bonds in specific environments.
-authors:
-- Christopher D. Watkins
-- juan-david-leongomez
-- Jeanne Bovet
-- Agnieszka Żelaźniewicz
-- Max Korbmacher
-- Marco Antônio Corrêa Varella
-- Ana Maria Fernandez
-- Danielle Wagstaff
-- Samuela Bolgan
-date: 2019-04-11 00:00:00
-doi: 10.1038/s41598-019-43267-7
-featured: false
-image:
-  focal_point: BottomLeft
-math: true
-projects: []
-publication: '*Scientific Reports, 9*, 6698'
-publication_short: ''
-publication_types: ["article-journal"]
-slides: example-slides
-summary: ''
+  may be important in the maintenance of long-term pair bonds in specific environments."
+
+# Summary. An optional shortened abstract.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.
+
 tags:
 - Desigualdad de ingresos
 - Transcultural
 - Besos romáticos
 - Vínculos de pareja
-title: National income inequality predicts cultural variation in mouth to mouth kissing
-url_code: https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-019-43267-7/MediaObjects/41598_2019_43267_MOESM2_ESM.pdf
-url_dataset: Datasets.zip
+
+featured: false
+
+# links:
+# - name: ""
+#   url: ""
 url_pdf: https://rdcu.be/bzC2D
+url_dataset: Datasets.zip
+url_code: https://static-content.springer.com/esm/art%3A10.1038%2Fs41598-019-43267-7/MediaObjects/41598_2019_43267_MOESM2_ESM.pdf
 url_poster: https://osf.io/x489w/
 url_preprint: ''
 url_project: https://osf.io/pbqwm/
 url_slides: ''
 url_source: ''
 url_video: ''
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+# caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: ''
 ---
 {{< metrics >}}

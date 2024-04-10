@@ -1,5 +1,29 @@
 ---
-abstract: Non-verbal behaviours, including voice characteristics during speech, are
+title: "Perceived differences in social status between speaker and listener affect the speaker's vocal characteristics"
+authors:
+- juan-david-leongomez
+- Viktoria R. Mileva
+- Anthony C. Little
+- S. Craig Roberts
+author_notes:
+- Primer autor conjunto
+- Primer autor conjunto
+date: "2017-06-14 00:00:00"
+doi: "10.1371/journal.pone.0179407"
+
+# Schedule page publish date (NOT publication's date).
+publishDate: ""
+
+# Publication type.
+# Accepts a single type but formatted as a YAML list (for Hugo requirements).
+# Enter a publication type from the CSL standard.
+publication_types: ["article-journal"]
+
+# Publication name and optional abbreviated publication name.
+publication: "*PLoS One, 12*(6), e0179407"
+publication_short: ""
+
+abstract: "Non-verbal behaviours, including voice characteristics during speech, are
   an important way to communicate social status. Research suggests that individuals
   can obtain high social status through dominance (using force and intimidation) or
   through prestige (by being knowledgeable and skillful). However, little is known
@@ -17,28 +41,11 @@ abstract: Non-verbal behaviours, including voice characteristics during speech, 
   (introductory, personal, interpersonal), also affected their vocal parameters, being
   more prominent in responses to personal and interpersonal questions. Overall, our
   results suggest that people adjust their vocal parameters according to the perceived
-  social status of the listener as well as their own self-perceived social status.
-author_notes:
-- Primer autor conjunto
-- Primer autor conjunto
-authors:
-- juan-david-leongomez
-- Viktoria R. Mileva
-- Anthony C. Little
-- S. Craig Roberts
-date: 2017-06-14 00:00:00
-doi: 10.1371/journal.pone.0179407
-featured: true
-image:
-  caption: 'Image credit: **Juan David Leongómez 2017**'
-  focal_point: BottomLeft
-math: true
-projects: []
-publication: '*PLoS One, 12*(6), e0179407'
-publication_short: ''
-publication_types: ["article-journal"]
-slides: example-slides
-summary: ''
+  social status of the listener as well as their own self-perceived social status."
+
+# Summary. An optional shortened abstract.
+# summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat.
+
 tags:
 - Voz humana
 - Modulación de la voz
@@ -48,16 +55,41 @@ tags:
 - f0
 - Tono de voz
 - Diferencias de sexo
-title: Perceived differences in social status between speaker and listener affect
-  the speaker's vocal characteristics
-url_code: ''
-url_dataset: https://doi.org/10.1371/journal.pone.0179407.s008
+
+featured: false
+
+# links:
+# - name: ""
+#   url: ""
 url_pdf: https://journals.plos.org/plosone/article/file?id=10.1371/journal.pone.0179407&type=printable
+url_dataset: https://doi.org/10.1371/journal.pone.0179407.s008
+url_code: ''
 url_poster: ''
 url_preprint: ''
 url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''
+
+# Featured image
+# To use, add an image named `featured.jpg/png` to your page's folder. 
+image:
+# caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/jdD8gXaTZsc)'
+  focal_point: ""
+  preview_only: false
+
+# Associated Projects (optional).
+#   Associate this publication with one or more of your projects.
+#   Simply enter your project's folder or file name without extension.
+#   E.g. `internal-project` references `content/project/internal-project/index.md`.
+#   Otherwise, set `projects: []`.
+projects: []
+
+# Slides (optional).
+#   Associate this publication with Markdown slides.
+#   Simply enter your slide deck's filename without extension.
+#   E.g. `slides: "example"` references `content/slides/example/index.md`.
+#   Otherwise, set `slides: ""`.
+slides: ''
 ---
 {{< metrics >}}
