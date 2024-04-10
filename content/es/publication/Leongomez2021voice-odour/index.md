@@ -60,10 +60,10 @@ featured: false
 #   url: ""
 url_pdf: ''
 url_dataset: https://osf.io/53bzk/
-url_code: https://osf.io/gwbhu/
+url_code: https://osf.io/px7m6/
 url_poster: ''
 url_preprint: https://doi.org/10.31234/osf.io/8f7g3
-url_project: https://osf.io/px7m6/
+url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''

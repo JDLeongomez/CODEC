@@ -110,6 +110,9 @@ skills:
 #   For an email link, use "fas" icon pack, "envelope" icon, and a link in the
 #   form "mailto:your-email@example.com" or "/#contact" for contact widget.
 social:
+  - icon: id-card
+    icon_pack: fas
+    link: https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001446
   - icon: building-columns
     icon_pack: fas
     link: https://investigaciones.unbosque.edu.co/codec
@@ -130,9 +133,15 @@ highlight_name: true
 El grupo de investigación [***CODEC*: Ciencias Cognitivas y del Comportamiento**](./) se centra en la comprensión del comportamiento humano desde perspectivas neurocientíficas, neuropsicológicas y evolutivas a partir de las Ciencias básicas y aplicadas.
 {style="text-align: justify;"}
 
-El grupo de investigación [***CODEC***](./) tiene tres líneas de investigación, que agrupan dos laboratorios y dos semilleros de investigación:
-{style="text-align: justify;"}   
+# Categoría [A1](https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001446)
 
+El grupo está clasificado en la [máxima categoría](https://minciencias.gov.co/la-ciencia-en-cifras/grupos) otorgada por [Minciencias](https://minciencias.gov.co/), el Ministerio de Ciencia Tecnología e Innovación de Colombia.
+{style="text-align: justify;"}
+
+# Líneas de investigación
+
+[***CODEC***](./) tiene tres líneas de investigación, que agrupan dos laboratorios y dos semilleros de investigación:
+{style="text-align: justify;"}   
 
 <ul>
  <li><p style="color:#FF8080";>Linea 1: <strong>Evolución y Comportamiento Humano</strong></p></li>

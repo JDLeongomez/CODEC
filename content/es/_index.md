@@ -50,12 +50,29 @@ sections:
       # To filter by a specific tag, set `tag` to an existing tag name.
       # To remove the toolbar, delete the entire `filter_button` block.
       buttons:
-        - name: All
+        - name: Todos
           tag: '*'
-        - name: Deep Learning
-          tag: Deep Learning
-        - name: Other
-          tag: Demo
+        - name: Rostro humano
+          tag: Rostro humano
+        - name: Voz humana
+          tag: Voz humana
+        - name: Modulación de la voz
+          tag: Modulación de la voz
+        - name: Inmunocompetencia
+          tag: Inmunocompetencia
+        - name: Niveles hormonales
+          tag: Niveles hormonales
+        - name: Potenciales evocados
+          tag: Potenciales evocados
+        - name: Sexo
+          tag: Sexo
+        - name: Atractivo
+          tag: Atractivo
+        - name: Mortalidad
+          tag: Mortalidad
+        - name: Evolución
+          tag: Evolución
+          
     design:
       # Choose how many columns the section has. Valid values: '1' or '2'.
       columns: '2'

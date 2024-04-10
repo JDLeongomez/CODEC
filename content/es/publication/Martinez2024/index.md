@@ -60,10 +60,10 @@ featured: false
 #   url: ""
 url_pdf: ''
 url_dataset: https://osf.io/2ca4z/
-url_code: https://osf.io/n9wuv/
+url_code: https://osf.io/jc6te/
 url_poster: ''
 url_preprint: https://psyarxiv.com/w5tka
-url_project: https://osf.io/jc6te/
+url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''

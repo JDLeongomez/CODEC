@@ -68,10 +68,10 @@ featured: false
 #   url: ""
 url_pdf: ''
 url_dataset: https://osf.io/2f8pm/
-url_code: https://osf.io/f86kr/
+url_code: https://doi.org/10.17605/OSF.IO/JU6M8
 url_poster: ''
 url_preprint: ''
-url_project: https://doi.org/10.17605/OSF.IO/JU6M8
+url_project: ''
 url_slides: ''
 url_source: ''
 url_video: ''
@@ -88,7 +88,7 @@ image:
 #   Simply enter your project's folder or file name without extension.
 #   E.g. `internal-project` references `content/project/internal-project/index.md`.
 #   Otherwise, set `projects: []`.
-projects: []
+projects: [example]
 
 # Slides (optional).
 #   Associate this publication with Markdown slides.
