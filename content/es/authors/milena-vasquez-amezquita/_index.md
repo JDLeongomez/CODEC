@@ -7,7 +7,7 @@ first_name: Milena
 last_name: Vásquez-Amézquita
 
 # Weight
-weight: 4
+weight: 3
 
 # Username (this should match the folder name)
 authors:
@@ -17,7 +17,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Docente de apoyo SEXCOG<br>Investigadora LabPsiExp<br><i>Profesora Asociada</i>
+role: Directora SEXCOG<br>Investigadora LabPsiExp<br><i>Profesora Asociada</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,7 +25,7 @@ organizations:
   url: "https://www.uelbosque.edu.co/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Profesora Asociada, docente de apoyo SEXCOG e investigadora en neurociencia de LabPsiExp. Interesada en investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
+bio: Profesora Asociada, directora SEXCOG e investigadora en neurociencia de LabPsiExp. Interesada en investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
 
 interests:
 - Eye-tracking
@@ -87,4 +87,4 @@ user_groups:
 
 ---
 
-Profesora Asociada e investigadora en neurociencia de [LabPsiExp](../../labpsiexp/), y  docente de apoyo [SEXCOG](../../sexcog/). Lidera proyectos de investigación en dos líneas. La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (*eye-tracking*) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
+Profesora Asociada e investigadora en neurociencia de [LabPsiExp](../../labpsiexp/), y directora del semillero de investigación [SEXCOG](../../sexcog/). Lidera proyectos de investigación en dos líneas. La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (*eye-tracking*) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.

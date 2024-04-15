@@ -7,7 +7,7 @@ first_name: Ana María
 last_name: Salazar
 
 # Weight
-weight: 4
+weight: 3
 
 # Username (this should match the folder name)
 authors:
@@ -17,7 +17,7 @@ authors:
 superuser: false
 
 # Role/position
-role: Docente de apoyo NEUROGROUP<br>Investigadora neuropsicología<br><i>Profesora Asociada</i>
+role: Directora NEUROGROUP<br>Investigadora neuropsicología<br><i>Profesora Asociada</i>
 
 # Organizations/Affiliations
 organizations:
@@ -25,7 +25,7 @@ organizations:
   url: "https://www.uelbosque.edu.co/"
 
 # Short bio (displayed in user profile at end of posts)
-bio: Profesora Asociada, docente de apoyo NEUROGROUP e investigadora en neuropsicología. Interesada en XXXX.
+bio: Profesora Asociada, directora NEUROGROUP e investigadora en neuropsicología. Interesada en XXXX.
 
 interests:
 - XXXXX
@@ -86,4 +86,4 @@ user_groups:
 
 ---
 
-Profesora Asociada e investigadora en neuropsicología, y docente de apoyo de [NEUROGROUP](../../neurogroup/). XXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXX.
+Profesora Asociada e investigadora en neuropsicología, y directora del semillero de investigación [NEUROGROUP](../../neurogroup/). XXXXXXXXXXXXXXXX XXXXXXXXXXX XXXXXXXXXXXX XXXXXXXXXXX.

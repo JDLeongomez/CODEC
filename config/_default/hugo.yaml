@@ -3,7 +3,7 @@
 # Hugo Documentation: https://gohugo.io/getting-started/configuration/#all-configuration-settings
 # This file is formatted using YAML syntax - learn more at https://learnxinyminutes.com/docs/yaml/
 
-title: CODEC # Website name
+title: CODEC · Grupo de Investigación # Website name
 baseURL: 'https://grupo-codec.netlify.app/' # Website URL
 
 ############################

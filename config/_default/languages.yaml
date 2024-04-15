@@ -12,7 +12,7 @@ es:
 en:
   languageCode: en-gb
   contentDir: content/en
-  title: CODEC
+  title: CODEC · Research Group
   params:
     description: 'CODEC: Cognitive and Behavioural Sciences research group'
   menu:
