@@ -12,6 +12,20 @@ sections:
       # Choose a user profile to display (a folder name within `content/authors/`)
       username: codec
 
+  - block: people
+    content:
+      title: Laboratorios y semilleros de investigación
+      # Choose which groups/teams of users to display.
+      #   Edit `user_groups` in each user's profile to add them to one or more of these groups.
+      user_groups:
+          - Laboratorios y Semilleros
+      sort_by: .Weight
+      sort_ascending: true
+    design:
+      show_interests: false
+      show_role: true
+      show_social: true
+
   - block: skills
     content:
       title: 

@@ -17,6 +17,15 @@ sections:
         
         ***EvoCo*** es una iniciativa en curso que busca constituirse como centro de investigación. Fue fundado en 2015[^1] por su director {{% mention "oscar-r.-sanchez" %}}. Principalmente estudiamos el comportamiento humano desde una perspectiva evolutiva. Realizamos proyectos experimentales (y algunos de minería de datos) sobre diversos temas, desde elección de pareja hasta efectos hormonales en el comportamiento, incluyendo análisis de voces y rostros.
         [^1]: Inicialmente se llamó "*Laboratorio de Análisis del Comportamiento Humano (LACH)*".
+
+  - block: skills
+    content:
+      title: 
+      text: ''
+      # Choose a user to display skills from (a folder name within `content/authors/`)
+      username: evoco
+    design:
+      columns: '1'
   
   - block: markdown
     content:

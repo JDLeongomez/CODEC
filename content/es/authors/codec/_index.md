@@ -17,7 +17,7 @@ organizations:
     url: https://unbosque.edu.co/
 
 # Short bio (displayed in user profile at end of posts)
-bio: grupo de investigación en Ciencias Cognitivas y del Comportamiento
+bio: Grupo de investigación en Ciencias Cognitivas y del Comportamiento
 
 # Interests to show in About widget
 interests:
