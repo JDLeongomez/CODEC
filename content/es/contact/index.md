@@ -8,7 +8,7 @@ sections:
     content:
       title: Contacto
       text: |-
-        Para infoirmación general del grupo, por favor contactar a {{% mention "juan-david-leongomez" %}}. Para información específica, contacta directamente al [investigador o investigadora](../people/) que necesites.
+        Para información general del grupo, por favor contactar a {{% mention "juan-david-leongomez" %}}. Para información específica, contacta directamente al [investigador o investigadora](../people/) que necesites.
       email: jleongomez@unbosque.edu.co
       phone: (+57) 601-6489000 Ext. 1901
       address:
@@ -45,5 +45,4 @@ sections:
       #    captcha: false
     design:
       columns: '1'
-
 ---
