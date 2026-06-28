@@ -1,0 +1,111 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import { LINES } from '../../data/lines';
+import { slug as toSlug } from '../../utils';
+
+export async function getStaticPaths() {
+  const semilleros = await getCollection('semilleros');
+  return semilleros.map(s => ({ params: { slug: toSlug(s.id) }, props: { semillero: s } }));
+}
+
+const { semillero } = Astro.props;
+const { name, short_name, color, logo_light, logo_dark, research_line,
+        founded, objective_es, methods_es, email, website, instagram } = semillero.data;
+
+const { Content } = await semillero.render();
+const director = await getEntry(semillero.data.director);
+const lab      = semillero.data.lab ? await getEntry(semillero.data.lab) : null;
+const line     = LINES[research_line as keyof typeof LINES];
+---
+
+<Base title={short_name}>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+
+    <nav class="text-sm text-gray-400 mb-8">
+      <a href="/semilleros" class="hover:text-codec transition-colors">Semilleros</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-600">{short_name}</span>
+    </nav>
+
+    <div class="flex flex-col sm:flex-row gap-8 items-start mb-12 pb-12 border-b border-gray-100">
+      {logo_light ? (
+        <div class="shrink-0 p-5 bg-gray-950 rounded-2xl">
+          <img src={logo_dark} alt={short_name} class="h-32 object-contain" />
+        </div>
+      ) : (
+        <div class="shrink-0 w-20 h-20 rounded-2xl flex items-center justify-center text-2xl font-extrabold text-white"
+          style={`background-color: ${color}`}>
+          {short_name.slice(0, 2)}
+        </div>
+      )}
+
+      <div>
+        <div class="flex flex-wrap items-center gap-3 mb-2">
+          {line && (
+            <span class="text-xs px-3 py-1 rounded-full font-semibold"
+              style={`background-color: ${color}18; color: ${color}`}>
+              {research_line === 'transversal' ? 'Transversal' : line.name_es}
+            </span>
+          )}
+          {founded && <span class="text-xs text-gray-400">Fundado en {founded}</span>}
+        </div>
+        <h1 class="text-3xl font-extrabold text-gray-900 leading-tight">{name}</h1>
+        <p class="text-lg font-semibold mt-1" style={`color: ${color}`}>{short_name}</p>
+
+        {director && (
+          <p class="text-sm text-gray-500 mt-2">
+            Director/a: <a href={`/investigadores/${toSlug(director.id)}`}
+              class="font-medium text-gray-700 hover:underline">{director.data.name}</a>
+          </p>
+        )}
+        {lab && (
+          <p class="text-sm text-gray-500 mt-1">
+            Adscrito a: <a href={`/laboratorios/${toSlug(lab.id)}`}
+              class="font-medium text-gray-700 hover:underline">{lab.data.short_name}</a>
+          </p>
+        )}
+
+        <div class="flex flex-wrap gap-2 mt-4">
+          {email     && <a href={`mailto:${email}`} class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"><Icon name="envelope" class="w-3.5 h-3.5 shrink-0" /> Email</a>}
+          {website   && <a href={website} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"><Icon name="globe" class="w-3.5 h-3.5 shrink-0" /> Sitio web</a>}
+          {instagram && <a href={instagram} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"><Icon name="instagram" class="w-3.5 h-3.5 shrink-0" /> Instagram</a>}
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2 space-y-10">
+        {objective_es && (
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 mb-3">Objetivo</h2>
+            <p class="text-gray-600 leading-relaxed p-4 bg-gray-50 rounded-xl border-l-4"
+              style={`border-color: ${color}`}>
+              {objective_es}
+            </p>
+          </div>
+        )}
+        <div class="prose prose-gray max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <aside>
+        {methods_es && !methods_es.includes('Pendiente de actualización') && (
+          <div>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Métodos</h2>
+            <ul class="space-y-2">
+              {methods_es.map(m => (
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <span class="mt-1 w-2 h-2 rounded-full shrink-0" style={`background-color: ${color}`}></span>
+                  {m}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+  </div>
+</Base>

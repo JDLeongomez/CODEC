@@ -1,8 +1,15 @@
 # IDEs
 .idea/
 
-# Hugo
-/resources/
-public/
-assets/jsconfig.json
+# Astro
+node_modules/
+dist/
+.astro/
+
+# Env
+.env
+.env.*
+!.env.example
+
+# R
 .Rproj.user

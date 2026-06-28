@@ -1,0 +1,34 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import SemilleroCard from '../../components/SemilleroCard.astro';
+import { LINES } from '../../data/lines';
+
+const semilleros = await getCollection('semilleros');
+
+const byLine = Object.entries(LINES).map(([id, line]) => ({
+  line,
+  items: semilleros.filter(s => s.data.research_line === id),
+})).filter(g => g.items.length > 0);
+---
+
+<Base title="Semilleros">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="mb-12">
+      <h1 class="text-4xl font-extrabold text-gray-900">Semilleros</h1>
+      <p class="text-gray-500 mt-2 text-lg">Grupos de investigación formativa del grupo CODEC</p>
+    </div>
+
+    {byLine.map(({ line, items }) => (
+      <div class="mb-14">
+        <div class="flex items-center gap-3 mb-6">
+          <div class="w-4 h-4 rounded-full" style={`background-color: ${line.color}`}></div>
+          <h2 class="text-xl font-bold text-gray-700">{line.name_es}</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+          {items.map(s => <SemilleroCard semillero={s} />)}
+        </div>
+      </div>
+    ))}
+  </div>
+</Base>

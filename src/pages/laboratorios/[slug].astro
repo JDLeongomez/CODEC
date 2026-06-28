@@ -1,0 +1,109 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ResearcherCard from '../../components/ResearcherCard.astro';
+import Icon from '../../components/Icon.astro';
+import { LINES } from '../../data/lines';
+import { slug as toSlug } from '../../utils';
+
+export async function getStaticPaths() {
+  const labs = await getCollection('labs');
+  return labs.map(l => ({ params: { slug: toSlug(l.id) }, props: { lab: l } }));
+}
+
+const { lab } = Astro.props;
+const { name, short_name, color, logo_dark, logo_light, research_line,
+        founded, objective_es, methods_es, email, website, instagram } = lab.data;
+
+const { Content } = await lab.render();
+const director = await getEntry(lab.data.director);
+const line     = LINES[research_line as keyof typeof LINES];
+
+const allResearchers = await getCollection('researchers');
+const members = allResearchers
+  .filter(r => r.data.labs?.some(ref => toSlug(ref.id) === toSlug(lab.id)))
+  .sort((a, b) => a.data.weight - b.data.weight);
+---
+
+<Base title={short_name}>
+  <div class="max-w-5xl mx-auto px-6 py-16">
+
+    <nav class="text-sm text-gray-400 mb-8">
+      <a href="/laboratorios" class="hover:text-codec transition-colors">Laboratorios</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-600">{short_name}</span>
+    </nav>
+
+    <div class="flex flex-col sm:flex-row gap-8 items-start mb-12 pb-12 border-b border-gray-100">
+      <div class="shrink-0 p-5 bg-gray-950 rounded-2xl">
+        <img src={logo_dark} alt={short_name} class="h-40 object-contain" />
+      </div>
+      <div>
+        <div class="flex items-center gap-3 mb-2">
+          {line && (
+            <span class="text-xs px-3 py-1 rounded-full font-semibold"
+              style={`background-color: ${color}18; color: ${color}`}>
+              {line.name_es}
+            </span>
+          )}
+          {founded && <span class="text-xs text-gray-400">Fundado en {founded}</span>}
+        </div>
+        <h1 class="text-3xl font-extrabold text-gray-900 leading-tight">{name}</h1>
+        <p class="text-lg font-semibold mt-1" style={`color: ${color}`}>{short_name}</p>
+        {director && (
+          <p class="text-sm text-gray-500 mt-2">
+            Director/a: <a href={`/investigadores/${toSlug(director.id)}`}
+              class="font-medium text-gray-700 hover:underline">{director.data.name}</a>
+          </p>
+        )}
+        <div class="flex flex-wrap gap-2 mt-4">
+          {email    && <a href={`mailto:${email}`} class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"><Icon name="envelope" class="w-3.5 h-3.5 shrink-0" /> Email</a>}
+          {website  && <a href={website} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"><Icon name="globe" class="w-3.5 h-3.5 shrink-0" /> Sitio web</a>}
+          {instagram && <a href={instagram} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors"><Icon name="instagram" class="w-3.5 h-3.5 shrink-0" /> Instagram</a>}
+        </div>
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      <div class="lg:col-span-2 space-y-10">
+        {objective_es && (
+          <div>
+            <h2 class="text-xl font-bold text-gray-900 mb-3">Objetivo</h2>
+            <p class="text-gray-600 leading-relaxed p-4 bg-gray-50 rounded-xl border-l-4"
+              style={`border-color: ${color}`}>
+              {objective_es}
+            </p>
+          </div>
+        )}
+        <div class="prose prose-gray max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <aside>
+        {methods_es && !methods_es.includes('Pendiente de actualización') && (
+          <div>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Métodos</h2>
+            <ul class="space-y-2">
+              {methods_es.map(m => (
+                <li class="flex items-start gap-2 text-sm text-gray-600">
+                  <span class="mt-1 w-2 h-2 rounded-full shrink-0" style={`background-color: ${color}`}></span>
+                  {m}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
+    </div>
+
+    {members.length > 0 && (
+      <div class="mt-16 pt-12 border-t border-gray-100">
+        <h2 class="text-2xl font-bold text-gray-900 mb-8">Investigadores</h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
+          {members.map(r => <ResearcherCard researcher={r} />)}
+        </div>
+      </div>
+    )}
+  </div>
+</Base>

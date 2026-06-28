@@ -1,0 +1,19 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import LabCard from '../../components/LabCard.astro';
+
+const labs = await getCollection('labs');
+---
+
+<Base title="Laboratorios">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="mb-12">
+      <h1 class="text-4xl font-extrabold text-gray-900">Laboratorios</h1>
+      <p class="text-gray-500 mt-2 text-lg">Unidades de investigación del grupo CODEC</p>
+    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+      {labs.map(lab => <LabCard lab={lab} />)}
+    </div>
+  </div>
+</Base>

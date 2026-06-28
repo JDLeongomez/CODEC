@@ -1,0 +1,37 @@
+---
+interface Props {
+  doi: string;
+}
+const { doi } = Astro.props;
+---
+
+<div class="flex flex-wrap items-center gap-8 py-2">
+  <span
+    class="__dimensions_badge_embed__"
+    data-doi={doi}
+    data-style="small_rectangle"
+    data-hide-zero-citations="true"
+    data-legend="always"
+  ></span>
+
+  <div
+    class="altmetric-embed"
+    data-badge-type="donut"
+    data-badge-popover="right"
+    data-doi={doi}
+    data-condensed="true"
+    data-hide-no-mentions="true"
+  ></div>
+
+  <a
+    href={`https://plu.mx/plum/a/?doi=${doi}`}
+    class="plumx-summary"
+    data-site="plum"
+    data-hide-when-empty="true"
+    data-orientation="horizontal"
+  ></a>
+</div>
+
+<script is:inline async src="https://badge.dimensions.ai/badge.js" charset="utf-8"></script>
+<script is:inline src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+<script is:inline type="text/javascript" src="//cdn.plu.mx/widget-summary.js"></script>

@@ -1,0 +1,67 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { slug as toSlug } from '../utils';
+
+interface Props {
+  pub: CollectionEntry<'publications'>;
+}
+
+const { pub } = Astro.props;
+const { title, year, authors, internal_authors, doi, journal, pub_type } = pub.data;
+
+const internalEntries = (await Promise.all((internal_authors ?? []).map(ref => getEntry(ref)))).filter(Boolean);
+const internalByName = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
+
+const typeLabels: Record<string, string> = {
+  article:       'Artículo',
+  'book-chapter': 'Capítulo',
+  book:          'Libro',
+  conference:    'Conferencia',
+  preprint:      'Preprint',
+  thesis:        'Tesis',
+  other:         'Otro',
+};
+---
+
+<div class="border border-gray-100 rounded-xl p-5 hover:shadow-sm transition-shadow bg-white flex gap-5">
+  <span class="text-3xl font-bold text-gray-150 shrink-0 tabular-nums leading-none pt-1 w-16 text-right text-gray-200">
+    {year}
+  </span>
+
+  <div class="flex-1 min-w-0">
+    <div class="flex flex-wrap items-center gap-2 mb-1.5">
+      <span class="text-xs px-2 py-0.5 rounded-full font-medium bg-codec/10 text-codec">
+        {typeLabels[pub_type] ?? pub_type}
+      </span>
+</div>
+
+    <a href={`/publicaciones/${toSlug(pub.id)}`}
+      class="font-semibold text-gray-900 hover:text-codec transition-colors leading-snug block mb-2">
+      {title}
+    </a>
+
+    <p class="text-xs text-gray-500 leading-relaxed mb-1.5">
+      {authors.map((author, i) => {
+        const slug = internalByName[author];
+        return (
+          <span>
+            {slug
+              ? <a href={`/investigadores/${slug}`}
+                  class="font-semibold text-gray-700 hover:text-codec transition-colors">{author}</a>
+              : <span>{author}</span>
+            }{i < authors.length - 1 ? ', ' : ''}
+          </span>
+        );
+      })}
+    </p>
+
+    {journal && <p class="text-xs text-gray-400 italic">{journal}</p>}
+
+    {doi && (
+      <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer"
+        class="text-xs text-codec/70 hover:text-codec transition-colors mt-1 inline-block">
+        doi:{doi}
+      </a>
+    )}
+  </div>
+</div>

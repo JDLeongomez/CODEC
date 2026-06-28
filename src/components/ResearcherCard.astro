@@ -1,0 +1,60 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { slug } from '../utils';
+import { LINES } from '../data/lines';
+
+interface Props {
+  researcher: CollectionEntry<'researchers'>;
+}
+
+const { researcher } = Astro.props;
+const { name, avatar, bio_short_es, labs, semilleros } = researcher.data;
+
+const labEntries       = await Promise.all((labs ?? []).map(ref => getEntry(ref)));
+const semilleroEntries = await Promise.all((semilleros ?? []).map(ref => getEntry(ref)));
+
+const lineIds = [...new Set([
+  ...labEntries.map(l => l?.data.research_line),
+  ...semilleroEntries.map(s => s?.data.research_line),
+])].filter(Boolean) as string[];
+---
+
+<a
+  href={`/investigadores/${slug(researcher.id)}`}
+  class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
+>
+  <div class="p-6 flex flex-col items-center text-center flex-1">
+    <div class="mb-4">
+      <img
+        src={avatar}
+        alt={name}
+        class="w-24 h-24 rounded-full object-cover ring-2 ring-gray-100 group-hover:ring-codec/40 transition-all"
+      />
+    </div>
+
+    <h3 class="font-semibold text-gray-900 group-hover:text-codec transition-colors leading-tight">
+      {name}
+    </h3>
+    <p class="text-xs text-gray-500 mt-1">{researcher.data.academic_role}</p>
+
+    <div class="flex flex-wrap gap-1 justify-center mt-3">
+      {lineIds.map(lid => {
+        const line = LINES[lid as keyof typeof LINES];
+        return line ? (
+          <span
+            class="text-xs px-2 py-0.5 rounded-full font-medium"
+            style={`background-color: ${line.color}18; color: ${line.color}`}
+          >
+            {line.name_es}
+          </span>
+        ) : null;
+      })}
+    </div>
+
+    {bio_short_es && (
+      <p class="text-xs text-gray-500 mt-3 leading-relaxed line-clamp-3">
+        {bio_short_es}
+      </p>
+    )}
+  </div>
+</a>

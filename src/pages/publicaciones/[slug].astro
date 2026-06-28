@@ -1,0 +1,134 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import DOIBadges from '../../components/DOIBadges.astro';
+import ResearcherCard from '../../components/ResearcherCard.astro';
+import Icon from '../../components/Icon.astro';
+import { slug as toSlug } from '../../utils';
+
+export async function getStaticPaths() {
+  const pubs = await getCollection('publications');
+  return pubs.map(p => ({ params: { slug: toSlug(p.id) }, props: { pub: p } }));
+}
+
+const { pub } = Astro.props;
+const { title, year, authors, internal_authors, doi, journal, volume, issue, pages,
+        abstract, pdf, preprint, pub_type } = pub.data;
+
+const { Content } = await pub.render();
+
+const internalEntries = (await Promise.all((internal_authors ?? []).map(ref => getEntry(ref)))).filter(Boolean);
+const internalByName  = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
+
+const typeLabels: Record<string, string> = {
+  article:        'Artículo de revista',
+  'book-chapter': 'Capítulo de libro',
+  book:           'Libro',
+  conference:     'Artículo de conferencia',
+  preprint:       'Preprint',
+  thesis:         'Tesis',
+  other:          'Otro',
+};
+
+const citation = [
+  journal,
+  volume && issue  ? `${volume}(${issue})` : volume ?? issue,
+  pages,
+].filter(Boolean).join(', ');
+---
+
+<Base title={title}>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+
+    <nav class="text-sm text-gray-400 mb-8">
+      <a href="/publicaciones" class="hover:text-codec transition-colors">Publicaciones</a>
+      <span class="mx-2">›</span>
+      <span class="text-gray-600 line-clamp-1">{title}</span>
+    </nav>
+
+    <!-- Header -->
+    <div class="mb-8">
+      <div class="flex flex-wrap items-center gap-2 mb-3">
+        <span class="text-xs px-3 py-1 rounded-full font-semibold bg-codec/10 text-codec">
+          {typeLabels[pub_type] ?? pub_type}
+        </span>
+<span class="text-sm font-bold text-gray-400">{year}</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight mb-4">{title}</h1>
+
+      <p class="text-sm text-gray-600 leading-relaxed mb-3">
+        {authors.map((author, i) => {
+          const slug = internalByName[author];
+          return (
+            <span>
+              {slug
+                ? <a href={`/investigadores/${slug}`}
+                    class="font-semibold text-gray-800 hover:text-codec transition-colors">{author}</a>
+                : <span>{author}</span>
+              }{i < authors.length - 1 ? ', ' : ''}
+            </span>
+          );
+        })}
+      </p>
+
+      {citation && <p class="text-sm italic text-gray-500 mb-4">{citation}</p>}
+
+      <div class="flex flex-wrap gap-2 mt-4">
+        {doi && (
+          <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors font-medium">
+            <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> DOI
+          </a>
+        )}
+        {pdf && (
+          <a href={pdf} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium">
+            <Icon name="document" class="w-3.5 h-3.5 shrink-0" /> PDF
+          </a>
+        )}
+        {preprint && (
+          <a href={preprint} target="_blank" rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors font-medium">
+            <Icon name="clipboard" class="w-3.5 h-3.5 shrink-0" /> Preprint
+          </a>
+        )}
+      </div>
+    </div>
+
+    <!-- Métricas (badges) -->
+    {doi && (
+      <div class="mb-8 p-5 bg-gray-50 rounded-xl">
+        <h2 class="text-xs font-bold text-gray-400 uppercase tracking-widest mb-4">Métricas de impacto</h2>
+        <DOIBadges doi={doi} />
+      </div>
+    )}
+
+    <!-- Resumen y contenido -->
+    {abstract && (
+      <div class="mb-8">
+        <h2 class="text-lg font-bold text-gray-900 mb-3">Resumen</h2>
+        <p class="text-gray-600 leading-relaxed p-5 bg-gray-50 rounded-xl border-l-4 border-codec">
+          {abstract}
+        </p>
+      </div>
+    )}
+
+    <div class="prose prose-gray max-w-none mb-8">
+      <Content />
+    </div>
+
+    <!-- Integrantes CODEC en esta publicación -->
+    {internalEntries.length > 0 && (
+      <div class="border-t border-gray-100 pt-10">
+        <h2 class="text-lg font-bold text-gray-900 mb-6">
+          Integrante{internalEntries.length > 1 ? 's' : ''} de CODEC
+        </h2>
+        <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+          {internalEntries.map(r => r && <ResearcherCard researcher={r} />)}
+        </div>
+      </div>
+    )}
+
+  </div>
+</Base>

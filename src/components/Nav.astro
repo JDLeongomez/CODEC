@@ -1,0 +1,38 @@
+---
+const links = [
+  { href: '/investigadores', label: 'Investigadores' },
+  { href: '/laboratorios',   label: 'Laboratorios' },
+  { href: '/semilleros',     label: 'Semilleros' },
+  { href: '/publicaciones',  label: 'Publicaciones' },
+];
+
+const current = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
+  <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+
+    <a href="/" class="flex items-center gap-3 group">
+      <img src="/logos/CODEC_oscuro.png" alt="CODEC" class="h-8" />
+      <span class="text-sm font-semibold text-gray-500 group-hover:text-codec transition-colors hidden sm:block">
+        CODEC
+      </span>
+    </a>
+
+    <nav class="flex items-center gap-1">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class={`px-4 py-2 rounded-md text-sm font-medium transition-colors ${
+            current.startsWith(link.href)
+              ? 'bg-codec/10 text-codec'
+              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+  </div>
+</header>
