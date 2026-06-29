@@ -5,6 +5,7 @@ import DOIBadges from '../../components/DOIBadges.astro';
 import ResearcherCard from '../../components/ResearcherCard.astro';
 import Icon from '../../components/Icon.astro';
 import { slug as toSlug } from '../../utils';
+import { alumni } from '../../data/alumni';
 
 export async function getStaticPaths() {
   const pubs = await getCollection('publications');
@@ -19,6 +20,13 @@ const { Content } = await pub.render();
 
 const internalEntries = (await Promise.all((internal_authors ?? []).map(ref => getEntry(ref)))).filter(Boolean);
 const internalByName  = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
+
+function normName(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+}
+const alumniByNorm: Record<string, string> = Object.fromEntries(
+  alumni.map(a => [normName(a.name), a.slug])
+);
 
 const typeLabels: Record<string, string> = {
   article:        'Artículo de revista',
@@ -65,13 +73,17 @@ const citation = [
 
           <p class="text-sm text-gray-600 leading-relaxed mb-3">
             {authors.map((author, i) => {
-              const slug = internalByName[author];
+              const currentSlug = internalByName[author];
+              const alumniSlug  = !currentSlug ? alumniByNorm[normName(author)] : undefined;
               return (
                 <span>
-                  {slug
-                    ? <a href={`/investigadores/${slug}`}
+                  {currentSlug
+                    ? <a href={`/investigadores/${currentSlug}`}
                         class="font-semibold text-gray-800 hover:text-codec transition-colors">{author}</a>
-                    : <span>{author}</span>
+                    : alumniSlug
+                      ? <a href={`/antiguos-integrantes#${alumniSlug}`}
+                          class="font-semibold text-gray-500 hover:text-codec transition-colors">{author}</a>
+                      : <span>{author}</span>
                   }{i < authors.length - 1 ? ', ' : ''}
                 </span>
               );
@@ -90,7 +102,8 @@ const citation = [
             {url && (
               <a href={url} target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium">
-                <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> Ver libro
+                <Icon name="link" class="w-3.5 h-3.5 shrink-0" />
+                {pub_type === 'book' || pub_type === 'book-chapter' ? 'Ver libro' : 'Ver publicación'}
               </a>
             )}
             {pdf && (
@@ -122,9 +135,11 @@ const citation = [
     {abstract && (
       <div class="mb-8">
         <h2 class="text-lg font-bold text-gray-900 mb-3">Resumen</h2>
-        <p class="text-gray-600 leading-relaxed p-5 bg-gray-50 rounded-xl border-l-4 border-codec">
-          {abstract}
-        </p>
+        <div class="text-gray-600 leading-relaxed p-5 bg-gray-50 rounded-xl border-l-4 border-codec space-y-3">
+          {abstract.split('\n').filter(Boolean).map((line: string) => (
+            <p>{line}</p>
+          ))}
+        </div>
       </div>
     )}
 

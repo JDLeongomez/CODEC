@@ -1,0 +1,98 @@
+---
+import { getCollection } from 'astro:content';
+import { COUNTRY_COORDS } from '../data/country-coords';
+
+// Collect all DOIs
+const publications = await getCollection('publications');
+const dois = publications
+  .map(p => p.data.doi)
+  .filter(Boolean)
+  .map(d => d!.trim());
+
+// Fetch from OpenAlex in a single batch
+type CountryMap = Record<string, number>;
+let countryCounts: CountryMap = {};
+
+try {
+  const filter = dois.map(d => `doi:${d}`).join('|');
+  const url = `https://api.openalex.org/works?filter=${encodeURIComponent(filter)}&select=authorships&per_page=200&mailto=juanleongomez@gmail.com`;
+  const res  = await fetch(url);
+  const data = await res.json() as { results: { authorships: { institutions: { country_code: string }[] }[] }[] };
+  for (const work of data.results ?? []) {
+    for (const authorship of work.authorships ?? []) {
+      for (const inst of authorship.institutions ?? []) {
+        const code = inst.country_code;
+        if (code) countryCounts[code] = (countryCounts[code] ?? 0) + 1;
+      }
+    }
+  }
+} catch (e) {
+  console.warn('CollaborationMap: OpenAlex fetch failed', e);
+}
+
+// Build marker data — exclude Colombia (home country)
+type MarkerData = { code: string; lat: number; lng: number; name: string; count: number };
+const markers: MarkerData[] = Object.entries(countryCounts)
+  .filter(([code]) => code !== 'CO' && COUNTRY_COORDS[code])
+  .map(([code, count]) => {
+    const [lat, lng, name] = COUNTRY_COORDS[code];
+    return { code, lat, lng, name, count };
+  })
+  .sort((a, b) => b.count - a.count);
+
+const totalCountries = Object.keys(countryCounts).filter(c => c !== 'CO').length;
+const mapDataJson = JSON.stringify(markers);
+---
+
+{markers.length > 0 ? (
+  <div>
+    <p class="text-xs text-gray-400 mb-3">
+      Colaboraciones en <span class="font-semibold text-gray-600">{totalCountries} países</span>
+      a partir de {dois.length} publicaciones con DOI.
+      Colombia excluida como sede del grupo.
+    </p>
+    <div
+      id="collab-map"
+      data-markers={mapDataJson}
+      class="w-full rounded-xl overflow-hidden border border-gray-100"
+      style="height: 460px;"
+    ></div>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <script>
+      import L from 'leaflet';
+
+      const el = document.getElementById('collab-map') as HTMLElement & { dataset: { markers: string } };
+      if (el) {
+        const markers: { lat: number; lng: number; name: string; count: number }[] =
+          JSON.parse(el.dataset.markers);
+
+        const map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
+
+        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
+          attribution: '© OpenStreetMap © CARTO',
+          subdomains: 'abcd',
+          maxZoom: 10,
+        }).addTo(map);
+
+        const maxCount = Math.max(...markers.map(m => m.count));
+
+        for (const m of markers) {
+          const radius = 5 + (Math.sqrt(m.count / maxCount)) * 22;
+          L.circleMarker([m.lat, m.lng], {
+            radius,
+            fillColor:   '#ffb600',
+            color:       '#ffffff',
+            weight:      1.5,
+            fillOpacity: 0.65,
+          })
+            .addTo(map)
+            .bindPopup(`<strong>${m.name}</strong><br/>${m.count} coautoría${m.count !== 1 ? 's' : ''}`);
+        }
+
+        map.fitWorld({ paddingTopLeft: [0, 0] });
+      }
+    </script>
+  </div>
+) : (
+  <p class="text-sm text-gray-400 italic">Datos de colaboración no disponibles.</p>
+)}

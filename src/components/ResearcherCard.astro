@@ -8,7 +8,8 @@ interface Props {
 }
 
 const { researcher } = Astro.props;
-const { name, avatar, bio_short_es, labs, semilleros } = researcher.data;
+const { name, avatar, codec_role, labs, semilleros } = researcher.data;
+const roles = (codec_role ?? '').split(',').map(r => r.trim()).filter(Boolean);
 
 const labEntries       = await Promise.all((labs ?? []).map(ref => getEntry(ref)));
 const semilleroEntries = await Promise.all((semilleros ?? []).map(ref => getEntry(ref)));
@@ -51,10 +52,12 @@ const lineIds = [...new Set([
       })}
     </div>
 
-    {bio_short_es && (
-      <p class="text-xs text-gray-500 mt-3 leading-relaxed line-clamp-3">
-        {bio_short_es}
-      </p>
+    {roles.length > 0 && (
+      <ul class="mt-3 space-y-0.5">
+        {roles.map(role => (
+          <li class="text-xs text-gray-500">{role}</li>
+        ))}
+      </ul>
     )}
   </div>
 </a>

@@ -1,6 +1,6 @@
 ---
 title: "El papel de la procrastinación académica como factor de la deserción universitaria"
-year: 2016
+year: 2017
 authors:
   - "Angélica Garzón Umerenkova"
   - "Javier Gil Flores"

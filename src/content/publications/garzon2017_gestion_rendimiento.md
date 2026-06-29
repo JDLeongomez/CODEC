@@ -1,5 +1,5 @@
 ---
-title: "Gestión del tiempo en alumnado universitario con diferentes niveles de rendimiento académico"
+title: "Gestión del tiempo en el alumnado universitario con diferentes niveles de rendimiento académico"
 year: 2017
 authors:
   - "Angélica Garzón Umerenkova"

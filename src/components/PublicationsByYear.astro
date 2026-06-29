@@ -1,0 +1,102 @@
+---
+import { getCollection } from 'astro:content';
+
+const publications = await getCollection('publications');
+
+type Group = 'articles' | 'books' | 'other';
+
+const GROUPS: { key: Group; label: string; color: string; types: string[] }[] = [
+  { key: 'articles', label: 'Artículos / Preprints', color: '#ffb600', types: ['article', 'preprint']              },
+  { key: 'books',    label: 'Libros / Capítulos',    color: '#00a6b0', types: ['book', 'book-chapter']             },
+  { key: 'other',    label: 'Otros',                  color: '#a451ff', types: ['conference', 'thesis', 'other']   },
+];
+
+const counts: Record<number, Record<Group, number>> = {};
+for (const p of publications) {
+  const year = p.data.year;
+  if (!counts[year]) counts[year] = { articles: 0, books: 0, other: 0 };
+  const group = GROUPS.find(g => g.types.includes(p.data.pub_type));
+  if (group) counts[year][group.key]++;
+}
+
+const years    = Object.keys(counts).map(Number).sort((a, b) => a - b);
+const maxCount = Math.max(...years.map(y => {
+  const c = counts[y];
+  return c.articles + c.books + c.other;
+}));
+
+const BAR_W = 24;
+const GAP   = 5;
+const H     = 130;
+const PAD_L = 28;
+const PAD_B = 26;
+const PAD_T = 26;   // room for legend
+const width  = PAD_L + years.length * (BAR_W + GAP);
+const height = PAD_T + H + PAD_B;
+---
+
+<div class="w-full overflow-x-auto">
+  <svg
+    viewBox={`0 0 ${width} ${height}`}
+    class="w-full"
+    style={`min-width: ${Math.min(width, 560)}px`}
+    aria-label="Publicaciones por año"
+  >
+    <!-- Leyenda -->
+    {GROUPS.map((g, i) => (
+      <>
+        <rect x={PAD_L + i * 110} y={4} width={10} height={10} rx="2" fill={g.color} />
+        <text x={PAD_L + i * 110 + 14} y={13} font-size="8.5" fill="#6b7280">{g.label}</text>
+      </>
+    ))}
+
+    <!-- Líneas guía -->
+    {[0.25, 0.5, 0.75, 1].map(f => {
+      const y   = PAD_T + H - f * H;
+      const val = Math.round(f * maxCount);
+      return (
+        <>
+          <line x1={PAD_L} y1={y} x2={width} y2={y} stroke="#e5e7eb" stroke-width="1" />
+          <text x={PAD_L - 4} y={y + 4} text-anchor="end" font-size="7.5" fill="#9ca3af">{val}</text>
+        </>
+      );
+    })}
+
+    <!-- Barras apiladas -->
+    {years.map((year, i) => {
+      const c   = counts[year];
+      const x   = PAD_L + i * (BAR_W + GAP);
+      const total = c.articles + c.books + c.other;
+      let cumH  = 0;
+      return (
+        <>
+          {GROUPS.map(g => {
+            const count = c[g.key];
+            if (count === 0) return null;
+            const barH  = (count / maxCount) * H;
+            const y     = PAD_T + H - cumH - barH;
+            cumH += barH;
+            return (
+              <rect x={x} y={y} width={BAR_W} height={barH}
+                fill={g.color} opacity="0.85"
+                rx={cumH === barH ? '3 3 0 0' : '0'}
+                class="hover:opacity-100 transition-opacity">
+                <title>{year} – {g.label}: {count}</title>
+              </rect>
+            );
+          })}
+          {total > 0 && (
+            <text x={x + BAR_W / 2}
+              y={PAD_T + H - (total / maxCount) * H - 3}
+              text-anchor="middle" font-size="7.5" fill="#6b7280">{total}</text>
+          )}
+          <text x={x + BAR_W / 2} y={PAD_T + H + PAD_B - 4}
+            text-anchor="middle" font-size="8" fill="#9ca3af"
+            transform={`rotate(-40, ${x + BAR_W / 2}, ${PAD_T + H + PAD_B - 4})`}>
+            {year}
+          </text>
+        </>
+      );
+    })}
+  </svg>
+</div>

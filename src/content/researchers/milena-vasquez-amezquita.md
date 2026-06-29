@@ -39,6 +39,10 @@ semilleros:
   - sexcog
 ---
 
-Profesora Asociada e investigadora en neurociencia de [LabPsiExp](/laboratorios/labpsiexp), y directora del semillero de investigación [SexCog](/semilleros/sexcog). Lidera proyectos de investigación en dos líneas principales.
+Mi investigación integra la **neurociencia cognitiva**, **perspectivas evolutivas** y la salud pública para estudiar cómo el cerebro procesa la información sexualmente relevante y cómo estos mecanismos configuran la atracción, las preferencias de pareja y la respuesta sexual. Mi tesis doctoral (*cum laude*, Universidad de Valencia) se centró en las preferencias sexuales típicas y atípicas según sexo y edad de los estímulos, utilizando el rastreo ocular como técnica central.
 
-La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (*eye-tracking*) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual.
+Trabajo en dos líneas principales. La primera explora los **mecanismos neurocognitivos de los intereses sexuales típicos y atípicos**, incluyendo parafilias como la pedofilia. La segunda estudia los **sesgos atencionales y la variabilidad de la frecuencia cardíaca (VFC)** como predictores del estado emocional y la excitación sexual. En ambas, el *eye-tracking* es mi herramienta metodológica principal, complementada con EEG, psicofisiología y paradigmas de morfometría facial.
+
+Una parte significativa de mi trabajo tiene una orientación **aplicada a la prevención**: he colaborado como consultora científica con la ONG RedPapaz y con la organización internacional Protect Children (Helsinki), donde contribuí a la traducción y adaptación al español del *Global ReDirection Program* para la prevención del abuso sexual infantil en línea.
+
+Mi trabajo en la Universidad El Bosque se enmarca en el [Laboratorio de Psicología Experimental (LabPsiExp)](/laboratorios/labpsiexp), donde también dirijo el semillero [SexCog](/semilleros/sexcog). He realizado dos estancias postdoctorales en la Universidad de la Costa (Barranquilla), financiadas por MinCiencias, y soy Profesora Colaboradora de la Universidad Internacional de Valencia.

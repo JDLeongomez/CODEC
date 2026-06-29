@@ -56,10 +56,18 @@ semilleros:
   - metaciencia
 ---
 
-Soy Profesor Titular e investigador de [EvoCo: Laboratorio de Evolución y Comportamiento Humano](/laboratorios/evoco), de la Facultad de Psicología de la Universidad El Bosque en Bogotá, Colombia. Además, lidero el grupo de investigación [CODEC: Ciencias Cognitivas y del Comportamiento](/) (clasificado como A1).
+Mi investigación adopta una perspectiva evolutiva para estudiar la comunicación humana, con énfasis en la **comunicación vocal**, la **elección de pareja** y la **musicalidad**. Me interesan especialmente los mecanismos bioacústicos y psicoacústicos que subyacen al comportamiento social, así como los efectos hormonales sobre la conducta humana.
 
-También soy fundador y miembro del Consejo Directivo de la [Latin American Association for Human Behavioral and Evolutionary Sciences (LAAHBES)](https://laahbes.org). Además, sirvo como recomendador (equivalente a Editor Asociado) para [PCI Registered Reports](https://rr.peercommunityin.org/), y como Data Editor para [*Proceedings of the Royal Society B*](https://royalsocietypublishing.org/journal/rspb).
+He publicado algunos de los primeros estudios que demuestran cambios intraindividuales en el tono de voz en respuesta al estatus social del oyente, y he documentado efectos significativos de la modulación vocal en contextos de cortejo. Mi trabajo se desarrolla principalmente en el [Laboratorio EvoCo](/laboratorios/evoco) de la Universidad El Bosque, Bogotá.
 
-Mis intereses de investigación se centran principalmente en la comunicación vocal humana, la elección de pareja y la musicalidad, así como en la bioacústica, la psicoacústica y los efectos hormonales en el comportamiento humano. He publicado algunos de los primeros artículos que demuestran cambios intraindividuo en el tono de voz en respuesta al estatus social del oyente, así como efectos significativos de la modulación de la voz en los oyentes en contextos de cortejo.
+Soy un convencido del rigor metodológico y la ciencia abierta: uso R para todos mis análisis y comparto datos, código y materiales de forma abierta. Con ese espíritu, impulsé la creación de [MetaCiencia](/semilleros/metaciencia), un semillero orientado a formar estudiantes en prácticas colaborativas, abiertas y reproducibles.
 
-Además, soy un apasionado por los métodos cuantitativos y la programación en R (usando RStudio), y abogo por promover la reproducibilidad y la ciencia abierta. En este espíritu, impulsé la creación de [MetaCiencia](/semilleros/metaciencia), un semillero académico orientado a explorar críticamente cómo se hace ciencia y a formar estudiantes y profesoras/es en prácticas abiertas, colaborativas y reproducibles.
+Asimismo, he contribuido a la vida académica y editorial. Soy fundador y miembro del Consejo Directivo de la *Latin American Association for Human Behavioral and Evolutionary Sciences (LAAHBES)*, recomendador (equivalente a editor asociado) en [PCI Registered Reports](https://rr.peercommunityin.org/), y Data Editor de [*Proceedings of the Royal Society B*](https://royalsocietypublishing.org/journal/rspb).
+
+<div class="not-prose mt-6 p-4 bg-codec/10 rounded-xl border border-codec/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+  <p class="text-sm text-gray-700">¿Quieres conocer más sobre mi trabajo, publicaciones y proyectos?</p>
+  <a href="https://jdleongomez.info/es/" target="_blank" rel="noopener noreferrer"
+     class="shrink-0 inline-flex items-center gap-2 bg-codec text-white text-sm font-semibold px-4 py-2 rounded-lg hover:bg-codec/90 transition-colors">
+    Visita mi sitio web →
+  </a>
+</div>

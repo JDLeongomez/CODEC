@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import PublicationCard from '../../components/PublicationCard.astro';
+import PublicationsByYear from '../../components/PublicationsByYear.astro';
+import CollaborationMap from '../../components/CollaborationMap.astro';
 
 const publications = (await getCollection('publications'))
   .sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title));
@@ -31,6 +33,18 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
 
     <div class="mb-8">
       <h1 class="text-4xl font-extrabold text-gray-900">Publicaciones</h1>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="space-y-6 mb-12">
+      <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+        <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Producción por año</h2>
+        <PublicationsByYear />
+      </div>
+      <div class="bg-white rounded-2xl border border-gray-100 p-5 shadow-sm">
+        <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Colaboraciones internacionales</h2>
+        <CollaborationMap />
+      </div>
     </div>
 
     <!-- Barra de filtros -->

@@ -79,7 +79,7 @@ const typeLabels: Record<string, string> = {
       {url && (
         <a href={url} target="_blank" rel="noopener noreferrer"
           class="text-xs font-medium text-codec/80 hover:text-codec transition-colors">
-          Ver libro →
+          {pub_type === 'book' || pub_type === 'book-chapter' ? 'Ver libro →' : 'Ver publicación →'}
         </a>
       )}
     </div>
