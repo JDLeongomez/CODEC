@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ResearcherCard from '../../components/ResearcherCard.astro';
 
-const all = (await getCollection('researchers')).sort((a, b) => a.data.weight - b.data.weight);
+const all     = (await getCollection('researchers')).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
 const leader  = all.filter(r =>  r.data.codec_role.includes('Líder'));
 const members = all.filter(r => !r.data.codec_role.includes('Líder'));
 ---
@@ -15,20 +15,13 @@ const members = all.filter(r => !r.data.codec_role.includes('Líder'));
       <p class="text-gray-500 mt-2 text-lg">Conoce al equipo del grupo CODEC</p>
     </div>
 
-    <div class="flex flex-col lg:grid lg:grid-cols-4 gap-5">
-
-      <div>
-        <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Líder</h2>
-        {leader.map(r => <ResearcherCard researcher={r} />)}
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+      <p class="hidden sm:block text-xs font-bold text-gray-400 uppercase tracking-widest">Líder</p>
+      <div class="hidden sm:flex sm:col-span-3 items-center gap-2">
+        <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
+        <span class="flex-1 h-px bg-gray-200"></span>
       </div>
-
-      <div class="lg:col-span-3 lg:border-l lg:border-gray-100 lg:pl-5">
-        <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Investigadoras/es</h2>
-        <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
-          {members.map(r => <ResearcherCard researcher={r} />)}
-        </div>
-      </div>
-
+      {[...leader, ...members].map(r => <ResearcherCard researcher={r} />)}
     </div>
 
     <a href="/antiguos-integrantes"

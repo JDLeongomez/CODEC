@@ -23,7 +23,7 @@ authors:
   - "Fiona Kate Barlow"
   - "Lisiane Bizarro"
   - "Paola Bressan"
-  - "Andrés Castellanos Chacón"
+  - "Andrés Castellanos-Chacón"
   - "Bryan K. C. Choy"
   - "Achmad Chusairi"
   - "Brenda L. Chávez Cosamelón"

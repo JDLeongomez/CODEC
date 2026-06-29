@@ -1,5 +1,5 @@
 ---
-name: Laboratorio de Evolución y Comportamiento Humano
+name: "EvoCo: Laboratorio de Evolución y Comportamiento Humano"
 short_name: EvoCo
 director: oscar-sanchez
 founded: 2015

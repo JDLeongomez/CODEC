@@ -8,18 +8,20 @@
 - Cargo académico actual: Profesor Titular
 - Rol dentro de CODEC: Líder CODEC, Investigador EvoCo, Director MetaCiencia
 - Correo institucional: <jleongomez@unbosque.edu.co>
-- Foto de perfil: Juan_David_Leongomez.jpg
-- Bio corta: ""
+- Foto de perfil: `/fotos/juan-david-leongomez.jpg`
+- Laboratorios: EvoCo
+- Semilleros: MetaCiencia
 
-- Bio larga: "Soy Profesor Titular e investigador de EvoCo: Laboratorio de Evolución y Comportamiento Humano, de la Facultad de Psicología de la Universidad El Bosque en Bogotá, Colombia. Además, lidero el grupo de investigación CODEC: Ciencias Cognitivas y del Comportamiento (clasificado como A1).
+- Bio corta: "Profesor Titular y líder del grupo CODEC. Estudia la comunicación vocal humana, la elección de pareja y la musicalidad, con especial interés en la ciencia abierta y la reproducibilidad."
 
-También soy fundador y miembro del Consejo Directivo de Latin American Association for Human Behavioral and Evolutionary Sciences (LAAHBES). Además, sirvo como recomendador (equivalente a Editor Asociado) para PCI Registered Reports, y como Data Editor para Proceedings of the Royal Society B.
+- Bio larga: (4 párrafos)
+  1. Perspectiva evolutiva, énfasis en comunicación vocal, elección de pareja y musicalidad; mecanismos bioacústicos/psicoacústicos y efectos hormonales.
+  2. Primeros estudios sobre cambios intraindividuales en tono de voz según estatus del oyente; efectos de modulación vocal en cortejo. Trabaja en EvoCo (Universidad El Bosque).
+  3. Rigor metodológico y ciencia abierta: R para todos los análisis, datos/código/materiales abiertos. Impulsor de MetaCiencia.
+  4. Roles editoriales: fundador y miembro del Consejo Directivo de LAAHBES; recomendador en PCI Registered Reports; Data Editor de *Proceedings of the Royal Society B*.
+  - CTA al sitio web personal.
 
-Mis intereses de investigación se centran principalmente en la comunicación vocal humana, la elección de pareja y la musicalidad, así como en la bioacústica, la psicoacústica y los efectos hormonales en el comportamiento humano. He publicado algunos de los primeros artículos que demuestran cambios intraindividuo en el tono de voz en respuesta al estatus social del oyente, así como efectos significativos de la modulación de la voz en los oyentes en contextos de cortejo.
-
-Además, soy un apasionado por los métodos cuantitativos y la programación en  (usando RStudio), y abogo por promover la reproducibilidad y la ciencia abierta. En este espíritu, impulsé la creación de MetaCiencia, un semillero académico orientado a explorar críticamente cómo se hace ciencia y a formar estudiantes y profesoras/es en prácticas abiertas, colaborativas y reproducibles."
-
-- Intereses de Investigación:
+- Intereses de investigación:
   - Selección de pareja
   - Comunicación vocal
   - Modulación vocal
@@ -31,7 +33,7 @@ Además, soy un apasionado por los métodos cuantitativos y la programación en 
   - Ciencia abierta
   - Reproducibilidad
 
-- Formación académica
+- Formación académica:
   - PhD, Psychology, School of Natural Sciences, 2014, University of Stirling (Stirling, Reino Unido)
   - MSc in Evolutionary Psychology, 2009, University of Liverpool (Liverpool, Reino Unido)
   - Licenciatura en Pedagogía Musical, 2006, Universidad Pedagógica Nacional (Bogotá, Colombia)
@@ -44,66 +46,39 @@ Además, soy un apasionado por los métodos cuantitativos y la programación en 
   - ResearchGate: <https://www.researchgate.net/profile/Juan_Leongomez>
   - Sitio web personal: <https://jdleongomez.info>
 
-### Ana Maria Salazar
+---
 
-- Nombre completo: Ana Maria Salazar
+### Ana María Salazar
+
+- Nombre completo: Ana María Salazar
 - Cargo académico actual: Profesora Asociada
 - Rol dentro de CODEC: Directora NeuroGroup
 - Correo institucional: <salazarana@unbosque.edu.co>
-- Foto de perfil: Ana_Maria_Salazar.jpg
-- Bio corta: ""
+- Foto de perfil: `/fotos/ana-maria-salazar.jpg`
+- Laboratorios: —
+- Semilleros: NeuroGroup
 
-- Bio larga: ""
+- Bio corta: "Profesora Asociada y directora del semillero NeuroGroup. Investiga el deterioro cognitivo y la neuropsicología del envejecimiento."
 
-- Intereses de Investigación:
+- Bio larga: *Pendiente de actualización.*
+
+- Intereses de investigación:
   - Neuropsicología
   - Deterioro cognitivo
   - Edadismo
 
-- Formación académica
-  - PhD, Neurociencias (medicina), XXXX, Universidad de Granada (Granada, España)
-  - Maestría en Neurociencias, XXXX, Universidad de Granada (Granada, España)
+- Formación académica:
+  - PhD, Neurociencias (Medicina), en curso, Universidad de Granada (Granada, España)
+  - Maestría en Neurociencias, en curso, Universidad de Granada (Granada, España)
   - Psicología, 2002, Universidad El Bosque (Bogotá, Colombia)
-  
+
 - Perfiles académicos:
   - Google Scholar: <https://scholar.google.com/citations?user=YMc6jgoAAAAJ>
   - ORCID: <https://orcid.org/0000-0003-1288-1469>
   - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57203655630>
   - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001361395>
-  - ResearchGate: <>
-  - Sitio web personal: <>
 
-### Milena Vásquez-Amézquita
-
-- Nombre completo: Milena Vásquez-Amézquita
-- Cargo académico actual: Profesora Asociada
-- Rol dentro de CODEC: Directora SEXCOG, Investigadora LabPsiExp
-- Correo institucional: <mvasquezam@unbosque.edu.co>
-- Foto de perfil: Milena_Vasquez-Amezquita.jpg
-- Bio corta: ""
-
-- Bio larga: "Profesora Asociada e investigadora en neurociencia de LabPsiExp, y directora del semillero de investigación SEXCOG. Lidera proyectos de investigación en dos líneas. La primera, sobre preferencias sexuales típicas-atípicas, no desviadas y desviadas, como la pedofilia. En segundo lugar, sobre los sesgos atencionales y la VFC como indicadores de trastornos afectivos. Se ha centrado en el uso del rastreo ocular (eye-tracking) como una medida indirecta del afecto y la excitación sexual. Tiene interés en la investigación sobre los mecanismos cognitivos que subyacen a los trastornos del estado de ánimo y la conducta sexual."
-
-- Intereses de Investigación:
-  - Neurociencia cognitiva del comportamiento sexual humano
-  - Mecanismos neurocognitivos de la atracción y la respuesta sexual
-  - Psicología evolutiva de la elección de pareja
-  - Mecanismos neurocognitivos de los intereses sexuales atípicos
-  - Prevención del abuso sexual infantil y la explotación sexual infantil en línea
-  - Rastreo ocular y atención visual
-
-- Formación académica
-  - PhD, Neurociencia, 2018, Universidad de Valencia (Valencia, España)
-  - MSc en Neurociencia Básica y Aplicada, 2012, Universidad de Valencia (Valencia, España)
-  - Psicología, 2007, Universidad Católica de Colombia (Bogota, Colombia)
-  
-- Perfiles académicos:
-  - Google Scholar: <https://scholar.google.com/citations?user=X58RxbIAAAAJ>
-  - ORCID: <https://orcid.org/0000-0001-7317-8430>
-  - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57195571822>
-  - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001511490>
-  - ResearchGate: <>
-  - Sitio web personal: <>
+---
 
 ### Andrés Felipe Reyes
 
@@ -111,55 +86,27 @@ Además, soy un apasionado por los métodos cuantitativos y la programación en 
 - Cargo académico actual: Profesor Asociado
 - Rol dentro de CODEC: Investigador LabPsiExp, Director DiCoMH
 - Correo institucional: <reyesandres@unbosque.edu.co>
-- Foto de perfil: Andres_Felipe_Reyes.jpg
-- Bio corta: ""
+- Foto de perfil: `/fotos/andres-felipe-reyes.jpg`
+- Laboratorios: LabPsiExp
+- Semilleros: DiCoMH
 
-- Bio larga: ""
+- Bio corta: "Profesor Asociado e investigador de LabPsiExp. Director del semillero DiCoMH."
 
-- Intereses de Investigación:
-  - XXX
+- Bio larga: *Pendiente de actualización.*
 
-- Formación académica
-  - MA General Linguistics, 2009, University of Groningen (Groningen, Holanda)
+- Intereses de investigación: *Pendiente de actualización.*
+
+- Formación académica:
+  - MA General Linguistics, 2009, University of Groningen (Groningen, Países Bajos)
   - MSc Clinical Linguistics, 2009, University of Potsdam (Potsdam, Alemania)
-  - Psicología, 2005, Fundacion Universitaria Konrad Lorenz (Bogotá, Colombia)
-  
+  - Psicología, 2005, Fundación Universitaria Konrad Lorenz (Bogotá, Colombia)
+
 - Perfiles académicos:
-  - Google Scholar: <>
   - ORCID: <https://orcid.org/0000-0003-1122-9815>
   - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=55935438000>
   - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000412783>
-  - ResearchGate: <>
-  - Sitio web personal: <>
 
-### Oscar R. Sánchez
-
-- Nombre completo: Oscar R. Sánchez
-- Cargo académico actual: Profesor Titular
-- Rol dentro de CODEC: Director EvoCo, Director PsicoEvo
-- Correo institucional: <sanchezoscar@unbosque.edu.co>
-- Foto de perfil: Oscar_Sanchez.jpg
-- Bio corta: ""
-
-- Bio larga: ""
-
-- Intereses de Investigación:
-  - Ecología comportamental
-  - Historia de vida
-  - Hormonas
-  - Vulnerabilidad y evolución
-
-- Formación académica
-  - MSc en Biología, 1999, Universidad de Los Andes (Bogotá, Colombia)
-  - Biología Marina, 1985, Universidad de Bogotá Jorge Tadeo Lozano (Bogotá, Colombia)
-  
-- Perfiles académicos:
-  - Google Scholar: <>
-  - ORCID: <https://orcid.org/0000-0003-1122-9815>
-  - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57204241942>
-  - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000425524>
-  - ResearchGate: <>
-  - Sitio web personal: <>
+---
 
 ### Fidel Mauricio Bonilla
 
@@ -167,29 +114,31 @@ Además, soy un apasionado por los métodos cuantitativos y la programación en 
 - Cargo académico actual: Profesor Titular
 - Rol dentro de CODEC: Director LabPsiExp
 - Correo institucional: <bonillafidel@unbosque.edu.co>
-- Foto de perfil: Mauricio_Bonilla.jpg
-- Bio corta: ""
+- Foto de perfil: `/fotos/fidel-mauricio-bonilla.jpg`
+- Laboratorios: LabPsiExp
+- Semilleros: —
 
-- Bio larga: ""
+- Bio corta: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp)."
 
-- Intereses de Investigación:
-  - XXX
+- Bio larga: *Pendiente de actualización.*
 
-- Formación académica
+- Intereses de investigación: *Pendiente de actualización.*
+
+- Formación académica:
   - PhD, Neurociencias, 2015, Universidad Santiago de Compostela (Santiago de Compostela, España)
   - MSc en Neuropsicología, 2019, Universidad de San Buenaventura (Bogotá, Colombia)
   - Especialización en Evaluación y Diagnóstico Neuropsicológico, 2017, Universidad de San Buenaventura (Bogotá, Colombia)
-  - Especialización en Ansiedad y estres, 1994, Universidad Complutense (Madrid, España)
+  - Especialización en Ansiedad y Estrés, 1994, Universidad Complutense (Madrid, España)
   - Especialización en Psicología Clínica y Experimental de la Salud, 1992, Universidad Nacional (Bogotá, Colombia)
-  - Psicología, 1988, Fundacion Universitaria Konrad Lorenz (Bogotá, Colombia)
-  
+  - Psicología, 1988, Fundación Universitaria Konrad Lorenz (Bogotá, Colombia)
+
 - Perfiles académicos:
   - Google Scholar: <https://scholar.google.com/citations?user=CAcFbOUAAAAJ>
   - ORCID: <https://orcid.org/0000-0003-4324-3224>
   - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57189243484>
   - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001334020>
-  - ResearchGate: <>
-  - Sitio web personal: <>
+
+---
 
 ### Miguel Puentes-Escamilla
 
@@ -197,192 +146,231 @@ Además, soy un apasionado por los métodos cuantitativos y la programación en 
 - Cargo académico actual: Profesor Asistente
 - Rol dentro de CODEC: Investigador EvoCo
 - Correo institucional: <pescamil@unbosque.edu.co>
-- Foto de perfil: Miguel_Puentes.jpg
-- Bio corta: ""
+- Foto de perfil: `/fotos/miguel-puentes-escamilla.jpg`
+- Laboratorios: EvoCo
+- Semilleros: —
 
-- Bio larga: ""
+- Bio corta: "Profesor Asistente e investigador de EvoCo, actualmente finalizando su doctorado en la University of Groningen."
 
-- Intereses de Investigación:
-  - XXX
+- Bio larga: *Pendiente de actualización.*
 
-- Formación académica
-  - PhD (en finalización), 2026, University of Groningen (Groningen, Países Bajos)
+- Intereses de investigación: *Pendiente de actualización.*
+
+- Formación académica:
+  - PhD (en finalización), ~2026, University of Groningen (Groningen, Países Bajos)
   - Maestría en Psicología, 2017, Universidad Nacional de Colombia (Bogotá, Colombia)
   - Psicología, 2009, Universidad Nacional de Colombia (Bogotá, Colombia)
-  
+
 - Perfiles académicos:
   - Google Scholar: <https://scholar.google.com/citations?user=kBzWGnAAAAAJ>
   - ORCID: <https://orcid.org/0000-0002-5243-6936>
-  - Scopus: <>
   - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000955892>
-  - ResearchGate: <>
-  - Sitio web personal: <>
+
+---
+
+### Milena Vásquez-Amézquita
+
+- Nombre completo: Milena Vásquez-Amézquita
+- Cargo académico actual: Profesora Asociada
+- Rol dentro de CODEC: Investigadora LabPsiExp, Directora SexCog
+- Correo institucional: <mvasquezam@unbosque.edu.co>
+- Foto de perfil: `/fotos/milena-vasquez-amezquita.jpg`
+- Laboratorios: LabPsiExp
+- Semilleros: SexCog
+
+- Bio corta: "Profesora Asociada e investigadora en neurociencia cognitiva del comportamiento sexual. Directora del semillero SexCog e investigadora de LabPsiExp."
+
+- Bio larga: (4 párrafos)
+  1. Integra neurociencia cognitiva, perspectivas evolutivas y salud pública para estudiar procesamiento cerebral de información sexualmente relevante. Tesis doctoral *cum laude* (U. Valencia) sobre preferencias sexuales típicas/atípicas con eye-tracking.
+  2. Línea 1: mecanismos neurocognitivos de intereses sexuales típicos y atípicos (incluyendo pedofilia). Línea 2: sesgos atencionales y VFC como predictores de estado emocional/excitación sexual. Metodología: eye-tracking, EEG, psicofisiología, morfometría facial.
+  3. Trabajo aplicado a prevención: consultora científica de RedPapaz y Protect Children (Helsinki); traducción/adaptación del *Global ReDirection Program* al español.
+  4. LabPsiExp y SexCog en U. El Bosque. Dos estancias postdoctorales en U. de la Costa (Barranquilla), financiadas por MinCiencias. Profesora Colaboradora de la Universidad Internacional de Valencia.
+
+- Intereses de investigación:
+  - Neurociencia cognitiva del comportamiento sexual humano
+  - Mecanismos neurocognitivos de la atracción y la respuesta sexual
+  - Psicología evolutiva de la elección de pareja
+  - Mecanismos neurocognitivos de los intereses sexuales atípicos
+  - Prevención del abuso sexual infantil
+  - Rastreo ocular y atención visual
+
+- Formación académica:
+  - PhD, Neurociencia, 2018, Universidad de Valencia (Valencia, España)
+  - MSc en Neurociencia Básica y Aplicada, 2012, Universidad de Valencia (Valencia, España)
+  - Psicología, 2007, Universidad Católica de Colombia (Bogotá, Colombia)
+
+- Perfiles académicos:
+  - Google Scholar: <https://scholar.google.com/citations?user=X58RxbIAAAAJ>
+  - ORCID: <https://orcid.org/0000-0001-7317-8430>
+  - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57195571822>
+  - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0001511490>
+
+---
+
+### Oscar R. Sánchez
+
+- Nombre completo: Oscar R. Sánchez
+- Cargo académico actual: Profesor Titular
+- Rol dentro de CODEC: Director EvoCo, Director PsicoEvo
+- Correo institucional: <sanchezoscar@unbosque.edu.co>
+- Foto de perfil: `/fotos/oscar-sanchez.jpg`
+- Laboratorios: EvoCo
+- Semilleros: PsicoEvo
+
+- Bio corta: "Profesor Titular y director del Laboratorio EvoCo y del semillero PsicoEvo. Estudia el comportamiento humano desde una perspectiva evolutiva."
+
+- Bio larga: *Pendiente de actualización.*
+
+- Intereses de investigación:
+  - Ecología comportamental
+  - Historia de vida
+  - Hormonas
+  - Vulnerabilidad y evolución
+
+- Formación académica:
+  - MSc en Biología, 1999, Universidad de Los Andes (Bogotá, Colombia)
+  - Biología Marina, 1985, Universidad de Bogotá Jorge Tadeo Lozano (Bogotá, Colombia)
+
+- Perfiles académicos:
+  - ORCID: <https://orcid.org/0000-0003-1122-9815>
+  - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57204241942>
+  - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000425524>
+
+---
 
 ## Laboratorios
 
 ### EvoCo
 
-- Nombre completo del laboratorio: Laboratorio de Evolución y Comportamiento Humano
-- Sigla o nombre corto: EvoCo
+- Nombre completo: Laboratorio de Evolución y Comportamiento Humano
+- Sigla: EvoCo
 - Director: Oscar R. Sánchez
 - Año de fundación: 2015
-- Línea de investigación de CODEC: Linea 1: Evolución y Comportamiento Humano
+- Línea de investigación: Línea 1 — Evolución y Comportamiento Humano
 - Color: #ff5555
-- Logo: EvoCo_claro.svg EvoCo_oscuro.svg
+- Logo: `EvoCo_claro.svg` / `EvoCo_oscuro.svg`
+- Correo: <sanchezoscar@unbosque.edu.co>
+- Otra red: <https://jdleongomez.info/es/lab/>
 
-- Texto de presentación: "En EvoCo: Laboratorio de Evolución y Comportamiento Humano estudiamos el comportamiento humano desde una perspectiva evolutiva. Realizamos proyectos experimentales (y algunos de minería de datos) sobre diversos temas que abarcan desde la elección de pareja hasta los efectos hormonales en el comportamiento, incluyendo análisis acústicos de voces y morfométricos de rostros."
-- Objetivo principal: ""
-- Métodos y competencias principales:
+- Texto de presentación: "En EvoCo estudiamos el comportamiento humano desde una perspectiva evolutiva. Realizamos proyectos experimentales (y algunos de minería de datos) sobre temas que abarcan desde la elección de pareja hasta los efectos hormonales en el comportamiento, incluyendo análisis acústicos de voces y morfométricos de rostros."
+
+- Métodos principales:
   - Modelado estadístico
   - Análisis acústico
   - Morfometrías geométricas
   - Niveles hormonales
   - Percepción subjetiva
 
-- Correo de contacto: <sanchezoscar@unbosque.edu.co>
-- Instagram: <>
-- Otra red: <https://jdleongomez.info/es/lab/>  
+---
 
 ### LabPsiExp
 
-- Nombre completo del laboratorio: Laboratorio Psicología Experimental
-- Sigla o nombre corto: LabPsiExp
+- Nombre completo: Laboratorio de Psicología Experimental
+- Sigla: LabPsiExp
 - Director: Fidel Mauricio Bonilla
-- Año de fundación: XXXX
-- Línea de investigación de CODEC: Linea 2: Neurociencias cognitivo-afectivas
+- Año de fundación: *pendiente*
+- Línea de investigación: Línea 2 — Neurociencias cognitivo-afectivas
 - Color: #a451ff
-- Logo: LabPsiExp_claro.svg LabPsiExp_oscuro.svg
+- Logo: `LabPsiExp_claro.svg` / `LabPsiExp_oscuro.svg`
+- Correo: <bonillafidel@unbosque.edu.co>
 
-- Texto de presentación: ""
-- Objetivo principal: ""
-- Métodos y competencias principales:
-  - XXXX
+- Texto de presentación: *Pendiente de actualización.*
 
-- Correo de contacto: <bonillafidel@unbosque.edu.co>
-- Instagram: <>
-- Otra red: <>
+---
 
 ## Semilleros
 
-### SexCog
-
-- Nombre completo del semillero:  Sexualidad y afectividad humana desde una perspectiva neurocognitiva
-- Sigla o nombre corto: SexCog
-- Directora: Milena Vásquez-Amézquita
-- Año de fundación: XXXX
-- Línea de investigación de CODEC: Linea 2: Neurociencias cognitivo-afectivas
-- Color: #a451ff
-- Logo: SexCog_claro.svg SexCog_oscuro.svg
-
-- Texto de presentación: ""
-- Objetivo principal: ""
-- Métodos y competencias principales:
-  - XXXX
-
-- Correo de contacto: <mvasquezam@unbosque.edu.co>
-- Instagram: <https://www.instagram.com/sexcog.research/>
-- Otra red: <>
-
-### PsicoEvo
-
-- Nombre completo del semillero: Psicología evolutiva
-- Sigla o nombre corto: PsicoEvo
-- Director: Oscar R. Sánchez
-- Año de fundación: 2025
-- Línea de investigación de CODEC: Linea 1: Evolución y Comportamiento Humano
-- Color: #ff5555
-- Logo: PsicoEvo_claro.svg PsicoEvo_oscuro.svg
-
-- Texto de presentación: ""
-- Objetivo principal: ""
-- Métodos y competencias principales:
-  - XXXX
-
-- Correo de contacto: <sanchezoscar@unbosque.edu.co>
-- Instagram: <>
-- Otra red: <>
-
 ### DiCoMH
 
-- Nombre completo del semillero: Diferencias congnitivas entre mujeres y hombres
-- Sigla o nombre corto: DiCoMH
+- Nombre completo: Diferencias cognitivas entre mujeres y hombres
+- Sigla: DiCoMH
 - Director: Andrés Felipe Reyes
 - Año de fundación: 2026
-- Línea de investigación de CODEC: Linea 2: Neurociencias cognitivo-afectivas
+- Línea de investigación: Línea 2 — Neurociencias cognitivo-afectivas
 - Color: #a451ff
-- Logo: DiCoMH_claro.svg DiCoMH_oscuro.svg
+- Logo: `DiCoMH_claro.svg` / `DiCoMH_oscuro.svg`
+- Correo: <reyesandres@unbosque.edu.co>
 
-- Texto de presentación: ""
-- Objetivo principal: ""
-- Métodos y competencias principales:
-  - XXXX
+- Texto de presentación: *Pendiente de actualización.*
 
-- Correo de contacto: <reyesandres@unbosque.edu.co>
-- Instagram: <>
-- Otra red: <>
+---
 
 ### MetaCiencia
 
-- Nombre completo del semillero:  Semillero abierto de ciencia, reproducibilidad y Transparencia
-- Sigla o nombre corto: MetaCiencia
+- Nombre completo: Semillero abierto de ciencia, reproducibilidad y transparencia
+- Sigla: MetaCiencia
 - Director: Juan David Leongómez
 - Año de fundación: 2026
-- Línea de investigación de CODEC: [TRANSVERSAL A TODAS LAS LÍNEAS]
+- Línea de investigación: Transversal a todas las líneas
 - Color: #d400aa
-- Logo: MetaCiencia_claro.svg MetaCiencia_oscuro.svg
+- Logo: `MetaCiencia_claro.svg` / `MetaCiencia_oscuro.svg`
+- Correo: <jleongomez@unbosque.edu.co>
+- Sitio web: <https://jdleongomez.github.io/MetaCiencia/>
 
-- Texto de presentación: "MetaCiencia es un semillero de investigación de la Universidad El Bosque, adscrito a la Facultad de Psicología, dedicado a promover prácticas científicas abiertas, reproducibles y transparentes. Estamos abiertos a personas de todas las facultades interesadas en estos temas. Nos interesa la promoción de la ciencia abierta a través de la investigación y divulgación.
-Su nombre no es accidental: la metaciencia es, literalmente, la ciencia sobre la ciencia. Es el campo que estudia cómo producimos conocimiento científico, qué tan confiable es ese conocimiento, y cómo podríamos hacerlo mejor. Es una disciplina empírica, no solo filosófica, con décadas de literatura acumulada y una comunidad global cada vez más activa.
+- Texto de presentación: "MetaCiencia es un semillero de investigación de la Universidad El Bosque, adscrito a la Facultad de Psicología, dedicado a promover prácticas científicas abiertas, reproducibles y transparentes. Abierto a personas de todas las facultades. Trabaja en torno a tres líneas: (1) reproducibilidad y transparencia, (2) prácticas de ciencia abierta, (3) educación en metaciencia y alfabetización científica."
 
-El semillero trabaja en torno a tres líneas principales:
+- Objetivo: "Promover la adopción de prácticas de ciencia abierta mediante investigación y divulgación."
 
-    Reproducibilidad y transparencia científica — pre-registro, reportes registrados, análisis reproducibles, apertura de datos y código.
-    Prácticas de ciencia abierta — acceso abierto no comercial (green OA), uso de software libre, documentación rigurosa de procesos científicos.
-    Educación en metaciencia y alfabetización científica — formación crítica en todos los niveles, desde el pregrado hasta la divulgación pública."
-
-- Objetivo principal: "Promover la adopción de prácticas de ciencia abierta mediante investigación y divulgación"
-- Métodos y competencias principales:
-  - XXXX
-
-- Correo de contacto: <jleongomez@unbosque.edu.co>
-- Instagram: <>
-- Otra red: <https://jdleongomez.github.io/MetaCiencia/>
+---
 
 ### NeuroGroup
 
-- Nombre completo del semillero: NeuroGroup
-- Sigla o nombre corto: NeuroGroup
-- Directora: Ana Maria Salazar
-- Año de fundación: XXXX
-- Línea de investigación de CODEC: Linea 3: Neuropsicología
+- Nombre completo: NeuroGroup
+- Sigla: NeuroGroup
+- Directora: Ana María Salazar
+- Año de fundación: *pendiente*
+- Línea de investigación: Línea 3 — Neuropsicología
 - Color: #00a6b0
-- Logo: NeuroGroup_claro.svg NeuroGroup_oscuro.svg
-
-- Texto de presentación: ""
-- Objetivo principal: ""
-- Métodos y competencias principales:
-  - XXXX
-
-- Correo de contacto: <salazarana@unbosque.edu.co>
+- Logo: `NeuroGroup_claro.svg` / `NeuroGroup_oscuro.svg`
+- Correo: <salazarana@unbosque.edu.co>
 - Instagram: <https://www.instagram.com/neurogroup.psicologia/>
-- Otra red: <>
+
+- Texto de presentación: *Pendiente de actualización.*
+
+---
+
+### PsicoEvo
+
+- Nombre completo: Psicología Evolutiva
+- Sigla: PsicoEvo
+- Director: Oscar R. Sánchez
+- Año de fundación: 2025
+- Línea de investigación: Línea 1 — Evolución y Comportamiento Humano
+- Color: #ff5555
+- Logo: `PsicoEvo_claro.svg` / `PsicoEvo_oscuro.svg`
+- Correo: <sanchezoscar@unbosque.edu.co>
+
+- Texto de presentación: *Pendiente de actualización.*
+
+---
+
+### SexCog
+
+- Nombre completo: Sexualidad y afectividad humana desde una perspectiva neurocognitiva
+- Sigla: SexCog
+- Directora: Milena Vásquez-Amézquita
+- Año de fundación: *pendiente*
+- Línea de investigación: Línea 2 — Neurociencias cognitivo-afectivas
+- Color: #a451ff
+- Logo: `SexCog_claro.svg` / `SexCog_oscuro.svg`
+- Correo: <mvasquezam@unbosque.edu.co>
+- Instagram: <https://www.instagram.com/sexcog.research/>
+
+- Texto de presentación: *Pendiente de actualización.*
+
+---
 
 ## Grupo CODEC
 
 - Nombre completo: Ciencias Cognitivas y del Comportamiento
-- Sigla o nombre corto: CODEC
-- Directora: Juan David Leongómez
-- Año de fundación: 2002 (anteriormente se llamaba "Procesos Cognoscitivos y Educación")
-- Logo: CODEC_claro.svg CODEC_oscuro.svg
+- Sigla: CODEC
+- Líder: Juan David Leongómez
+- Año de fundación: 2002 (antes: "Procesos Cognoscitivos y Educación")
+- Logo: `CODEC_claro.svg` / `CODEC_oscuro.svg`
 
 - Líneas de investigación:
-  - Linea 1: Evolución y Comportamiento Humano (color: #ff5555)
-  - Linea 2: Neurociencias cognitivo-afectivas (color: #a451ff)
-  - Linea 3: Neuropsicología (color: #00a6b0)
-
-- Colores:
-  - Grupo: #ffb600
-  - Linea 1: #ff5555
-  - Línea 2: #a451ff
-  - Línea 3: #00a6b0
-  - TRANSVERSAL: #d400aa
+  - Línea 1: Evolución y Comportamiento Humano — color: #ff5555
+  - Línea 2: Neurociencias cognitivo-afectivas — color: #a451ff
+  - Línea 3: Neuropsicología — color: #00a6b0
+  - Transversal: #d400aa
+  - Grupo (acento): #ffb600

@@ -2,7 +2,7 @@
 title: "Effects of stimulus emotional content on gaze pattern: an eye-tracking study"
 year: 2026
 authors:
-  - "Andrés Castellanos Chacón"
+  - "Andrés Castellanos-Chacón"
   - "Daniela Arias-Otero"
   - "Valeria Uribe-Jaramillo"
   - "Juan David Leongómez"

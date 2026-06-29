@@ -11,7 +11,7 @@ export const alumni: AlumniMember[] = [
   { name: 'Jairo Emiro Bravo', slug: 'jairo-emiro-bravo', period: '2010–2012' },
   { name: 'Alba Lucía Meneses Báez', slug: 'alba-lucia-meneses-baez', period: '2005–2022' },
   { name: 'Diana María Arias Castro', slug: 'diana-maria-arias-castro', period: '2018' },
-  { name: 'Andrés Castellanos Chacón', slug: 'andres-castellanos-chacon', period: '2022–2026' },
+  { name: 'Andrés Castellanos-Chacón', slug: 'andres-castellanos-chacon', period: '2022–2026' },
   { name: 'Angela Patricia Delgado Cotte', slug: 'angela-patricia-delgado-cotte', period: '2009–2010' },
   { name: 'Judith Andrea Garzón Cubides', slug: 'judith-andrea-garzon-cubides', period: '2010' },
   { name: 'Karen Cristina Jacome Duran', slug: 'karen-cristina-jacome-duran', period: '2020–2022' },

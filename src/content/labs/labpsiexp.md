@@ -1,5 +1,5 @@
 ---
-name: Laboratorio de Psicología Experimental
+name: "LabPsiExp: Laboratorio de Psicología Experimental"
 short_name: LabPsiExp
 director: fidel-mauricio-bonilla
 research_line: line2

@@ -6,7 +6,7 @@ authors:
   - "Oscar R. Sánchez"
   - "Milena Vásquez-Amézquita"
   - "Eugenio Valderrama"
-  - "Andrés Castellanos Chacón"
+  - "Andrés Castellanos-Chacón"
   - "Lina Morales-Sánchez"
   - "Javier Nieto"
   - "Isaac González-Santoyo"

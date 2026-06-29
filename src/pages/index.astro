@@ -7,10 +7,10 @@ import SemilleroCard from '../components/SemilleroCard.astro';
 import { LINES } from '../data/lines';
 import { slug as toSlug } from '../utils';
 
-const allResearchers = (await getCollection('researchers')).sort((a, b) => a.data.weight - b.data.weight);
-const resLeader  = allResearchers.filter(r =>  r.data.codec_role.includes('Líder'));
-const resMembers = allResearchers.filter(r => !r.data.codec_role.includes('Líder'));
-const researchers = allResearchers;
+const allResearchers = (await getCollection('researchers')).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
+const resLeader      = allResearchers.filter(r =>  r.data.codec_role.includes('Líder'));
+const resMembers     = allResearchers.filter(r => !r.data.codec_role.includes('Líder'));
+const researchers    = allResearchers;
 const labs        = await getCollection('labs');
 const semilleros  = await getCollection('semilleros');
 ---
@@ -143,20 +143,13 @@ const semilleros  = await getCollection('semilleros');
         </div>
         <a href="/investigadores" class="text-sm font-semibold text-codec hover:underline">Ver todos →</a>
       </div>
-      <div class="flex flex-col lg:grid lg:grid-cols-4 gap-5">
-
-        <div>
-          <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Líder</h3>
-          {resLeader.map(r => <ResearcherCard researcher={r} />)}
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+        <p class="hidden sm:block text-xs font-bold text-gray-400 uppercase tracking-widest">Líder</p>
+        <div class="hidden sm:flex sm:col-span-3 items-center gap-2">
+          <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
+          <span class="flex-1 h-px bg-gray-200"></span>
         </div>
-
-        <div class="lg:col-span-3 lg:border-l lg:border-gray-200 lg:pl-5">
-          <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Investigadoras/es</h3>
-          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
-            {resMembers.map(r => <ResearcherCard researcher={r} />)}
-          </div>
-        </div>
-
+        {[...resLeader, ...resMembers].map(r => <ResearcherCard researcher={r} />)}
       </div>
     </div>
   </section>
