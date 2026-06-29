@@ -6,7 +6,7 @@ authors:
   - "Angela Janeth Pereira Morales"
 internal_authors:
   - ana-maria-salazar
-journal: "Editorial Universidad El bosque"
+journal: "Editorial Universidad El Bosque"
 url: "https://editorial.unbosque.edu.co/esquizofrenia-mas-alla-del-etiquetamiento-sintomatico-8mjao.html"
 cover: "/portadas/salazar2022_esquizofrenia.jpg"
 pub_type: book
