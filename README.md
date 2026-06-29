@@ -1,6 +1,8 @@
 # CODEC — Ciencias Cognitivas y del Comportamiento
 
-![CODEC](public/logos/CODEC_oscuro.svg)
+<p align="center">
+  <img src="public/logos/CODEC_claro.png" alt="Logo CODEC" width="260"/>
+</p>
 
 Repositorio del sitio web del grupo de investigación **CODEC: Ciencias Cognitivas y del Comportamiento** (clasificación **A1**), adscrito a la Facultad de Psicología de la **Universidad El Bosque**, Bogotá, Colombia.
 
