@@ -7,7 +7,10 @@ import SemilleroCard from '../components/SemilleroCard.astro';
 import { LINES } from '../data/lines';
 import { slug as toSlug } from '../utils';
 
-const researchers = (await getCollection('researchers')).sort((a, b) => a.data.weight - b.data.weight);
+const allResearchers = (await getCollection('researchers')).sort((a, b) => a.data.weight - b.data.weight);
+const resLeader  = allResearchers.filter(r =>  r.data.codec_role.includes('Líder'));
+const resMembers = allResearchers.filter(r => !r.data.codec_role.includes('Líder'));
+const researchers = allResearchers;
 const labs        = await getCollection('labs');
 const semilleros  = await getCollection('semilleros');
 ---
@@ -139,8 +142,20 @@ const semilleros  = await getCollection('semilleros');
         </div>
         <a href="/investigadores" class="text-sm font-semibold text-codec hover:underline">Ver todos →</a>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-5">
-        {researchers.map(r => <ResearcherCard researcher={r} />)}
+      <div class="flex flex-col lg:grid lg:grid-cols-4 gap-5">
+
+        <div>
+          <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Líder</h3>
+          {resLeader.map(r => <ResearcherCard researcher={r} />)}
+        </div>
+
+        <div class="lg:col-span-3 lg:border-l lg:border-gray-200 lg:pl-5">
+          <h3 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Investigadoras/es</h3>
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
+            {resMembers.map(r => <ResearcherCard researcher={r} />)}
+          </div>
+        </div>
+
       </div>
     </div>
   </section>

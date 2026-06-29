@@ -1,5 +1,5 @@
 ---
-name: Diferencias Cognitivas entre Mujeres y Hombres
+name: "DiCoMH: Diferencias Cognitivas entre Mujeres y Hombres"
 short_name: DiCoMH
 director: andres-felipe-reyes
 lab: labpsiexp

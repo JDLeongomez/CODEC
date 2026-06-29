@@ -1,5 +1,5 @@
 ---
-name: Psicología Evolutiva
+name: "PsicoEvo: Psicología Evolutiva"
 short_name: PsicoEvo
 director: oscar-sanchez
 lab: evoco

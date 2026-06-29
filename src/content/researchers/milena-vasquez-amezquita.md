@@ -3,7 +3,7 @@ name: Milena Vásquez-Amézquita
 academic_role: Profesora Asociada
 codec_role: Investigadora LabPsiExp, Directora SexCog
 email: mvasquezam@unbosque.edu.co
-weight: 3
+weight: 6
 avatar: /fotos/milena-vasquez-amezquita.jpg
 
 bio_short_es: "Profesora Asociada e investigadora en neurociencia cognitiva del comportamiento sexual. Directora del semillero SexCog e investigadora de LabPsiExp."

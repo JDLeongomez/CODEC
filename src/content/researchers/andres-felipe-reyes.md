@@ -3,7 +3,7 @@ name: Andrés Felipe Reyes
 academic_role: Profesor Asociado
 codec_role: Investigador LabPsiExp, Director DiCoMH
 email: reyesandres@unbosque.edu.co
-weight: 4
+weight: 2
 avatar: /fotos/andres-felipe-reyes.jpg
 
 bio_short_es: "Profesor Asociado e investigador de LabPsiExp. Director del semillero DiCoMH."

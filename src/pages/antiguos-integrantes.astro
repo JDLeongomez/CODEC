@@ -1,0 +1,55 @@
+---
+import Base from '../layouts/Base.astro';
+import { alumni } from '../data/alumni';
+
+const byDecade: Record<string, typeof alumni> = {};
+for (const a of alumni) {
+  const startYear = parseInt(a.period.split('–')[0]);
+  const decade = startYear >= 2020 ? '2020–' : startYear >= 2010 ? '2010–2019' : '2004–2009';
+  if (!byDecade[decade]) byDecade[decade] = [];
+  byDecade[decade].push(a);
+}
+const decades = ['2020–', '2010–2019', '2004–2009'];
+---
+
+<Base title="Antiguos integrantes — CODEC">
+  <div class="max-w-4xl mx-auto px-6 py-16">
+
+    <h1 class="text-4xl font-extrabold text-gray-900 mb-4">Antiguos integrantes</h1>
+
+    <div class="prose prose-gray max-w-none mb-12 text-gray-600 leading-relaxed space-y-4">
+      <p>
+        CODEC existe desde <strong>2004</strong>, cuando fue reconocido por Minciencias con el nombre
+        <em>Procesos Cognoscitivos y Educación</em>. Con el tiempo, su actividad se orientó cada vez
+        más hacia las ciencias cognitivas y del comportamiento, lo que llevó al cambio de nombre actual:
+        <strong>Cognición, Comportamiento y Evolución (CODEC)</strong>.
+      </p>
+      <p>
+        A lo largo de más de veinte años han formado parte del grupo investigadores, docentes y
+        colaboradores que contribuyeron a construir su historia. Esta página recoge a quienes
+        participaron en algún momento y cuyo nombre puede aparecer como coautor en las
+        <a href="/publicaciones" class="text-codec hover:underline">publicaciones del grupo</a>.
+      </p>
+    </div>
+
+    <div class="space-y-10">
+      {decades.map(decade => byDecade[decade] && (
+        <section>
+          <h2 class="text-lg font-semibold text-gray-400 uppercase tracking-widest mb-4">{decade}</h2>
+          <div class="grid sm:grid-cols-2 gap-x-8 gap-y-1">
+            {byDecade[decade]
+              .sort((a, b) => a.name.split(' ').at(-1)!.localeCompare(b.name.split(' ').at(-1)!, 'es'))
+              .map(member => (
+                <div id={member.slug} class="flex items-baseline justify-between py-1.5 border-b border-gray-100">
+                  <span class="text-sm text-gray-800">{member.name}</span>
+                  <span class="text-xs text-gray-400 ml-4 shrink-0">{member.period}</span>
+                </div>
+              ))
+            }
+          </div>
+        </section>
+      ))}
+    </div>
+
+  </div>
+</Base>

@@ -1,5 +1,5 @@
 ---
-name: Semillero abierto de Ciencia, Reproducibilidad y Transparencia
+name: "MetaCiencia: Semillero abierto de Ciencia, Reproducibilidad y Transparencia"
 short_name: MetaCiencia
 director: juan-david-leongomez
 research_line: transversal

@@ -1,5 +1,5 @@
 ---
-name: Sexualidad y afectividad humana desde una perspectiva neurocognitiva
+name: "SexCog: Sexualidad y afectividad humana desde una perspectiva neurocognitiva"
 short_name: SexCog
 director: milena-vasquez-amezquita
 lab: labpsiexp

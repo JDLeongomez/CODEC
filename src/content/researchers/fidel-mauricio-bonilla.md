@@ -3,7 +3,7 @@ name: Fidel Mauricio Bonilla
 academic_role: Profesor Titular
 codec_role: Director LabPsiExp
 email: bonillafidel@unbosque.edu.co
-weight: 5
+weight: 3
 avatar: /fotos/fidel-mauricio-bonilla.jpg
 
 bio_short_es: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp)."

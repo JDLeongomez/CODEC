@@ -3,7 +3,7 @@ name: Miguel Puentes-Escamilla
 academic_role: Profesor Asistente
 codec_role: Investigador EvoCo
 email: pescamil@unbosque.edu.co
-weight: 7
+weight: 5
 avatar: /fotos/miguel-puentes-escamilla.jpg
 
 bio_short_es: "Profesor Asistente e investigador de EvoCo, actualmente finalizando su doctorado en la University of Groningen."

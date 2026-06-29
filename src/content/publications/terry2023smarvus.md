@@ -156,7 +156,10 @@ authors:
 internal_authors:
   - juan-david-leongomez
 doi: "10.5334/jopd.80"
-journal: "Journal of Open Psychology Data, 11"
+journal: "Journal of Open Psychology Data"
+volume: "11"
+issue: "1"
+pages: "8"
 pub_type: article
 featured: false
 abstract: "This large, international dataset contains survey responses from N = 12,570 students from 100 universities in 35 countries, collected in 21 languages. We measured anxieties (statistics, mathematics, test, trait, social interaction, performance, creativity, intolerance of uncertainty, and fear of negative evaluation), self-efficacy, persistence, and the cognitive reflection test, and collected demographics, previous mathematics grades, self-reported and official statistics grades, and statistics module details. Data reuse potential is broad, including testing links between anxieties and statistics/mathematics education factors, and examining instruments’ psychometric properties across different languages and contexts. Data and metadata are stored on the Open Science Framework website (https://osf.io/mhg94/)."

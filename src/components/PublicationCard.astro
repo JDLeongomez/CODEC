@@ -1,6 +1,7 @@
 ---
 import { getEntry, type CollectionEntry } from 'astro:content';
 import { slug as toSlug } from '../utils';
+import { alumni } from '../data/alumni';
 
 interface Props {
   pub: CollectionEntry<'publications'>;
@@ -11,6 +12,13 @@ const { title, year, authors, internal_authors, doi, journal, pub_type } = pub.d
 
 const internalEntries = (await Promise.all((internal_authors ?? []).map(ref => getEntry(ref)))).filter(Boolean);
 const internalByName = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
+
+function normName(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+}
+const alumniByNorm: Record<string, string> = Object.fromEntries(
+  alumni.map(a => [normName(a.name), a.slug])
+);
 
 const typeLabels: Record<string, string> = {
   article:       'Artículo',
@@ -42,13 +50,17 @@ const typeLabels: Record<string, string> = {
 
     <p class="text-xs text-gray-500 leading-relaxed mb-1.5">
       {authors.map((author, i) => {
-        const slug = internalByName[author];
+        const currentSlug = internalByName[author];
+        const alumniSlug  = !currentSlug ? alumniByNorm[normName(author)] : undefined;
         return (
           <span>
-            {slug
-              ? <a href={`/investigadores/${slug}`}
+            {currentSlug
+              ? <a href={`/investigadores/${currentSlug}`}
                   class="font-semibold text-gray-700 hover:text-codec transition-colors">{author}</a>
-              : <span>{author}</span>
+              : alumniSlug
+                ? <a href={`/antiguos-integrantes#${alumniSlug}`}
+                    class="font-semibold text-gray-500 hover:text-codec transition-colors">{author}</a>
+                : <span>{author}</span>
             }{i < authors.length - 1 ? ', ' : ''}
           </span>
         );

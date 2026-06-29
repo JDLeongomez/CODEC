@@ -3,7 +3,7 @@ name: Juan David Leongómez
 academic_role: Profesor Titular
 codec_role: Líder CODEC, Investigador EvoCo, Director MetaCiencia
 email: jleongomez@unbosque.edu.co
-weight: 1
+weight: 4
 avatar: /fotos/juan-david-leongomez.jpg
 
 bio_short_es: "Profesor Titular y líder del grupo CODEC. Estudia la comunicación vocal humana, la elección de pareja y la musicalidad, con especial interés en la ciencia abierta y la reproducibilidad."
