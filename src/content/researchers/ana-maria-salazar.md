@@ -1,5 +1,5 @@
 ---
-name: Ana Maria Salazar
+name: Ana María Salazar
 academic_role: Profesora Asociada
 codec_role: Directora NeuroGroup
 email: salazarana@unbosque.edu.co

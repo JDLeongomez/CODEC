@@ -14,12 +14,12 @@ const current = Astro.url.pathname;
 
     <a href="/" class="flex items-center gap-3 group">
       <img src="/logos/CODEC_oscuro.png" alt="CODEC" class="h-8" />
-      <span class="text-sm font-semibold text-gray-500 group-hover:text-codec transition-colors hidden sm:block">
+      <span class="text-sm font-semibold text-gray-500 group-hover:text-codec transition-colors">
         CODEC
       </span>
     </a>
 
-    <nav class="flex items-center gap-1">
+    <nav class="hidden sm:flex items-center gap-1">
       {links.map(link => (
         <a
           href={link.href}
@@ -34,5 +34,56 @@ const current = Astro.url.pathname;
       ))}
     </nav>
 
+    <button
+      id="menu-toggle"
+      class="sm:hidden p-2 rounded-md text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <svg id="icon-open"  class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg id="icon-close" class="w-5 h-5 hidden" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>
+    </button>
+
+  </div>
+
+  <div id="mobile-menu" class="hidden sm:hidden border-t border-gray-100 bg-white">
+    <div class="px-4 py-2 flex flex-col">
+      {links.map(link => (
+        <a
+          href={link.href}
+          class={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
+            current.startsWith(link.href)
+              ? 'bg-codec/10 text-codec'
+              : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+          }`}
+        >
+          {link.label}
+        </a>
+      ))}
+    </div>
   </div>
 </header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu   = document.getElementById('mobile-menu');
+  const iconOpen  = document.getElementById('icon-open');
+  const iconClose = document.getElementById('icon-close');
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = !menu?.classList.contains('hidden');
+    menu?.classList.toggle('hidden', isOpen);
+    iconOpen?.classList.toggle('hidden', !isOpen);
+    iconClose?.classList.toggle('hidden', isOpen);
+    toggle.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+  menu?.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      menu.classList.add('hidden');
+      iconOpen?.classList.remove('hidden');
+      iconClose?.classList.add('hidden');
+      toggle?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
