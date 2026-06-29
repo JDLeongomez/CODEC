@@ -9,25 +9,32 @@ const dois = publications
   .filter(Boolean)
   .map(d => d!.trim());
 
-// Fetch from OpenAlex in a single batch
+// Fetch from OpenAlex in batches of 25 (avoids URL length issues)
+type OAWork = { authorships: { institutions: { country_code: string }[] }[] };
 type CountryMap = Record<string, number>;
 let countryCounts: CountryMap = {};
 
+const BATCH = 25;
 try {
-  const filter = dois.map(d => `doi:${d}`).join('|');
-  const url = `https://api.openalex.org/works?filter=${encodeURIComponent(filter)}&select=authorships&per_page=200&mailto=juanleongomez@gmail.com`;
-  const res  = await fetch(url);
-  const data = await res.json() as { results: { authorships: { institutions: { country_code: string }[] }[] }[] };
-  for (const work of data.results ?? []) {
-    for (const authorship of work.authorships ?? []) {
-      for (const inst of authorship.institutions ?? []) {
-        const code = inst.country_code;
-        if (code) countryCounts[code] = (countryCounts[code] ?? 0) + 1;
+  for (let i = 0; i < dois.length; i += BATCH) {
+    const batch  = dois.slice(i, i + BATCH);
+    // Correct OpenAlex filter: single "doi:" prefix, pipe-separated values
+    const filter = `doi:${batch.join('|')}`;
+    const url    = `https://api.openalex.org/works?filter=${filter}&select=authorships&per_page=50&mailto=juanleongomez@gmail.com`;
+    const res    = await fetch(url);
+    if (!res.ok) { console.warn('CollaborationMap: HTTP', res.status); continue; }
+    const data   = await res.json() as { results: OAWork[] };
+    for (const work of data.results ?? []) {
+      for (const authorship of work.authorships ?? []) {
+        for (const inst of authorship.institutions ?? []) {
+          const code = inst.country_code;
+          if (code) countryCounts[code] = (countryCounts[code] ?? 0) + 1;
+        }
       }
     }
   }
 } catch (e) {
-  console.warn('CollaborationMap: OpenAlex fetch failed', e);
+  console.warn('CollaborationMap: fetch failed', e);
 }
 
 // Build marker data — exclude Colombia (home country)
@@ -66,7 +73,7 @@ const mapDataJson = JSON.stringify(markers);
         const markers: { lat: number; lng: number; name: string; count: number }[] =
           JSON.parse(el.dataset.markers);
 
-        const map = L.map(el, { scrollWheelZoom: false, zoomControl: true });
+        const map = L.map(el, { scrollWheelZoom: false, zoomControl: true, minZoom: 2 });
 
         L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
           attribution: '© OpenStreetMap © CARTO',
@@ -89,7 +96,8 @@ const mapDataJson = JSON.stringify(markers);
             .bindPopup(`<strong>${m.name}</strong><br/>${m.count} coautoría${m.count !== 1 ? 's' : ''}`);
         }
 
-        map.fitWorld({ paddingTopLeft: [0, 0] });
+        const bounds = L.latLngBounds(markers.map(m => [m.lat, m.lng] as [number, number]));
+        map.fitBounds(bounds, { padding: [40, 40] });
       }
     </script>
   </div>
