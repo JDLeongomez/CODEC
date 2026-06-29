@@ -70,7 +70,11 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
             {typeLabels[type] ?? type}
           </button>
         ))}
-        <span id="pub-count" class="ml-auto text-xs text-gray-400">
+        <select id="pub-year" class="ml-auto rounded-lg border border-gray-200 text-sm text-gray-700 px-3 py-1.5 focus:outline-none focus:ring-2 focus:ring-codec/30 focus:border-codec/50 transition">
+          <option value="all">Todos los años</option>
+          {years.map(y => <option value={y}>{y}</option>)}
+        </select>
+        <span id="pub-count" class="text-xs text-gray-400">
           {publications.length} publicacion{publications.length !== 1 ? 'es' : ''}
         </span>
       </div>
@@ -99,6 +103,7 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
               <div
                 data-pub
                 data-type={pub.data.pub_type}
+                data-year={pub.data.year}
                 data-text={`${pub.data.title} ${pub.data.authors.join(' ')}`.toLowerCase()}
               >
                 <PublicationCard pub={pub} />
@@ -113,14 +118,16 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
 </Base>
 
 <script>
-  const searchInput = document.getElementById('pub-search') as HTMLInputElement;
-  const countEl     = document.getElementById('pub-count')!;
-  const noResults   = document.getElementById('no-results')!;
-  const typeBtns    = document.querySelectorAll<HTMLButtonElement>('[data-type-btn]');
-  const pubCards    = document.querySelectorAll<HTMLElement>('[data-pub]');
+  const searchInput  = document.getElementById('pub-search') as HTMLInputElement;
+  const yearSelect   = document.getElementById('pub-year') as HTMLSelectElement;
+  const countEl      = document.getElementById('pub-count')!;
+  const noResults    = document.getElementById('no-results')!;
+  const typeBtns     = document.querySelectorAll<HTMLButtonElement>('[data-type-btn]');
+  const pubCards     = document.querySelectorAll<HTMLElement>('[data-pub]');
   const yearSections = document.querySelectorAll<HTMLElement>('[data-year-section]');
 
   let activeType = 'all';
+  let activeYear = 'all';
   let query      = '';
 
   function applyFilters() {
@@ -128,8 +135,9 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
 
     pubCards.forEach(card => {
       const typeMatch = activeType === 'all' || card.dataset.type === activeType;
+      const yearMatch = activeYear === 'all' || card.dataset.year === activeYear;
       const textMatch = query === '' || card.dataset.text!.includes(query);
-      const show = typeMatch && textMatch;
+      const show = typeMatch && yearMatch && textMatch;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -146,6 +154,11 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
 
   searchInput?.addEventListener('input', () => {
     query = searchInput.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  yearSelect?.addEventListener('change', () => {
+    activeYear = yearSelect.value;
     applyFilters();
   });
 
