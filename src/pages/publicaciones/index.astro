@@ -12,25 +12,67 @@ for (const pub of publications) {
   byYear[pub.data.year].push(pub);
 }
 const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
+
+const typeLabels: Record<string, string> = {
+  article:        'Artículo',
+  'book-chapter': 'Capítulo',
+  book:           'Libro',
+  conference:     'Conferencia',
+  preprint:       'Preprint',
+  thesis:         'Tesis',
+  other:          'Otro',
+};
+
+const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort();
 ---
 
 <Base title="Publicaciones">
   <div class="max-w-4xl mx-auto px-6 py-16">
 
-    <div class="mb-12">
+    <div class="mb-8">
       <h1 class="text-4xl font-extrabold text-gray-900">Publicaciones</h1>
-      <p class="text-gray-500 mt-2">
-        {publications.length} publicacion{publications.length !== 1 ? 'es' : ''} del grupo CODEC
-      </p>
+    </div>
+
+    <!-- Barra de filtros -->
+    <div class="mb-10 space-y-3">
+      <div class="relative">
+        <svg class="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-4.35-4.35M17 11A6 6 0 1 1 5 11a6 6 0 0 1 12 0z"/>
+        </svg>
+        <input
+          id="pub-search"
+          type="search"
+          placeholder="Buscar por título o autores…"
+          class="w-full pl-9 pr-4 py-2 rounded-lg border border-gray-200 text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-codec/30 focus:border-codec/50 transition"
+        />
+      </div>
+
+      <div class="flex flex-wrap gap-2 items-center">
+        <button data-type-btn="all" class="type-btn px-3 py-1 rounded-full text-xs font-medium transition-colors bg-codec/10 text-codec">
+          Todos
+        </button>
+        {presentTypes.map(type => (
+          <button data-type-btn={type} class="type-btn px-3 py-1 rounded-full text-xs font-medium transition-colors text-gray-500 hover:bg-gray-100">
+            {typeLabels[type] ?? type}
+          </button>
+        ))}
+        <span id="pub-count" class="ml-auto text-xs text-gray-400">
+          {publications.length} publicacion{publications.length !== 1 ? 'es' : ''}
+        </span>
+      </div>
     </div>
 
     {publications.length === 0 && (
       <p class="text-gray-400 text-center py-16">No hay publicaciones registradas aún.</p>
     )}
 
+    <p id="no-results" class="hidden text-gray-400 text-center py-16">
+      No se encontraron publicaciones con ese criterio.
+    </p>
+
     <div class="space-y-14">
       {years.map(year => (
-        <div>
+        <div data-year-section>
           <div class="flex items-center gap-4 mb-5">
             <h2 class="text-2xl font-bold text-gray-900">{year}</h2>
             <div class="flex-1 h-px bg-gray-100"></div>
@@ -39,7 +81,15 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
             </span>
           </div>
           <div class="space-y-3">
-            {byYear[year].map(pub => <PublicationCard pub={pub} />)}
+            {byYear[year].map(pub => (
+              <div
+                data-pub
+                data-type={pub.data.pub_type}
+                data-text={`${pub.data.title} ${pub.data.authors.join(' ')}`.toLowerCase()}
+              >
+                <PublicationCard pub={pub} />
+              </div>
+            ))}
           </div>
         </div>
       ))}
@@ -47,3 +97,55 @@ const years = Object.keys(byYear).map(Number).sort((a, b) => b - a);
 
   </div>
 </Base>
+
+<script>
+  const searchInput = document.getElementById('pub-search') as HTMLInputElement;
+  const countEl     = document.getElementById('pub-count')!;
+  const noResults   = document.getElementById('no-results')!;
+  const typeBtns    = document.querySelectorAll<HTMLButtonElement>('[data-type-btn]');
+  const pubCards    = document.querySelectorAll<HTMLElement>('[data-pub]');
+  const yearSections = document.querySelectorAll<HTMLElement>('[data-year-section]');
+
+  let activeType = 'all';
+  let query      = '';
+
+  function applyFilters() {
+    let visible = 0;
+
+    pubCards.forEach(card => {
+      const typeMatch = activeType === 'all' || card.dataset.type === activeType;
+      const textMatch = query === '' || card.dataset.text!.includes(query);
+      const show = typeMatch && textMatch;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+
+    yearSections.forEach(section => {
+      const hasVisible = [...section.querySelectorAll<HTMLElement>('[data-pub]')]
+        .some(c => c.style.display !== 'none');
+      section.style.display = hasVisible ? '' : 'none';
+    });
+
+    countEl.textContent = `${visible} publicacion${visible !== 1 ? 'es' : ''}`;
+    noResults.classList.toggle('hidden', visible > 0);
+  }
+
+  searchInput?.addEventListener('input', () => {
+    query = searchInput.value.toLowerCase().trim();
+    applyFilters();
+  });
+
+  typeBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      activeType = btn.dataset.typeBtn!;
+      typeBtns.forEach(b => {
+        const isActive = b.dataset.typeBtn === activeType;
+        b.classList.toggle('bg-codec/10', isActive);
+        b.classList.toggle('text-codec', isActive);
+        b.classList.toggle('text-gray-500', !isActive);
+        b.classList.toggle('hover:bg-gray-100', !isActive);
+      });
+      applyFilters();
+    });
+  });
+</script>
