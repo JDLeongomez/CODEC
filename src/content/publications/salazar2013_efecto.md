@@ -2,7 +2,7 @@
 title: "EFECTO DE LOS FALLOS COGNOSCITIVOS Y LA DEPRESIÓN SOBRE EL FUNCIONAMIENTO GLOBAL DE PERSONAS MAYORES CON ALZHEIMER"
 year: 2013
 authors:
-  - "Ana Maria Salazar Montes"
+  - "Ana María Salazar"
 internal_authors:
   - ana-maria-salazar
 journal: "Neuropsiquiatría Y Neurociencias"

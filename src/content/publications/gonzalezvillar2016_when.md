@@ -3,7 +3,7 @@ title: "When the brain simulates stopping: Neural activity recorded during real 
 year: 2016
 authors:
   - "Alberto J. González-Villar"
-  - "F. Mauricio Bonilla"
+  - "Fidel Mauricio Bonilla"
   - "María T. Carrillo-de-la-Peña"
 internal_authors:
   - fidel-mauricio-bonilla

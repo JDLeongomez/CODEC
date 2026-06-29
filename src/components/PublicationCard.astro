@@ -8,7 +8,7 @@ interface Props {
 }
 
 const { pub } = Astro.props;
-const { title, year, authors, internal_authors, doi, journal, pub_type } = pub.data;
+const { title, year, authors, internal_authors, doi, journal, url, pub_type } = pub.data;
 
 const internalEntries = (await Promise.all((internal_authors ?? []).map(ref => getEntry(ref)))).filter(Boolean);
 const internalByName = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
@@ -69,11 +69,19 @@ const typeLabels: Record<string, string> = {
 
     {journal && <p class="text-xs text-gray-400 italic">{journal}</p>}
 
-    {doi && (
-      <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer"
-        class="text-xs text-codec/70 hover:text-codec transition-colors mt-1 inline-block">
-        doi:{doi}
-      </a>
-    )}
+    <div class="flex flex-wrap items-center gap-3 mt-1">
+      {doi && (
+        <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer"
+          class="text-xs text-codec/70 hover:text-codec transition-colors">
+          doi:{doi}
+        </a>
+      )}
+      {url && (
+        <a href={url} target="_blank" rel="noopener noreferrer"
+          class="text-xs font-medium text-codec/80 hover:text-codec transition-colors">
+          Ver libro →
+        </a>
+      )}
+    </div>
   </div>
 </div>

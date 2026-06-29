@@ -2,7 +2,7 @@
 title: "INHIBITION OF VOLUNTARY MOVEMENT: AN OVERVIEW"
 year: 2009
 authors:
-  - "Fidel Mauricio Bonilla Carreno"
+  - "Fidel Mauricio Bonilla"
 internal_authors:
   - fidel-mauricio-bonilla
 journal: "Cuadernos Hispanoamericanos De Psicología"

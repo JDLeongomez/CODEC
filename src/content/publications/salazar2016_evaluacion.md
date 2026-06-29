@@ -2,7 +2,7 @@
 title: "Evaluación e intervención de la sobrecarga del cuidador informal de adultos mayores dependientes: Revisión de artículos publicados entre 1997 - 2014"
 year: 2016
 authors:
-  - "Ana Maria Salazar Montes"
+  - "Ana María Salazar"
   - "Julie Astrid Solano Perez"
   - "Lina Marcela Murcia Paredes"
 internal_authors:

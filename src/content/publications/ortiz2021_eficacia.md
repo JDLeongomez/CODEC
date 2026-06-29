@@ -3,7 +3,7 @@ title: "Eficacia de un entrenamiento cognitivo computarizado sobre la atención 
 year: 2021
 authors:
   - "Lorena García Ortiz"
-  - "Fidel Mauricio Bonilla Carreño"
+  - "Fidel Mauricio Bonilla"
   - "Carmen Patricia Martínez González"
 internal_authors:
   - fidel-mauricio-bonilla

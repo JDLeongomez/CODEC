@@ -2,7 +2,7 @@
 title: "Efectos de señales incongruentes en el paradigma stop sobre los indicadores de inhibición SSRT y el número de errores"
 year: 2011
 authors:
-  - "Fidel Mauricio Bonilla Carreno"
+  - "Fidel Mauricio Bonilla"
 internal_authors:
   - fidel-mauricio-bonilla
 journal: "Cuadernos Hispanoamericanos De Psicología"

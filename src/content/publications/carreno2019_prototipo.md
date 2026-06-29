@@ -2,7 +2,7 @@
 title: "Prototipo de brazo robótico activado con registros de electroencefalografía"
 year: 2019
 authors:
-  - "Fidel Mauricio Bonilla Carreno"
+  - "Fidel Mauricio Bonilla"
 internal_authors:
   - fidel-mauricio-bonilla
 journal: "Revista Virtual Pro"

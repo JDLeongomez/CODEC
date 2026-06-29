@@ -2,7 +2,7 @@
 title: "Diseño e implementación de una BCI Speller con P300 en estudiantes universitarios"
 year: 2024
 authors:
-  - "Fidel Mauricio Bonilla Carreno"
+  - "Fidel Mauricio Bonilla"
   - "Juan Jose Pena Martin"
   - "Armando Alcides Quinones Quinones"
   - "Oscar Mauricio Arias Ballen"

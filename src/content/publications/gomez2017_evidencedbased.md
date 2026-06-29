@@ -2,7 +2,7 @@
 title: "Evidenced-based medicine in glioma: molecular biology is only part of the story"
 year: 2017
 authors:
-  - "Andres Felipe Reyes Gomez"
+  - "Andrés Felipe Reyes"
   - "European Low Grade Glioma Network"
 internal_authors:
   - andres-felipe-reyes

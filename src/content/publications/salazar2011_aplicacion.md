@@ -2,7 +2,7 @@
 title: "Aplicación exploratoria de la traducción española cuestionario de personalidad para niños (ESPQ) en una muestra piloto de niños de 6 a 8 años"
 year: 2011
 authors:
-  - "Ana Maria Salazar Montes"
+  - "Ana María Salazar"
 internal_authors:
   - ana-maria-salazar
 journal: "Evaluar"

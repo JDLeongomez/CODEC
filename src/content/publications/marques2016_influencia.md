@@ -2,7 +2,7 @@
 title: "Influencia de la atención voluntaria en el éxito académico en jóvenes universitarios"
 year: 2016
 authors:
-  - "Daniela Filipa Silva Marques"
+  - "Daniela Filipa Da Silva Marques"
   - "Goncalo Jacinto"
   - "Ramon Cladellas Pros"
   - "Daniela Cortes Saavedra"

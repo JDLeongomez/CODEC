@@ -2,7 +2,7 @@
 title: "Validez y confiabilidad del Alzheimer's Dis ease Assesment Scale Cognitive S ubscale (ADAS - Cog), en pacientes con demencia tipo Alzheimer leve y moderada y sujetos sanos residentes en Bogotá - Colombia"
 year: 2016
 authors:
-  - "Ana Maria Salazar Montes"
+  - "Ana María Salazar"
   - "Angela Janeth Pereira Morales"
 internal_authors:
   - ana-maria-salazar

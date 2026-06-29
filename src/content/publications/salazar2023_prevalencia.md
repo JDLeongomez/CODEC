@@ -2,7 +2,7 @@
 title: "Prevalencia y factores de riesgo psicosociales de la depresión en un grupo de adultos mayores en Bogotá"
 year: 2023
 authors:
-  - "Ana M. Salazar"
+  - "Ana María Salazar"
   - "Sandra J. Plata"
   - "María F. Reyes"
   - "Paola Gómez"

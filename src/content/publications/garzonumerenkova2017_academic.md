@@ -2,7 +2,7 @@
 title: "Academic procrastination in non-traditional college students"
 year: 2017
 authors:
-  - "Angélica Garzón-Umerenkova"
+  - "Angélica Garzón Umerenkova"
   - "Javier Gil-Flores"
 doi: "10.14204/ejrep.43.16134"
 journal: "Electronic Journal of Research in Educational Psychology"

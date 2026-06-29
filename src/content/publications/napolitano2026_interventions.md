@@ -5,7 +5,7 @@ authors:
   - "Nicholas Napolitano"
   - "Santiago Amaya"
   - "Cristian A. Rojas-Barahona"
-  - "Andrés Castellanos"
+  - "Andrés Castellanos Chacón"
   - "William Jiménez-Leal"
 doi: "10.1525/collabra.162294"
 journal: "Collabra: Psychology"

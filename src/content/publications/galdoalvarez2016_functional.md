@@ -3,7 +3,7 @@ title: "Functional Equivalence of Imagined vs. Real Performance of an Inhibitory
 year: 2016
 authors:
   - "Santiago Galdo-Alvarez"
-  - "Fidel M. Bonilla"
+  - "Fidel Mauricio Bonilla"
   - "Alberto J. González-Villar"
   - "María T. Carrillo-de-la-Peña"
 internal_authors:

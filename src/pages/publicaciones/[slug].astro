@@ -13,7 +13,7 @@ export async function getStaticPaths() {
 
 const { pub } = Astro.props;
 const { title, year, authors, internal_authors, doi, journal, volume, issue, pages,
-        abstract, pdf, preprint, pub_type } = pub.data;
+        abstract, pdf, preprint, url, cover, pub_type } = pub.data;
 
 const { Content } = await pub.render();
 
@@ -48,51 +48,65 @@ const citation = [
 
     <!-- Header -->
     <div class="mb-8">
-      <div class="flex flex-wrap items-center gap-2 mb-3">
-        <span class="text-xs px-3 py-1 rounded-full font-semibold bg-codec/10 text-codec">
-          {typeLabels[pub_type] ?? pub_type}
-        </span>
-<span class="text-sm font-bold text-gray-400">{year}</span>
-      </div>
-
-      <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight mb-4">{title}</h1>
-
-      <p class="text-sm text-gray-600 leading-relaxed mb-3">
-        {authors.map((author, i) => {
-          const slug = internalByName[author];
-          return (
-            <span>
-              {slug
-                ? <a href={`/investigadores/${slug}`}
-                    class="font-semibold text-gray-800 hover:text-codec transition-colors">{author}</a>
-                : <span>{author}</span>
-              }{i < authors.length - 1 ? ', ' : ''}
+      <div class="flex gap-6 items-start">
+        {cover && (
+          <img src={cover} alt={`Portada: ${title}`}
+            class="hidden sm:block w-28 shrink-0 rounded-lg shadow-md object-cover" />
+        )}
+        <div class="flex-1 min-w-0">
+          <div class="flex flex-wrap items-center gap-2 mb-3">
+            <span class="text-xs px-3 py-1 rounded-full font-semibold bg-codec/10 text-codec">
+              {typeLabels[pub_type] ?? pub_type}
             </span>
-          );
-        })}
-      </p>
+            <span class="text-sm font-bold text-gray-400">{year}</span>
+          </div>
 
-      {citation && <p class="text-sm italic text-gray-500 mb-4">{citation}</p>}
+          <h1 class="text-2xl sm:text-3xl font-extrabold text-gray-900 leading-tight mb-4">{title}</h1>
 
-      <div class="flex flex-wrap gap-2 mt-4">
-        {doi && (
-          <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors font-medium">
-            <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> DOI
-          </a>
-        )}
-        {pdf && (
-          <a href={pdf} target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium">
-            <Icon name="document" class="w-3.5 h-3.5 shrink-0" /> PDF
-          </a>
-        )}
-        {preprint && (
-          <a href={preprint} target="_blank" rel="noopener noreferrer"
-            class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors font-medium">
-            <Icon name="clipboard" class="w-3.5 h-3.5 shrink-0" /> Preprint
-          </a>
-        )}
+          <p class="text-sm text-gray-600 leading-relaxed mb-3">
+            {authors.map((author, i) => {
+              const slug = internalByName[author];
+              return (
+                <span>
+                  {slug
+                    ? <a href={`/investigadores/${slug}`}
+                        class="font-semibold text-gray-800 hover:text-codec transition-colors">{author}</a>
+                    : <span>{author}</span>
+                  }{i < authors.length - 1 ? ', ' : ''}
+                </span>
+              );
+            })}
+          </p>
+
+          {citation && <p class="text-sm italic text-gray-500 mb-4">{citation}</p>}
+
+          <div class="flex flex-wrap gap-2 mt-4">
+            {doi && (
+              <a href={`https://doi.org/${doi}`} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors font-medium">
+                <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> DOI
+              </a>
+            )}
+            {url && (
+              <a href={url} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium">
+                <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> Ver libro
+              </a>
+            )}
+            {pdf && (
+              <a href={pdf} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium">
+                <Icon name="document" class="w-3.5 h-3.5 shrink-0" /> PDF
+              </a>
+            )}
+            {preprint && (
+              <a href={preprint} target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors font-medium">
+                <Icon name="clipboard" class="w-3.5 h-3.5 shrink-0" /> Preprint
+              </a>
+            )}
+          </div>
+        </div>
       </div>
     </div>
 

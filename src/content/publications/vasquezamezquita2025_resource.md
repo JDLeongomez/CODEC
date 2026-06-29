@@ -3,7 +3,7 @@ title: "Resource availability and experiences of partner violence shape facial m
 year: 2025
 authors:
   - "Milena Vásquez-Amézquita"
-  - "Andrés Castellanos-Chacón"
+  - "Andrés Castellanos Chacón"
   - "Wendy Medina-Sarmiento"
   - "Valentina Cepeda"
   - "Marina Begoña Martínez-González"

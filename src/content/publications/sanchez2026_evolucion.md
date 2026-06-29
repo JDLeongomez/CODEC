@@ -2,10 +2,12 @@
 title: "Evolución, comportamiento estratégico humano y desajuste"
 year: 2026
 authors:
-  - "Oscar Raul Sanchez Rubio"
+  - "Oscar R. Sánchez"
 internal_authors:
   - oscar-sanchez
 journal: "Editorial Universidad El bosque"
+url: "https://editorial.unbosque.edu.co/evolucion-comportamiento-estrategico-humano-y-desajuste-49sm8.html"
+cover: "/portadas/sanchez2026_evolucion.jpg"
 pub_type: book
 featured: false
 ---

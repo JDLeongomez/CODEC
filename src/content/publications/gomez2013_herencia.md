@@ -2,7 +2,7 @@
 title: "Herencia no genética, competencia lingüística, experiencia prenatal y manipulación de la conducta: aportes recientes de la neurobiología conductual y la neuropsicología a la explicación del comportamiento"
 year: 2013
 authors:
-  - "Andres Felipe Reyes Gomez"
+  - "Andrés Felipe Reyes"
 internal_authors:
   - andres-felipe-reyes
 doi: "http://revistas.urosario.edu.co/index.php/apl/article/view/2403"

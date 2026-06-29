@@ -1,8 +1,8 @@
 ---
-title: "Introducción a la evaluación clínica neuropsicológica del adulto"
-year: 2020
+title: "Guía práctica de evaluación neuropsicológica del adulto"
+year: 2018
 authors:
-  - "Ana Maria Salazar Montes"
+  - "Ana María Salazar"
 internal_authors:
   - ana-maria-salazar
 journal: "Editorial Universidad El bosque"

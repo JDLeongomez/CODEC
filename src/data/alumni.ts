@@ -16,7 +16,7 @@ export const alumni: AlumniMember[] = [
   { name: 'Judith Andrea Garzón Cubides', slug: 'judith-andrea-garzon-cubides', period: '2010' },
   { name: 'Karen Cristina Jacome Duran', slug: 'karen-cristina-jacome-duran', period: '2020–2022' },
   { name: 'Pedro Organista Díaz', slug: 'pedro-organista-diaz', period: '2004–2012' },
-  { name: 'Eugenio Valderrama Escallón', slug: 'eugenio-valderrama-escallon', period: '2022–2024' },
+  { name: 'Eugenio Valderrama', slug: 'eugenio-valderrama', period: '2022–2024' },
   { name: 'Liliana Cuellar Floriano', slug: 'liliana-cuellar-floriano', period: '2004–2006' },
   { name: 'Diego Hernando Espinal Franco', slug: 'diego-hernando-espinal-franco', period: '2009–2010' },
   { name: 'Eliana Alexey Quintero Gallego', slug: 'eliana-alexey-quintero-gallego', period: '2004–2010' },

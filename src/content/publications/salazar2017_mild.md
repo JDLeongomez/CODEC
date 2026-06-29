@@ -2,7 +2,7 @@
 title: "MILD COGNITIVE impairment (MCI) and dementia in a sample of adults in the city of Bogotá"
 year: 2017
 authors:
-  - "Ana Maria Salazar Montes"
+  - "Ana María Salazar"
   - "Fabio Alexander Sierra Matamoros"
   - "Maria Camila Montalvo Villegas"
   - "Olga Lucia Pedraza Linares"

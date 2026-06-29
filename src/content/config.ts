@@ -101,6 +101,8 @@ const publications = defineCollection({
     abstract:         z.string().optional(),
     pdf:              z.string().url().optional(),
     preprint:         z.string().url().optional(),
+    url:              z.string().url().optional(),
+    cover:            z.string().optional(),
     pub_type:         z.enum(['article', 'book-chapter', 'book', 'conference', 'preprint', 'thesis', 'other']).default('article'),
     featured:         z.boolean().default(false),
   }),

@@ -7,7 +7,7 @@ authors:
   - "Zuzana Štěrbová"
   - "Ondřej Pavlovič"
   - "Juan David Leongómez"
-  - "Andrés Castellanos-Chacón"
+  - "Andrés Castellanos Chacón"
   - "S. Adil Sarıbay"
   - "Karel Kleisner"
   - "Petr Tureček"

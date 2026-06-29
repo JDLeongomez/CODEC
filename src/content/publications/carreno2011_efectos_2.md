@@ -2,7 +2,7 @@
 title: "Efectos de la retroinformación en la ejecuciónsobre el número de errores y tiempo de reacción en la tarea de Eriksen"
 year: 2011
 authors:
-  - "Fidel Mauricio Bonilla Carreno"
+  - "Fidel Mauricio Bonilla"
 internal_authors:
   - fidel-mauricio-bonilla
 journal: "Cuadernos Hispanoamericanos De Psicología"

@@ -49,7 +49,7 @@ authors:
   - "Dayna Moya"
   - "Rogerdison Natsitsabui"
   - "Giacomo Novembre"
-  - "Florence Ewomazino Nweke (Ph.D.)"
+  - "Florence Ewomazino Nweke"
   - "Patricia Opondo"
   - "Yuto Ozaki"
   - "Hineatua Parkinson"

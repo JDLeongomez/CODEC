@@ -5,7 +5,7 @@ authors:
   - "Silvia Angélica Puertas Céspedes"
   - "Edwar Leonardo Esteban Pérez"
   - "R. Malatesha Joshi"
-  - "Mauricio Bonilla Carreño"
+  - "Fidel Mauricio Bonilla"
   - "Álvaro Hernando Izquierdo Bello"
 internal_authors:
   - fidel-mauricio-bonilla

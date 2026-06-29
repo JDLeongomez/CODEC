@@ -11,7 +11,7 @@ authors:
   - "Marco Rossi"
   - "Gabriele Miceli"
   - "Alexandre Roux"
-  - "Andrés Reyes"
+  - "Andrés Felipe Reyes"
   - "Silvio Sarubbo"
   - "Anja Smits"
   - "Joanna Sierpowska"

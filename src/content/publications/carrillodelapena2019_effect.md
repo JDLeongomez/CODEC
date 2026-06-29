@@ -3,8 +3,10 @@ title: "Effect of the stop-signal modality on brain electrical activity associat
 year: 2019
 authors:
   - "M.T. Carrillo-de-la-Peña"
-  - "F.M. Bonilla"
+  - "Fidel Mauricio Bonilla"
   - "A.J. González-Villar"
+internal_authors:
+  - fidel-mauricio-bonilla
 doi: "10.1016/j.biopsycho.2019.01.010"
 journal: "Biological Psychology"
 volume: "143"

@@ -2,7 +2,7 @@
 title: "Strategies in non-fluent aphasia: Object clitic substitutions and redundant structures"
 year: 2014
 authors:
-  - "Andres Felipe Reyes Gomez"
+  - "Andrés Felipe Reyes"
   - "Roelien Bastiaanse"
   - "Silvia Martinez Ferreiro"
 internal_authors:
