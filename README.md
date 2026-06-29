@@ -14,7 +14,7 @@ El grupo estudia la cognición y el comportamiento humano desde perspectivas evo
 
 ## Tecnología
 
-El sitio está construido con [Astro](https://astro.build) y [Tailwind CSS](https://tailwindcss.com), y se despliega automáticamente en Netlify desde este repositorio.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c81005dc-b26c-4764-ad44-2e7e527dab8c/deploy-status)](https://app.netlify.com/sites/grupo-codec/deploys) El sitio está construido con [Astro](https://astro.build) y [Tailwind CSS](https://tailwindcss.com), y se despliega automáticamente en [Netlify](https://grupo-codec.netlify.app) desde este repositorio.
 
 ## Desarrollo local
 
@@ -26,3 +26,4 @@ pnpm dev
 ## Autor
 
 Creado y mantenido por [Juan David Leongómez](https://jdleongomez.info), líder del grupo CODEC.
+
