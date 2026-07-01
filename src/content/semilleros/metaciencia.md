@@ -30,3 +30,12 @@ El semillero trabaja en torno a tres líneas principales:
 - **Reproducibilidad y transparencia científica** — pre-registro, reportes registrados, análisis reproducibles, apertura de datos y código.
 - **Prácticas de ciencia abierta** — acceso abierto no comercial (green OA), uso de software libre, documentación rigurosa de procesos científicos.
 - **Educación en metaciencia y alfabetización científica** — formación crítica en todos los niveles, desde el pregrado hasta la divulgación pública.
+
+<div class="not-prose mt-6 p-4 rounded-xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3" style="background-color: #d400aa18; border-color: #d400aa33;">
+  <p class="text-sm text-gray-700">¿Quieres conocer más sobre nuestro semillero, proyectos y actividades?</p>
+  <a href="https://jdleongomez.github.io/MetaCiencia/" target="_blank" rel="noopener noreferrer"
+     class="shrink-0 inline-flex items-center gap-2 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
+     style="background-color: #d400aa;">
+    Visita nuestro sitio web →
+  </a>
+</div>
