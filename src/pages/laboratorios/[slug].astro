@@ -108,34 +108,28 @@ const auxiliares = allAuxiliares
     {(members.length > 0 || auxiliares.length > 0) && (
       <div class="mt-16 pt-12 border-t border-gray-100">
 
-        <div class="flex flex-col lg:grid lg:grid-cols-4 gap-5">
-          {dirMember && (
-            <div>
-              <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Director/a</h2>
-              <ResearcherCard researcher={dirMember} />
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+          {members.length > 0 && (
+            <div class="hidden sm:flex items-center gap-2">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Director/a</span>
+              <span class="flex-1 h-px bg-gray-200"></span>
             </div>
           )}
+          {members.length > 0 && (
+            <div class="hidden sm:flex sm:col-span-3 items-center gap-2">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
+              <span class="flex-1 h-px bg-gray-200"></span>
+            </div>
+          )}
+          {[...(dirMember ? [dirMember] : []), ...otherMembers].map(r => <ResearcherCard researcher={r} />)}
 
-          {(otherMembers.length > 0 || auxiliares.length > 0) && (
-            <div class="lg:col-span-3 lg:border-l lg:border-gray-100 lg:pl-5 flex flex-col gap-8">
-              {otherMembers.length > 0 && (
-                <div>
-                  <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Investigadoras/es</h2>
-                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
-                    {otherMembers.map(r => <ResearcherCard researcher={r} />)}
-                  </div>
-                </div>
-              )}
-              {auxiliares.length > 0 && (
-                <div class={otherMembers.length > 0 ? 'pt-8 border-t border-gray-100' : ''}>
-                  <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Auxiliares de investigación</h2>
-                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
-                    {auxiliares.map(a => <AuxiliarCard auxiliar={a} />)}
-                  </div>
-                </div>
-              )}
+          {auxiliares.length > 0 && (
+            <div class="col-span-2 sm:col-span-4 flex items-center gap-2">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Auxiliares de investigación</span>
+              <span class="flex-1 h-px bg-gray-200"></span>
             </div>
           )}
+          {auxiliares.map(a => <AuxiliarCard auxiliar={a} />)}
         </div>
 
       </div>
