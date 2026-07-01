@@ -7,6 +7,17 @@ import SemilleroCard from '../components/SemilleroCard.astro';
 import { LINES } from '../data/lines';
 import { slug as toSlug } from '../utils';
 
+const SHOW_TYPES = new Set(['article', 'book', 'book-chapter']);
+const recentPubs = (await getCollection('publications'))
+  .filter(p => SHOW_TYPES.has(p.data.pub_type))
+  .sort((a, b) => b.data.year - a.data.year)
+  .slice(0, 3);
+const pubTypeLabels: Record<string, string> = {
+  article:        'Artículo',
+  'book-chapter': 'Capítulo de libro',
+  book:           'Libro',
+};
+
 const allResearchers = (await getCollection('researchers')).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
 const resLeader      = allResearchers.filter(r =>  r.data.codec_role.includes('Líder'));
 const resMembers     = allResearchers.filter(r => !r.data.codec_role.includes('Líder'));
@@ -185,6 +196,50 @@ const semilleros  = await getCollection('semilleros');
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
         {semilleros.map(s => <SemilleroCard semillero={s} />)}
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Publicaciones recientes -->
+  <section class="py-20 px-6 bg-white">
+    <div class="max-w-6xl mx-auto">
+      <div class="flex items-end justify-between mb-10">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900">Publicaciones recientes</h2>
+          <p class="text-gray-500 mt-1">Últimas publicaciones del grupo</p>
+        </div>
+        <a href="/publicaciones" class="text-sm font-semibold text-codec hover:underline">Ver todas →</a>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {recentPubs.map(pub => (
+          <div class="group rounded-2xl border border-gray-100 p-6 hover:shadow-md transition-all hover:border-codec/20 bg-white flex flex-col gap-3">
+            <div class="flex items-start justify-between gap-2">
+              <span class="text-xs font-semibold px-2.5 py-1 rounded-full bg-codec/10 text-codec shrink-0">
+                {pubTypeLabels[pub.data.pub_type] ?? pub.data.pub_type}
+              </span>
+              <span class="text-3xl font-black text-gray-100 tabular-nums leading-none">
+                {pub.data.year}
+              </span>
+            </div>
+            <a href={`/publicaciones/${toSlug(pub.id)}`}
+              class="font-semibold text-gray-900 group-hover:text-codec transition-colors leading-snug">
+              {pub.data.title}
+            </a>
+            <p class="text-xs text-gray-500 leading-relaxed">
+              {pub.data.authors.slice(0, 3).join(', ')}{pub.data.authors.length > 3 ? ' et al.' : ''}
+            </p>
+            {pub.data.journal && (
+              <p class="text-xs font-medium text-gray-500 italic mt-auto">{pub.data.journal}</p>
+            )}
+            {pub.data.doi && (
+              <a href={`https://doi.org/${pub.data.doi}`} target="_blank" rel="noopener noreferrer"
+                class="text-xs text-codec/60 hover:text-codec transition-colors">
+                doi:{pub.data.doi}
+              </a>
+            )}
+          </div>
+        ))}
       </div>
     </div>
   </section>

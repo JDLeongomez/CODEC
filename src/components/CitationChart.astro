@@ -1,0 +1,107 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  pubs: CollectionEntry<'publications'>[];
+}
+const { pubs } = Astro.props;
+
+type Group = 'articles' | 'books' | 'other';
+
+const GROUPS: { key: Group; label: string; color: string; types: string[] }[] = [
+  { key: 'articles', label: 'Artículos / Preprints', color: '#ffb600', types: ['article', 'preprint']           },
+  { key: 'books',    label: 'Libros / Capítulos',    color: '#00a6b0', types: ['book', 'book-chapter']          },
+  { key: 'other',    label: 'Otros',                  color: '#a451ff', types: ['conference', 'thesis', 'software', 'other'] },
+];
+
+const counts: Record<number, Record<Group, number>> = {};
+for (const p of pubs) {
+  const year = p.data.year;
+  if (!counts[year]) counts[year] = { articles: 0, books: 0, other: 0 };
+  const group = GROUPS.find(g => g.types.includes(p.data.pub_type));
+  if (group) counts[year][group.key]++;
+}
+
+const pubYears = Object.keys(counts).map(Number);
+const minYear  = pubYears.length > 0 ? Math.min(...pubYears) : new Date().getFullYear();
+const maxYear  = new Date().getFullYear();
+const allYears = Array.from({ length: maxYear - minYear + 1 }, (_, i) => minYear + i);
+
+const maxCount = Math.max(
+  ...allYears.map(y => counts[y] ? counts[y].articles + counts[y].books + counts[y].other : 0),
+  1
+);
+
+const BAR_W = 16;
+const GAP   = 3;
+const H     = 50;
+const PAD_L = 22;
+const PAD_B = 20;
+const PAD_T = 4;
+const width  = PAD_L + allYears.length * (BAR_W + GAP);
+const height = PAD_T + H + PAD_B;
+
+// Intervalo de etiquetas según el número total de años
+const totalYears = allYears.length;
+const interval   = totalYears <= 10 ? 1 : totalYears <= 20 ? 2 : totalYears <= 40 ? 5 : 10;
+const labelSet   = new Set(allYears.filter(y => interval === 1 || y % interval === 0));
+---
+
+<div class="w-full">
+  <!-- Leyenda en HTML para que no se distorsione con el escalado del SVG -->
+  <div class="flex flex-wrap items-center justify-between gap-2 mb-2">
+    <p class="text-xs font-semibold text-gray-400 uppercase tracking-wide">Contribuciones al grupo</p>
+    <div class="flex flex-wrap gap-3">
+      {GROUPS.map(g => (
+        <div class="flex items-center gap-1.5">
+          <span class="w-2.5 h-2.5 rounded-sm shrink-0" style={`background-color: ${g.color}; opacity: 0.85`}></span>
+          <span class="text-xs text-gray-500">{g.label}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="w-full overflow-x-auto">
+    <svg
+      viewBox={`0 0 ${width} ${height}`}
+      class="w-full"
+      style={`min-width: ${Math.min(width, 480)}px`}
+      aria-label="Contribuciones al grupo por año"
+    >
+      <line x1={PAD_L} y1={PAD_T + H} x2={width} y2={PAD_T + H} stroke="#e5e7eb" stroke-width="1" />
+      <line x1={PAD_L} y1={PAD_T}     x2={width} y2={PAD_T}     stroke="#f3f4f6" stroke-width="1" />
+      <text x={PAD_L - 4} y={PAD_T + 4} text-anchor="end" font-size="5" fill="#d1d5db">{maxCount}</text>
+
+      {allYears.map((year, i) => {
+        const c    = counts[year];
+        const x    = PAD_L + i * (BAR_W + GAP);
+        let   cumH = 0;
+        return (
+          <>
+            {c && GROUPS.map(g => {
+              const count = c[g.key];
+              if (count === 0) return null;
+              const barH = (count / maxCount) * H;
+              const y    = PAD_T + H - cumH - barH;
+              cumH += barH;
+              return (
+                <rect x={x} y={y} width={BAR_W} height={barH}
+                  fill={g.color} opacity="0.85"
+                  class="hover:opacity-100 transition-opacity">
+                  <title>{year} – {g.label}: {count}</title>
+                </rect>
+              );
+            })}
+            {labelSet.has(year) && (
+              <text x={x + BAR_W / 2} y={PAD_T + H + PAD_B - 4}
+                text-anchor="middle" font-size="5" fill="#9ca3af"
+                transform={`rotate(-40, ${x + BAR_W / 2}, ${PAD_T + H + PAD_B - 4})`}>
+                {year}
+              </text>
+            )}
+          </>
+        );
+      })}
+    </svg>
+  </div>
+</div>

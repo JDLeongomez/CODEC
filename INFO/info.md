@@ -395,14 +395,20 @@
 - Nombre completo: Sexualidad y afectividad humana desde una perspectiva neurocognitiva
 - Sigla: SexCog
 - Directora: Milena Vásquez-Amézquita
-- Año de fundación: *pendiente*
+- Año de fundación: 2022
 - Línea de investigación: Línea 2 — Neurociencias cognitivo-afectivas
 - Color: #a451ff
 - Logo: `SexCog_claro.svg` / `SexCog_oscuro.svg`
 - Correo: <mvasquezam@unbosque.edu.co>
 - Instagram: <https://www.instagram.com/sexcog.research/>
 
-- Texto de presentación: *Pendiente de actualización.*
+- Objetivo: "Promover la iniciación científica en el estudio del comportamiento sexual humano, integrando la neurociencia cognitiva y la salud pública para generar conocimiento con impacto científico y social."
+
+- Métodos principales:
+  - Paradigmas experimentales
+  - Rastreo ocular (eye tracking)
+
+- Texto de presentación: "SexCog es un semillero de investigación de la Universidad El Bosque, adscrito a LabPsiExp y a la Facultad de Psicología. Desarrolla investigación sobre mecanismos neurocognitivos del comportamiento sexual humano y forma estudiantes en metodologías experimentales. Trabaja en cuatro líneas: (1) neurociencia cognitiva de la atracción y la respuesta sexual, (2) psicología evolutiva y elección de pareja, (3) prevención del abuso y la explotación sexual infantil (salud pública), y (4) desarrollo de tecnologías de rastreo ocular."
 
 ---
 
