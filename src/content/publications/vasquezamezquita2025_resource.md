@@ -11,6 +11,8 @@ authors:
 internal_authors:
   - milena-vasquez-amezquita
   - juan-david-leongomez
+internal_auxiliares:
+  - valentina-cepeda
 doi: "10.1016/j.evolhumbehav.2025.106707"
 journal: "Evolution and Human Behavior"
 volume: "46"

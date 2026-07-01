@@ -92,13 +92,20 @@
 
 - Bio corta: "Profesor Asociado e investigador de LabPsiExp. Director del semillero DiCoMH."
 
-- Bio larga: *Pendiente de actualización.*
+- Bio larga: "Soy psicólogo, profesor e investigador con más de 15 años de experiencia en neurociencia cognitiva, neuropsicología, neuroeducación y (neuro)psicología del lenguaje. Mi práctica incluye la consulta y evaluación neuropsicológica antes, durante y después de cirugía cerebral con paciente despierto. Mi investigación integra la neurociencia cognitiva, la psicología y la evaluación neuropsicológica para beneficio de los pacientes y los equipos neuroquirúrgicos."
 
-- Intereses de investigación: *Pendiente de actualización.*
+- Intereses de investigación:
+  - Neurociencia cognitiva
+  - Neuropsicología
+  - Neurolingüística
+  - Psicolingüística
+  - Diferencias entre hombres y mujeres en las emociones
+  - Características de personalidad
+  - Intereses diferenciados
 
 - Formación académica:
   - MA General Linguistics, 2009, University of Groningen (Groningen, Países Bajos)
-  - MSc Clinical Linguistics, 2009, University of Potsdam (Potsdam, Alemania)
+  - MSc Clinical Linguistics, 2008, University of Potsdam (Potsdam, Alemania) *(corregido de 2009)*
   - Psicología, 2005, Fundación Universitaria Konrad Lorenz (Bogotá, Colombia)
 
 - Perfiles académicos:
@@ -118,15 +125,18 @@
 - Laboratorios: LabPsiExp
 - Semilleros: —
 
-- Bio corta: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp)."
+- Bio corta: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp). Estudia el procesamiento cortical de rostros, la percepción de emociones y la velocidad de procesamiento de estímulos."
 
-- Bio larga: *Pendiente de actualización.*
+- Bio larga: "Investigo el procesamiento cortical de rostros, la función del potencial P300 en la velocidad de procesamiento de información visual y auditiva, y la percepción de emociones expresadas a través de las unidades de acción facial. También abordo el entrenamiento cognitivo en estudiantes universitarios con dificultades ejecutivas y atencionales que afectan su rendimiento académico."
 
-- Intereses de investigación: *Pendiente de actualización.*
+- Intereses de investigación:
+  - Potencial P300 como marcador de la velocidad de procesamiento de estímulos visuales y auditivos
+  - Procesamiento de emociones expresadas a través de las unidades de acción facial (FACs)
+  - Funciones ejecutivas y atencionales en estudiantes universitarios
 
 - Formación académica:
   - PhD, Neurociencias, 2015, Universidad Santiago de Compostela (Santiago de Compostela, España)
-  - MSc en Neuropsicología, 2019, Universidad de San Buenaventura (Bogotá, Colombia)
+  - MSc en Neuropsicología Clínica, 2019, Universidad de San Buenaventura (Bogotá, Colombia) *(corregido de "Neuropsicología")*
   - Especialización en Evaluación y Diagnóstico Neuropsicológico, 2017, Universidad de San Buenaventura (Bogotá, Colombia)
   - Especialización en Ansiedad y Estrés, 1994, Universidad Complutense (Madrid, España)
   - Especialización en Psicología Clínica y Experimental de la Salud, 1992, Universidad Nacional (Bogotá, Colombia)
@@ -181,9 +191,9 @@
 - Bio corta: "Profesora Asociada e investigadora en neurociencia cognitiva del comportamiento sexual. Directora del semillero SexCog e investigadora de LabPsiExp."
 
 - Bio larga: (4 párrafos)
-  1. Integra neurociencia cognitiva, perspectivas evolutivas y salud pública para estudiar procesamiento cerebral de información sexualmente relevante. Tesis doctoral *cum laude* (U. Valencia) sobre preferencias sexuales típicas/atípicas con eye-tracking.
-  2. Línea 1: mecanismos neurocognitivos de intereses sexuales típicos y atípicos (incluyendo pedofilia). Línea 2: sesgos atencionales y VFC como predictores de estado emocional/excitación sexual. Metodología: eye-tracking, EEG, psicofisiología, morfometría facial.
-  3. Trabajo aplicado a prevención: consultora científica de RedPapaz y Protect Children (Helsinki); traducción/adaptación del *Global ReDirection Program* al español.
+  1. Integra neurociencia cognitiva y psicología evolutiva para comprender cómo el cerebro procesa información sexualmente relevante. Tesis doctoral *cum laude* (U. Valencia) sobre mecanismos neurocognitivos de preferencias sexuales típicas y atípicas, usando rastreo ocular.
+  2. El rastreo ocular es su herramienta metodológica transversal, complementado con paradigmas experimentales y otras aproximaciones de la neurociencia cognitiva.
+  3. Desde perspectiva de salud pública y enfoque de género: prevención de abuso y explotación sexual de NNA. Colaboración con Saint Mary's University (Canadá). Consultora científica de RedPapaz y Protect Children (Finlandia); traducción/adaptación del *Global ReDirection Program* al español.
   4. LabPsiExp y SexCog en U. El Bosque. Dos estancias postdoctorales en U. de la Costa (Barranquilla), financiadas por MinCiencias. Profesora Colaboradora de la Universidad Internacional de Valencia.
 
 - Intereses de investigación:
@@ -238,6 +248,34 @@
 
 ---
 
+## Auxiliares de investigación
+
+### Valentina Cepeda
+
+- Nombre completo: Valentina Cepeda
+- Cargo académico actual: Asistente de investigación
+- Laboratorio: LabPsiExp (supervisora: Milena Vásquez-Amézquita)
+- Foto de perfil: `/fotos/valentina-cepeda.jpg`
+
+- Bio: Psicóloga clínica, asistente de investigación y docente universitaria en la Facultad de Psicología de la Universidad El Bosque. Especializada en psicología clínica y autoeficacia personal. En LabPsiExp colabora en proyectos sobre atención visual, contenido erótico y comportamiento sexual bajo la supervisión de Milena Vásquez-Amézquita. Su trabajo de grado (relación entre pensamientos sexuales y patrones atencionales) fue reconocido con distinción meritoria.
+
+- Intereses de investigación:
+  - Trastornos afectivos
+  - Terapia de pareja
+  - Sexualidad en víctimas y victimarios
+  - Preferencias sexuales típicas y atípicas
+  - Sesgos atencionales asociados a contenido sexual
+  - Eye-tracking como herramienta para el estudio del comportamiento humano
+
+- Formación académica:
+  - Especialización en Psicología Clínica y Autoeficacia Personal, 2024, Universidad El Bosque (Bogotá, Colombia)
+  - Psicología, 2023, Universidad El Bosque (Bogotá, Colombia)
+
+- Perfiles académicos:
+  - ORCID: <https://orcid.org/0009-0007-2620-6743>
+
+---
+
 ## Laboratorios
 
 ### EvoCo
@@ -268,13 +306,19 @@
 - Nombre completo: Laboratorio de Psicología Experimental
 - Sigla: LabPsiExp
 - Director: Fidel Mauricio Bonilla
-- Año de fundación: *pendiente*
+- Año de fundación: 1998
 - Línea de investigación: Línea 2 — Neurociencias cognitivo-afectivas
 - Color: #a451ff
 - Logo: `LabPsiExp_claro.svg` / `LabPsiExp_oscuro.svg`
 - Correo: <bonillafidel@unbosque.edu.co>
 
-- Texto de presentación: *Pendiente de actualización.*
+- Objetivo: "Impartir formación en la metodología experimental para estudiar e investigar los procesos psicológicos básicos."
+
+- Métodos principales:
+  - Registros de tipo central (encéfalo)
+  - Registros de tipo periférico (sistema nervioso autónomo y somático)
+
+- Texto de presentación: "El LabPsiExp promueve la investigación de cómo funcionan procesos psicológicos como la percepción, la atención, la memoria, el aprendizaje y las emociones, a través del diseño de experimentos controlados. Cuenta con computadores con programas para presentar estímulos y registrar respuestas, sistemas de seguimiento ocular, y sistemas de registro y análisis de respuestas psicofisiológicas."
 
 ---
 
@@ -291,7 +335,9 @@
 - Logo: `DiCoMH_claro.svg` / `DiCoMH_oscuro.svg`
 - Correo: <reyesandres@unbosque.edu.co>
 
-- Texto de presentación: *Pendiente de actualización.*
+- Objetivo: "Explorar la información disponible que dé cuenta de cuáles son las diferencias reales entre hombres y mujeres que se expresan a través de las emociones, las características de personalidad, los intereses diferenciados y otros aspectos, basados en la neurociencia, la neuropsicología y la psicología."
+
+- Texto de presentación: "DiCoMH es un semillero multidisciplinario enmarcado en las ciencias sociales y las ciencias de la salud. Su misión es crear un espacio educativo científicamente respaldado a través de revisiones de literatura que expliquen de manera comprensible los problemas sociales complejos, promoviendo la toma de decisiones informadas y el bienestar de las comunidades globales."
 
 ---
 

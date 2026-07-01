@@ -92,7 +92,8 @@ const publications = defineCollection({
     title:            z.string(),
     year:             z.number(),
     authors:          z.array(z.string()),
-    internal_authors: z.array(reference('researchers')).optional(),
+    internal_authors:    z.array(reference('researchers')).optional(),
+    internal_auxiliares: z.array(reference('auxiliares')).optional(),
     doi:              z.string().optional(),
     journal:          z.string().optional(),
     volume:           z.string().optional(),
@@ -108,4 +109,34 @@ const publications = defineCollection({
   }),
 });
 
-export const collections = { researchers, labs, semilleros, publications };
+const auxiliares = defineCollection({
+  type: 'content',
+  schema: z.object({
+    name:          z.string(),
+    academic_role: z.string(),
+    codec_role:    z.string().default('Auxiliar de Investigación'),
+    avatar:        z.string().optional(),
+    lab:           reference('labs'),
+
+    interests_es:  z.array(z.string()).optional(),
+
+    education: z.array(z.object({
+      degree:      z.string(),
+      institution: z.string(),
+      year:        z.union([z.number(), z.string()]),
+    })).optional(),
+
+    scholar:       z.string().url().optional(),
+    orcid:         z.string().optional(),
+    scopus:        z.string().url().optional(),
+    cvlac:         z.string().url().optional(),
+    researchgate:  z.string().url().optional(),
+    website:       z.string().url().optional(),
+    twitter:       z.string().optional(),
+    linkedin:      z.string().url().optional(),
+    instagram:     z.string().optional(),
+    bluesky:       z.string().optional(),
+  }),
+});
+
+export const collections = { researchers, labs, semilleros, publications, auxiliares };

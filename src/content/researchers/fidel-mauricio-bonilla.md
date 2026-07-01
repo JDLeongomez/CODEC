@@ -6,16 +6,18 @@ email: bonillafidel@unbosque.edu.co
 weight: 3
 avatar: /fotos/fidel-mauricio-bonilla.jpg
 
-bio_short_es: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp)."
+bio_short_es: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp). Estudia el procesamiento cortical de rostros, la percepción de emociones y la velocidad de procesamiento de estímulos."
 
 interests_es:
-  - Pendiente de actualización
+  - Potencial P300 como marcador de la velocidad de procesamiento de estímulos visuales y auditivos
+  - Procesamiento de emociones expresadas a través de las unidades de acción facial (FACs)
+  - Funciones ejecutivas y atencionales en estudiantes universitarios
 
 education:
   - degree: PhD, Neurociencias
     institution: Universidad Santiago de Compostela (Santiago de Compostela, España)
     year: 2015
-  - degree: MSc en Neuropsicología
+  - degree: MSc en Neuropsicología Clínica
     institution: Universidad de San Buenaventura (Bogotá, Colombia)
     year: 2019
   - degree: Especialización en Evaluación y Diagnóstico Neuropsicológico
@@ -40,4 +42,4 @@ labs:
   - labpsiexp
 ---
 
-*Bio pendiente de actualización.*
+Investigo el procesamiento cortical de rostros, la función del potencial P300 en la velocidad de procesamiento de información visual y auditiva, y la percepción de emociones expresadas a través de las unidades de acción facial. También abordo el entrenamiento cognitivo en estudiantes universitarios con dificultades ejecutivas y atencionales que afectan su rendimiento académico.

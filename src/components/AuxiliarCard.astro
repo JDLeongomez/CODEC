@@ -1,0 +1,53 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { LINES } from '../data/lines';
+import { slug as toSlug } from '../utils';
+
+interface Props {
+  auxiliar: CollectionEntry<'auxiliares'>;
+}
+
+const { auxiliar } = Astro.props;
+const { name, avatar, academic_role, codec_role, lab: labRef } = auxiliar.data;
+
+const lab   = await getEntry(labRef);
+const line  = lab ? LINES[lab.data.research_line as keyof typeof LINES] : null;
+const color = lab?.data.color ?? '#9ca3af';
+---
+
+<a
+  href={`/auxiliares/${toSlug(auxiliar.id)}`}
+  class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
+>
+  <div class="p-6 flex flex-col items-center text-center flex-1">
+    {avatar ? (
+      <div class="mb-4">
+        <img
+          src={avatar}
+          alt={name}
+          class="w-24 h-24 rounded-full object-cover ring-2 ring-gray-100 group-hover:ring-codec/40 transition-all"
+        />
+      </div>
+    ) : (
+      <div class="mb-4 w-24 h-24 rounded-full bg-gray-100 flex items-center justify-center">
+        <span class="text-2xl text-gray-400">{name.charAt(0)}</span>
+      </div>
+    )}
+
+    <h3 class="font-semibold text-gray-900 group-hover:text-codec transition-colors leading-tight">{name}</h3>
+    <p class="text-xs text-gray-500 mt-1">{academic_role}</p>
+    <p class="text-xs text-gray-400 mt-0.5">{codec_role}</p>
+
+    {line && (
+      <div class="mt-3">
+        <span
+          class="text-xs px-2 py-0.5 rounded-full font-medium"
+          style={`background-color: ${color}18; color: ${color}`}
+        >
+          {line.name_es}
+        </span>
+      </div>
+    )}
+
+  </div>
+</a>

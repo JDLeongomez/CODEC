@@ -2,6 +2,7 @@
 import { getCollection, getEntry } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ResearcherCard from '../../components/ResearcherCard.astro';
+import AuxiliarCard from '../../components/AuxiliarCard.astro';
 import Icon from '../../components/Icon.astro';
 import { LINES } from '../../data/lines';
 import { slug as toSlug } from '../../utils';
@@ -23,6 +24,13 @@ const allResearchers = await getCollection('researchers');
 const members = allResearchers
   .filter(r => r.data.labs?.some(ref => toSlug(ref.id) === toSlug(lab.id)))
   .sort((a, b) => a.data.weight - b.data.weight);
+
+const dirMember    = members.find(r => toSlug(r.id) === toSlug(lab.data.director.id));
+const otherMembers = members.filter(r => toSlug(r.id) !== toSlug(lab.data.director.id));
+
+const allAuxiliares = await getCollection('auxiliares');
+const auxiliares = allAuxiliares
+  .filter(a => toSlug(a.data.lab.id) === toSlug(lab.id));
 ---
 
 <Base title={short_name}>
@@ -97,32 +105,41 @@ const members = allResearchers
       </aside>
     </div>
 
-    {members.length > 0 && (() => {
-      const dirMember    = members.find(r => toSlug(r.id) === toSlug(lab.data.director.id));
-      const otherMembers = members.filter(r => toSlug(r.id) !== toSlug(lab.data.director.id));
-      return (
-        <div class="mt-16 pt-12 border-t border-gray-100">
-          <div class="flex flex-col lg:grid lg:grid-cols-4 gap-5">
+    {(members.length > 0 || auxiliares.length > 0) && (
+      <div class="mt-16 pt-12 border-t border-gray-100">
 
-            {dirMember && (
-              <div>
-                <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Director/a</h2>
-                <ResearcherCard researcher={dirMember} />
-              </div>
-            )}
+        <div class="flex flex-col lg:grid lg:grid-cols-4 gap-5">
+          {dirMember && (
+            <div>
+              <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Director/a</h2>
+              <ResearcherCard researcher={dirMember} />
+            </div>
+          )}
 
-            {otherMembers.length > 0 && (
-              <div class="lg:col-span-3 lg:border-l lg:border-gray-100 lg:pl-5">
-                <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Investigadoras/es</h2>
-                <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
-                  {otherMembers.map(r => <ResearcherCard researcher={r} />)}
+          {(otherMembers.length > 0 || auxiliares.length > 0) && (
+            <div class="lg:col-span-3 lg:border-l lg:border-gray-100 lg:pl-5 flex flex-col gap-8">
+              {otherMembers.length > 0 && (
+                <div>
+                  <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Investigadoras/es</h2>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                    {otherMembers.map(r => <ResearcherCard researcher={r} />)}
+                  </div>
                 </div>
-              </div>
-            )}
-
-          </div>
+              )}
+              {auxiliares.length > 0 && (
+                <div class={otherMembers.length > 0 ? 'pt-8 border-t border-gray-100' : ''}>
+                  <h2 class="text-xs font-bold text-gray-900 uppercase tracking-widest mb-4">Auxiliares de investigación</h2>
+                  <div class="grid grid-cols-2 sm:grid-cols-3 gap-5">
+                    {auxiliares.map(a => <AuxiliarCard auxiliar={a} />)}
+                  </div>
+                </div>
+              )}
+            </div>
+          )}
         </div>
-      );
-    })()}
+
+      </div>
+    )}
+
   </div>
 </Base>

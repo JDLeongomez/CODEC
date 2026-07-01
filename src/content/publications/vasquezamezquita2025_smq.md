@@ -12,6 +12,8 @@ authors:
 internal_authors:
   - milena-vasquez-amezquita
   - juan-david-leongomez
+internal_auxiliares:
+  - valentina-cepeda
 doi: "10.1080/14681994.2025.2507109"
 journal: "Sexual and Relationship Therapy"
 volume: "40"

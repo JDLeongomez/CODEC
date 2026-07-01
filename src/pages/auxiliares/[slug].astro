@@ -1,0 +1,156 @@
+---
+import { getCollection, getEntry } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Icon from '../../components/Icon.astro';
+import PublicationCard from '../../components/PublicationCard.astro';
+import { LINES } from '../../data/lines';
+import { slug as toSlug } from '../../utils';
+
+export async function getStaticPaths() {
+  const auxiliares = await getCollection('auxiliares');
+  return auxiliares.map(a => ({ params: { slug: toSlug(a.id) }, props: { auxiliar: a } }));
+}
+
+const { auxiliar } = Astro.props;
+const { name, academic_role, codec_role, avatar,
+        interests_es, education, lab: labRef,
+        scholar, orcid, scopus, cvlac,
+        researchgate, website, twitter, linkedin, instagram, bluesky } = auxiliar.data;
+
+const { Content } = await auxiliar.render();
+const lab  = await getEntry(labRef);
+const line = lab ? LINES[lab.data.research_line as keyof typeof LINES] : null;
+
+const allPublications = await getCollection('publications');
+const myPublications  = allPublications
+  .filter(pub => pub.data.internal_auxiliares?.some(ref => toSlug(ref.id) === toSlug(auxiliar.id)))
+  .sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title));
+
+const profileLinks = [
+  { href: website,                                           label: 'Sitio web',      icon: 'globe' },
+  { href: scholar,                                           label: 'Google Scholar',  icon: 'google-scholar' },
+  { href: orcid ? `https://orcid.org/${orcid}` : undefined,  label: 'ORCID',           icon: 'orcid' },
+  { href: scopus,                                            label: 'Scopus',          icon: 'scopus' },
+  { href: cvlac,                                             label: 'CvLAC',           icon: 'cvlac' },
+  { href: researchgate,                                      label: 'ResearchGate',    icon: 'researchgate' },
+  { href: linkedin,                                          label: 'LinkedIn',        icon: 'linkedin' },
+  { href: twitter  ? `https://twitter.com/${twitter}`  : undefined, label: 'Twitter',  icon: 'twitter' },
+  { href: instagram ? `https://www.instagram.com/${instagram}/` : undefined, label: 'Instagram', icon: 'instagram' },
+  { href: bluesky  ? `https://bsky.app/profile/${bluesky}` : undefined, label: 'Bluesky', icon: 'bluesky' },
+].filter(l => l.href) as { href: string; label: string; icon: string }[];
+---
+
+<Base title={name}>
+  <div class="max-w-4xl mx-auto px-6 py-16">
+
+    <nav class="text-sm text-gray-400 mb-8">
+      {lab && (
+        <>
+          <a href="/laboratorios" class="hover:text-codec transition-colors">Laboratorios</a>
+          <span class="mx-2">›</span>
+          <a href={`/laboratorios/${toSlug(lab.id)}`} class="hover:text-codec transition-colors">{lab.data.short_name}</a>
+          <span class="mx-2">›</span>
+        </>
+      )}
+      <span class="text-gray-600">{name}</span>
+    </nav>
+
+    <div class="flex flex-col sm:flex-row gap-8 mb-12">
+      <div class="shrink-0">
+        {avatar
+          ? <img src={avatar} alt={name} class="w-36 h-36 rounded-2xl object-cover shadow-md" />
+          : <div class="w-36 h-36 rounded-2xl bg-gray-100 flex items-center justify-center shadow-md">
+              <span class="text-4xl text-gray-400">{name.charAt(0)}</span>
+            </div>
+        }
+      </div>
+      <div class="flex-1">
+        <h1 class="text-3xl font-extrabold text-gray-900 leading-tight">{name}</h1>
+        <p class="text-gray-500 mt-1">{academic_role} · Universidad El Bosque</p>
+        <p class="text-sm text-gray-400 mt-1">{codec_role}</p>
+
+        {lab && line && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            <span class="text-xs px-3 py-1 rounded-full font-medium"
+              style={`background-color: ${lab.data.color}18; color: ${lab.data.color}`}>
+              {line.name_es}
+            </span>
+          </div>
+        )}
+
+        {profileLinks.length > 0 && (
+          <div class="flex flex-wrap gap-2 mt-4">
+            {profileLinks.map(link => (
+              <a href={link.href}
+                target="_blank" rel="noopener noreferrer"
+                class="inline-flex items-center gap-1.5 text-xs bg-gray-100 hover:bg-gray-200 text-gray-700 px-3 py-1.5 rounded-lg transition-colors">
+                <Icon name={link.icon} class="w-4 h-4 shrink-0" />
+                <span>{link.label}</span>
+              </a>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+      <div class="lg:col-span-2">
+        <div class="prose prose-gray max-w-none">
+          <Content />
+        </div>
+      </div>
+
+      <aside class="space-y-8">
+        {interests_es && interests_es.length > 0 && (
+          <div>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Intereses</h2>
+            <div class="flex flex-wrap gap-2">
+              {interests_es.map(i => (
+                <span class="text-xs bg-codec/10 text-codec px-2.5 py-1 rounded-full font-medium">{i}</span>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {education && education.length > 0 && (
+          <div>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Formación</h2>
+            <ul class="space-y-3">
+              {education.map(e => (
+                <li class="border-l-2 border-gray-100 pl-3">
+                  <p class="text-xs font-semibold text-gray-700">{e.degree}</p>
+                  <p class="text-xs text-gray-500">{e.institution}</p>
+                  <p class="text-xs text-gray-400">{e.year}</p>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {lab && (
+          <div>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Laboratorio</h2>
+            <a href={`/laboratorios/${toSlug(lab.id)}`}
+              class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+              {lab.data.logo_light && <img src={lab.data.logo_light} alt={lab.data.short_name} class="h-6 object-contain" />}
+              <span class="text-sm font-medium text-gray-700">{lab.data.short_name}</span>
+            </a>
+          </div>
+        )}
+      </aside>
+    </div>
+
+    {myPublications.length > 0 && (
+      <div class="mt-16 pt-12 border-t border-gray-100">
+        <h2 class="text-2xl font-bold text-gray-900 mb-2">Publicaciones</h2>
+        <p class="text-gray-500 mb-8 text-sm">
+          {myPublications.length} publicaci{myPublications.length === 1 ? 'ón' : 'ones'} con CODEC
+        </p>
+        <div class="space-y-3">
+          {myPublications.map(pub => <PublicationCard pub={pub} />)}
+        </div>
+      </div>
+    )}
+
+  </div>
+</Base>

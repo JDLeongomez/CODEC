@@ -8,10 +8,13 @@ interface Props {
 }
 
 const { pub } = Astro.props;
-const { title, year, authors, internal_authors, doi, journal, url, pub_type } = pub.data;
+const { title, year, authors, internal_authors, internal_auxiliares, doi, journal, url, pub_type } = pub.data;
 
 const internalEntries = (await Promise.all((internal_authors ?? []).map(ref => getEntry(ref)))).filter(Boolean);
-const internalByName = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
+const internalByName  = Object.fromEntries(internalEntries.map(r => [r!.data.name, toSlug(r!.id)]));
+
+const auxiliarEntries = (await Promise.all((internal_auxiliares ?? []).map(ref => getEntry(ref)))).filter(Boolean);
+const auxiliarByName  = Object.fromEntries(auxiliarEntries.map(a => [a!.data.name, toSlug(a!.id)]));
 
 function normName(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
@@ -41,7 +44,7 @@ const typeLabels: Record<string, string> = {
       <span class="text-xs px-2 py-0.5 rounded-full font-medium bg-codec/10 text-codec">
         {typeLabels[pub_type] ?? pub_type}
       </span>
-</div>
+    </div>
 
     <a href={`/publicaciones/${toSlug(pub.id)}`}
       class="font-semibold text-gray-900 hover:text-codec transition-colors leading-snug block mb-2">
@@ -50,17 +53,21 @@ const typeLabels: Record<string, string> = {
 
     <p class="text-xs text-gray-500 leading-relaxed mb-1.5">
       {authors.map((author, i) => {
-        const currentSlug = internalByName[author];
-        const alumniSlug  = !currentSlug ? alumniByNorm[normName(author)] : undefined;
+        const currentSlug  = internalByName[author];
+        const auxiliarSlug = !currentSlug ? auxiliarByName[author] : undefined;
+        const alumniSlug   = !currentSlug && !auxiliarSlug ? alumniByNorm[normName(author)] : undefined;
         return (
           <span>
             {currentSlug
               ? <a href={`/investigadores/${currentSlug}`}
                   class="font-semibold text-gray-700 hover:text-codec transition-colors">{author}</a>
-              : alumniSlug
-                ? <a href={`/antiguos-integrantes#${alumniSlug}`}
-                    class="font-semibold text-gray-500 hover:text-codec transition-colors">{author}</a>
-                : <span>{author}</span>
+              : auxiliarSlug
+                ? <a href={`/auxiliares/${auxiliarSlug}`}
+                    class="font-semibold text-gray-700 hover:text-codec transition-colors">{author}</a>
+                : alumniSlug
+                  ? <a href={`/antiguos-integrantes#${alumniSlug}`}
+                      class="font-semibold text-gray-500 hover:text-codec transition-colors">{author}</a>
+                  : <span>{author}</span>
             }{i < authors.length - 1 ? ', ' : ''}
           </span>
         );
