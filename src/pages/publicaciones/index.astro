@@ -105,7 +105,7 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
                 data-pub
                 data-type={pub.data.pub_type}
                 data-year={pub.data.year}
-                data-text={`${pub.data.title} ${pub.data.authors.join(' ')}`.toLowerCase()}
+                data-text={`${pub.data.title} ${pub.data.authors.join(' ')}`.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()}
               >
                 <PublicationCard pub={pub} />
               </div>
@@ -154,7 +154,7 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
   }
 
   searchInput?.addEventListener('input', () => {
-    query = searchInput.value.toLowerCase().trim();
+    query = searchInput.value.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
     applyFilters();
   });
 

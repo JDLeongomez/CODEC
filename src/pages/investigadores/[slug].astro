@@ -33,17 +33,18 @@ const lineIds = [...new Set([
 ])].filter(Boolean) as string[];
 
 const socialLinks = [
-  { href: website,                                          label: 'Sitio web',     icon: 'globe' },
-  { href: scholar,                                          label: 'Google Scholar', icon: 'google-scholar' },
-  { href: orcid ? `https://orcid.org/${orcid}` : undefined, label: 'ORCID',          icon: 'orcid' },
-  { href: scopus,                                           label: 'Scopus',         icon: 'scopus' },
-  { href: cvlac,                                            label: 'CvLAC',          icon: 'cvlac' },
-  { href: researchgate,                                     label: 'ResearchGate',   icon: 'researchgate' },
-  { href: `mailto:${email}`,                                label: 'Email',          icon: 'envelope' },
+  { href: website,                                                label: 'Sitio web',     icon: 'globe' },
+  { href: scholar,                                                label: 'Google Scholar', icon: 'google-scholar' },
+  { href: orcid ? `https://orcid.org/${orcid}` : undefined,       label: 'ORCID',          icon: 'orcid' },
+  { href: scopus,                                                 label: 'Scopus',         icon: 'scopus' },
+  { href: cvlac,                                                  label: 'CvLAC',          icon: 'cvlac' },
+  { href: researchgate,                                           label: 'ResearchGate',   icon: 'researchgate' },
+  { href: twitter ? `https://twitter.com/${twitter}` : undefined, label: 'Twitter / X',    icon: 'twitter' },
+  { href: `mailto:${email}`,                                      label: 'Email',          icon: 'envelope' },
 ].filter(l => l.href);
 ---
 
-<Base title={name} description={bio_short_es}>
+<Base title={name} description={bio_short_es} image={avatar}>
   <div class="max-w-4xl mx-auto px-6 py-16">
 
     <nav class="text-sm text-gray-400 mb-8">
@@ -54,7 +55,17 @@ const socialLinks = [
 
     <div class="flex flex-col sm:flex-row gap-8 mb-12">
       <div class="shrink-0">
-        <img src={avatar} alt={name} class="w-36 h-36 rounded-2xl object-cover shadow-md" />
+        <button id="avatar-btn" class="cursor-zoom-in" aria-label="Ver foto a tamaño completo">
+          <img src={avatar} alt={name} class="w-36 h-36 rounded-2xl object-cover shadow-md hover:shadow-lg transition-shadow" />
+        </button>
+        <dialog id="avatar-dialog"
+          class="backdrop:bg-black/70 bg-transparent p-0 max-w-sm w-full rounded-2xl shadow-2xl">
+          <button id="avatar-close" aria-label="Cerrar"
+            class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
+            ×
+          </button>
+          <img src={avatar} alt={name} class="w-full rounded-2xl object-cover" />
+        </dialog>
       </div>
       <div class="flex-1">
         <h1 class="text-3xl font-extrabold text-gray-900 leading-tight">{name}</h1>
@@ -181,3 +192,12 @@ const socialLinks = [
 
   </div>
 </Base>
+
+<script>
+  const btn    = document.getElementById('avatar-btn') as HTMLButtonElement;
+  const dialog = document.getElementById('avatar-dialog') as HTMLDialogElement;
+  const close  = document.getElementById('avatar-close') as HTMLButtonElement;
+  btn?.addEventListener('click', () => dialog.showModal());
+  close?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+</script>

@@ -49,7 +49,7 @@ const citation = [
 ].filter(Boolean).join(', ');
 ---
 
-<Base title={title}>
+<Base title={title} description={abstract?.split('\n')[0]} image={cover}>
   <div class="max-w-4xl mx-auto px-6 py-16">
 
     <nav class="text-sm text-gray-400 mb-8">
@@ -62,8 +62,22 @@ const citation = [
     <div class="mb-8">
       <div class="flex gap-6 items-start">
         {cover && (
-          <img src={cover} alt={`Portada: ${title}`}
-            class="hidden sm:block w-28 shrink-0 rounded-lg shadow-md object-cover" />
+          <>
+            <button id="cover-btn" class="hidden sm:block shrink-0 cursor-zoom-in"
+              aria-label="Ver portada a tamaño completo">
+              <img src={cover} alt={`Portada: ${title}`}
+                class="w-28 rounded-lg shadow-md object-cover hover:shadow-lg transition-shadow" />
+            </button>
+            <dialog id="cover-dialog"
+              class="backdrop:bg-black/70 bg-transparent p-0 max-w-screen-md w-full rounded-xl shadow-2xl">
+              <button id="cover-close" aria-label="Cerrar"
+                class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
+                ×
+              </button>
+              <img src={cover} alt={`Portada: ${title}`}
+                class="w-full rounded-xl object-contain max-h-[90vh]" />
+            </dialog>
+          </>
         )}
         <div class="flex-1 min-w-0">
           <div class="flex flex-wrap items-center gap-2 mb-3">
@@ -181,3 +195,15 @@ const citation = [
 
   </div>
 </Base>
+
+{cover && (
+  <script>
+    const btn    = document.getElementById('cover-btn') as HTMLButtonElement;
+    const dialog = document.getElementById('cover-dialog') as HTMLDialogElement;
+    const close  = document.getElementById('cover-close') as HTMLButtonElement;
+
+    btn?.addEventListener('click', () => dialog.showModal());
+    close?.addEventListener('click', () => dialog.close());
+    dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+  </script>
+)}

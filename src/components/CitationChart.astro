@@ -45,6 +45,10 @@ const height = PAD_T + H + PAD_B;
 const totalYears = allYears.length;
 const interval   = totalYears <= 10 ? 1 : totalYears <= 20 ? 2 : totalYears <= 40 ? 5 : 10;
 const labelSet   = new Set(allYears.filter(y => interval === 1 || y % interval === 0));
+
+// font-size proporcional al viewBox para que en pantalla el tamaño sea constante
+// (~7.5px en un contenedor de 600px) sin importar cuántos años tenga el investigador
+const labelFontSize = Math.max(3, +(width / 80).toFixed(1));
 ---
 
 <div class="w-full">
@@ -70,7 +74,7 @@ const labelSet   = new Set(allYears.filter(y => interval === 1 || y % interval =
     >
       <line x1={PAD_L} y1={PAD_T + H} x2={width} y2={PAD_T + H} stroke="#e5e7eb" stroke-width="1" />
       <line x1={PAD_L} y1={PAD_T}     x2={width} y2={PAD_T}     stroke="#f3f4f6" stroke-width="1" />
-      <text x={PAD_L - 4} y={PAD_T + 4} text-anchor="end" font-size="5" fill="#d1d5db">{maxCount}</text>
+      <text x={PAD_L - 4} y={PAD_T + 4} text-anchor="end" font-size={labelFontSize} fill="#d1d5db">{maxCount}</text>
 
       {allYears.map((year, i) => {
         const c    = counts[year];
@@ -94,7 +98,7 @@ const labelSet   = new Set(allYears.filter(y => interval === 1 || y % interval =
             })}
             {labelSet.has(year) && (
               <text x={x + BAR_W / 2} y={PAD_T + H + PAD_B - 4}
-                text-anchor="middle" font-size="5" fill="#9ca3af"
+                text-anchor="middle" font-size={labelFontSize} fill="#9ca3af"
                 transform={`rotate(-40, ${x + BAR_W / 2}, ${PAD_T + H + PAD_B - 4})`}>
                 {year}
               </text>

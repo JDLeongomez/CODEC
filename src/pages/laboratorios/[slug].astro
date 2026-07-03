@@ -30,10 +30,10 @@ const otherMembers = members.filter(r => toSlug(r.id) !== toSlug(lab.data.direct
 
 const allAuxiliares = await getCollection('auxiliares');
 const auxiliares = allAuxiliares
-  .filter(a => toSlug(a.data.lab.id) === toSlug(lab.id));
+  .filter(a => a.data.labs?.some(ref => toSlug(ref.id) === toSlug(lab.id)));
 ---
 
-<Base title={short_name}>
+<Base title={name} description={objective_es} image={logo_light}>
   <div class="max-w-5xl mx-auto px-6 py-16">
 
     <nav class="text-sm text-gray-400 mb-8">
@@ -43,8 +43,20 @@ const auxiliares = allAuxiliares
     </nav>
 
     <div class="flex flex-col sm:flex-row gap-8 items-start mb-12 pb-12 border-b border-gray-100">
-      <div class="shrink-0 p-5 bg-gray-950 rounded-2xl">
-        <img src={logo_dark} alt={short_name} class="h-40 object-contain" />
+      <div class="shrink-0">
+        <button id="logo-btn" class="cursor-zoom-in p-5 bg-gray-950 rounded-2xl block hover:bg-gray-900 transition-colors" aria-label="Ver logo a tamaño completo">
+          <img src={logo_dark} alt={short_name} class="h-40 object-contain" />
+        </button>
+        <dialog id="logo-dialog"
+          class="backdrop:bg-black/70 bg-transparent p-0 max-w-lg w-full rounded-2xl shadow-2xl">
+          <button id="logo-close" aria-label="Cerrar"
+            class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
+            ×
+          </button>
+          <div class="bg-gray-950 rounded-2xl p-10">
+            <img src={logo_dark} alt={short_name} class="w-full object-contain max-h-[80vh]" />
+          </div>
+        </dialog>
       </div>
       <div>
         <div class="flex items-center gap-3 mb-2">
@@ -137,3 +149,12 @@ const auxiliares = allAuxiliares
 
   </div>
 </Base>
+
+<script>
+  const btn    = document.getElementById('logo-btn') as HTMLButtonElement;
+  const dialog = document.getElementById('logo-dialog') as HTMLDialogElement;
+  const close  = document.getElementById('logo-close') as HTMLButtonElement;
+  btn?.addEventListener('click', () => dialog.showModal());
+  close?.addEventListener('click', () => dialog.close());
+  dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+</script>

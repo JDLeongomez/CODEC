@@ -116,7 +116,8 @@ const auxiliares = defineCollection({
     academic_role: z.string(),
     codec_role:    z.string().default('Auxiliar de Investigación'),
     avatar:        z.string().optional(),
-    lab:           reference('labs'),
+    labs:           z.array(reference('labs')).optional(),
+    semilleros:     z.array(reference('semilleros')).optional(),
 
     interests_es:  z.array(z.string()).optional(),
 

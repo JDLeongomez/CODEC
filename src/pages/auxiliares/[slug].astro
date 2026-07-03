@@ -13,13 +13,19 @@ export async function getStaticPaths() {
 
 const { auxiliar } = Astro.props;
 const { name, academic_role, codec_role, avatar,
-        interests_es, education, lab: labRef,
+        interests_es, education,
+        labs: labRefs, semilleros: semilleroRefs,
         scholar, orcid, scopus, cvlac,
         researchgate, website, twitter, linkedin, instagram, bluesky } = auxiliar.data;
 
 const { Content } = await auxiliar.render();
-const lab  = await getEntry(labRef);
-const line = lab ? LINES[lab.data.research_line as keyof typeof LINES] : null;
+const labEntries       = (await Promise.all((labRefs ?? []).map(ref => getEntry(ref)))).filter(Boolean);
+const semilleroEntries = (await Promise.all((semilleroRefs ?? []).map(ref => getEntry(ref)))).filter(Boolean);
+
+const lineIds = [...new Set([
+  ...labEntries.map(l => l?.data.research_line),
+  ...semilleroEntries.map(s => s?.data.research_line),
+])].filter(Boolean) as string[];
 
 const allPublications = await getCollection('publications');
 const myPublications  = allPublications
@@ -40,15 +46,20 @@ const profileLinks = [
 ].filter(l => l.href) as { href: string; label: string; icon: string }[];
 ---
 
-<Base title={name}>
+<Base title={name} image={avatar}>
   <div class="max-w-4xl mx-auto px-6 py-16">
 
     <nav class="text-sm text-gray-400 mb-8">
-      {lab && (
+      {labEntries.length > 0 && (
         <>
           <a href="/laboratorios" class="hover:text-codec transition-colors">Laboratorios</a>
           <span class="mx-2">›</span>
-          <a href={`/laboratorios/${toSlug(lab.id)}`} class="hover:text-codec transition-colors">{lab.data.short_name}</a>
+          {labEntries.map((l, i) => l && (
+            <span>
+              <a href={`/laboratorios/${toSlug(l.id)}`} class="hover:text-codec transition-colors">{l.data.short_name}</a>
+              {i < labEntries.length - 1 && <span class="mx-1">/</span>}
+            </span>
+          ))}
           <span class="mx-2">›</span>
         </>
       )}
@@ -57,24 +68,42 @@ const profileLinks = [
 
     <div class="flex flex-col sm:flex-row gap-8 mb-12">
       <div class="shrink-0">
-        {avatar
-          ? <img src={avatar} alt={name} class="w-36 h-36 rounded-2xl object-cover shadow-md" />
-          : <div class="w-36 h-36 rounded-2xl bg-gray-100 flex items-center justify-center shadow-md">
-              <span class="text-4xl text-gray-400">{name.charAt(0)}</span>
-            </div>
-        }
+        {avatar ? (
+          <>
+            <button id="avatar-btn" class="cursor-zoom-in" aria-label="Ver foto a tamaño completo">
+              <img src={avatar} alt={name} class="w-36 h-36 rounded-2xl object-cover shadow-md hover:shadow-lg transition-shadow" />
+            </button>
+            <dialog id="avatar-dialog"
+              class="backdrop:bg-black/70 bg-transparent p-0 max-w-sm w-full rounded-2xl shadow-2xl">
+              <button id="avatar-close" aria-label="Cerrar"
+                class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
+                ×
+              </button>
+              <img src={avatar} alt={name} class="w-full rounded-2xl object-cover" />
+            </dialog>
+          </>
+        ) : (
+          <div class="w-36 h-36 rounded-2xl bg-gray-100 flex items-center justify-center shadow-md">
+            <span class="text-4xl text-gray-400">{name.charAt(0)}</span>
+          </div>
+        )}
       </div>
       <div class="flex-1">
         <h1 class="text-3xl font-extrabold text-gray-900 leading-tight">{name}</h1>
         <p class="text-gray-500 mt-1">{academic_role} · Universidad El Bosque</p>
         <p class="text-sm text-gray-400 mt-1">{codec_role}</p>
 
-        {lab && line && (
+        {lineIds.length > 0 && (
           <div class="flex flex-wrap gap-2 mt-4">
-            <span class="text-xs px-3 py-1 rounded-full font-medium"
-              style={`background-color: ${lab.data.color}18; color: ${lab.data.color}`}>
-              {line.name_es}
-            </span>
+            {lineIds.map(lid => {
+              const line = LINES[lid as keyof typeof LINES];
+              return line ? (
+                <span class="text-xs px-3 py-1 rounded-full font-medium"
+                  style={`background-color: ${line.color}18; color: ${line.color}`}>
+                  {line.name_es}
+                </span>
+              ) : null;
+            })}
           </div>
         )}
 
@@ -127,14 +156,40 @@ const profileLinks = [
           </div>
         )}
 
-        {lab && (
+        {labEntries.length > 0 && (
           <div>
-            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">Laboratorio</h2>
-            <a href={`/laboratorios/${toSlug(lab.id)}`}
-              class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
-              {lab.data.logo_light && <img src={lab.data.logo_light} alt={lab.data.short_name} class="h-6 object-contain" />}
-              <span class="text-sm font-medium text-gray-700">{lab.data.short_name}</span>
-            </a>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">
+              Laboratorio{labEntries.length > 1 ? 's' : ''}
+            </h2>
+            <div class="space-y-2">
+              {labEntries.map(l => l && (
+                <a href={`/laboratorios/${toSlug(l.id)}`}
+                  class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+                  {l.data.logo_light && <img src={l.data.logo_light} alt={l.data.short_name} class="h-6 object-contain" />}
+                  <span class="text-sm font-medium text-gray-700">{l.data.short_name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
+        {semilleroEntries.length > 0 && (
+          <div>
+            <h2 class="text-sm font-bold text-gray-400 uppercase tracking-widest mb-3">
+              Semillero{semilleroEntries.length > 1 ? 's' : ''}
+            </h2>
+            <div class="space-y-2">
+              {semilleroEntries.map(s => s && (
+                <a href={`/semilleros/${toSlug(s.id)}`}
+                  class="flex items-center gap-3 p-3 rounded-xl border border-gray-100 hover:border-gray-200 hover:shadow-sm transition-all">
+                  {s.data.logo_light
+                    ? <img src={s.data.logo_light} alt={s.data.short_name} class="h-6 object-contain" />
+                    : <span class="text-xs font-bold" style={`color: ${s.data.color}`}>{s.data.short_name}</span>
+                  }
+                  <span class="text-sm font-medium text-gray-700">{s.data.short_name}</span>
+                </a>
+              ))}
+            </div>
           </div>
         )}
       </aside>
@@ -154,3 +209,12 @@ const profileLinks = [
 
   </div>
 </Base>
+
+<script>
+  const btn    = document.getElementById('avatar-btn') as HTMLButtonElement;
+  const dialog = document.getElementById('avatar-dialog') as HTMLDialogElement;
+  const close  = document.getElementById('avatar-close') as HTMLButtonElement;
+  btn?.addEventListener('click', () => dialog?.showModal());
+  close?.addEventListener('click', () => dialog?.close());
+  dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+</script>

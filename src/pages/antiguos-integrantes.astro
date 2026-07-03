@@ -1,6 +1,23 @@
 ---
 import Base from '../layouts/Base.astro';
+import { getCollection } from 'astro:content';
 import { alumni } from '../data/alumni';
+
+const publications = await getCollection('publications');
+
+function normName(s: string): string {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+}
+const alumniSlugs = new Set(alumni.map(a => a.slug));
+
+// Count publications per alumni slug
+const pubCountBySlug: Record<string, number> = {};
+for (const pub of publications) {
+  for (const author of pub.data.authors) {
+    const slug = alumni.find(a => normName(a.name) === normName(author))?.slug;
+    if (slug) pubCountBySlug[slug] = (pubCountBySlug[slug] ?? 0) + 1;
+  }
+}
 
 const byDecade: Record<string, typeof alumni> = {};
 for (const a of alumni) {
@@ -42,7 +59,15 @@ const decades = ['2020–', '2010–2019', '2004–2009'];
               .map(member => (
                 <div id={member.slug} class="flex items-baseline justify-between py-1.5 border-b border-gray-100">
                   <span class="text-sm text-gray-800">{member.name}</span>
-                  <span class="text-xs text-gray-400 ml-4 shrink-0">{member.period}</span>
+                  <span class="flex items-baseline gap-3 ml-4 shrink-0">
+                    {pubCountBySlug[member.slug] && (
+                      <span class="text-xs text-codec/50 tabular-nums"
+                        title={`${pubCountBySlug[member.slug]} publicación${pubCountBySlug[member.slug] !== 1 ? 'es' : ''} en CODEC`}>
+                        {pubCountBySlug[member.slug]} pub.
+                      </span>
+                    )}
+                    <span class="text-xs text-gray-400">{member.period}</span>
+                  </span>
                 </div>
               ))
             }

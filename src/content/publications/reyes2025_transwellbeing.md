@@ -16,4 +16,5 @@ pages: "72–82"
 pub_type: preprint
 featured: false
 pdf: "https://kwnsfk27.r.eu-west-1.awstrack.me/L0/https:%2F%2Fauthors.elsevier.com%2Fc%2F1m3l515hTu0og6/1/0102019a5ed10788-925a0014-1bf6-40b6-a3c9-7eb716fc5b32-000000/_naoHyfKP_vaV2CLcGBp2jMqn4U=451"
+cover: "/portadas/reyes2025_transwellbeing.png"
 ---

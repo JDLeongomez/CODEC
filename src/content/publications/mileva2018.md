@@ -10,4 +10,5 @@ journal: "The Conversation"
 pub_type: other
 featured: false
 url: "https://theconversation.com/want-to-know-if-your-partners-cheating-on-you-just-listen-to-their-voice-92387"
+cover: "/portadas/mileva2018.jpg"
 ---
