@@ -22,9 +22,10 @@ education:
     institution: Universidad de Bogotá Jorge Tadeo Lozano (Bogotá, Colombia)
     year: 1985
 
-orcid:  "0000-0003-1122-9815"
-scopus: https://www.scopus.com/authid/detail.uri?authorId=57204241942
-cvlac:  https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000425524
+scholar: https://scholar.google.com/citations?user=lg0bz10AAAAJ
+orcid:   "0000-0003-1122-9815"
+scopus:  https://www.scopus.com/authid/detail.uri?authorId=57204241942
+cvlac:   https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000425524
 
 labs:
   - evoco
