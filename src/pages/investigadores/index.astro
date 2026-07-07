@@ -3,7 +3,7 @@ import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import ResearcherCard from '../../components/ResearcherCard.astro';
 
-const all     = (await getCollection('researchers')).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
+const all     = (await getCollection('researchers')).filter(r => !r.data.draft).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
 const leader  = all.filter(r =>  r.data.codec_role.includes('Líder'));
 const members = all.filter(r => !r.data.codec_role.includes('Líder'));
 ---

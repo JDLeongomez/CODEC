@@ -34,7 +34,7 @@ const pubTypeLabels: Record<string, string> = {
   book:           'Libro',
 };
 
-const allResearchers = (await getCollection('researchers')).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
+const allResearchers = (await getCollection('researchers')).filter(r => !r.data.draft).sort((a, b) => a.data.name.localeCompare(b.data.name, 'es'));
 const resLeader      = allResearchers.filter(r =>  r.data.codec_role.includes('Líder'));
 const resMembers     = allResearchers.filter(r => !r.data.codec_role.includes('Líder'));
 const researchers    = allResearchers;

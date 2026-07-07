@@ -4,6 +4,12 @@ import Base from '../../layouts/Base.astro';
 import PublicationCard from '../../components/PublicationCard.astro';
 import PublicationsByYear from '../../components/PublicationsByYear.astro';
 import CollaborationMap from '../../components/CollaborationMap.astro';
+import { alumni } from '../../data/alumni';
+
+function normName(s: string) {
+  return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
+}
+const alumniNormToSlug = Object.fromEntries(alumni.map(a => [normName(a.name), a.slug]));
 
 const publications = (await getCollection('publications'))
   .sort((a, b) => b.data.year - a.data.year || a.data.title.localeCompare(b.data.title));
@@ -46,6 +52,12 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
         <h2 class="text-sm font-semibold text-gray-500 uppercase tracking-wide mb-4">Colaboraciones internacionales</h2>
         <CollaborationMap />
       </div>
+    </div>
+
+    <!-- Banner filtro por alumni (se muestra solo con ?autor=) -->
+    <div id="autor-banner" class="hidden mb-6 flex items-center gap-3 bg-codec/10 border border-codec/20 text-codec px-4 py-2.5 rounded-xl text-sm font-medium">
+      <span>Publicaciones de <strong id="autor-nombre"></strong></span>
+      <a href="/publicaciones" class="ml-auto text-xs text-codec/60 hover:text-codec transition-colors">× Ver todas</a>
     </div>
 
     <!-- Barra de filtros -->
@@ -106,6 +118,7 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
                 data-type={pub.data.pub_type}
                 data-year={pub.data.year}
                 data-text={`${pub.data.title} ${pub.data.authors.join(' ')}`.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase()}
+                data-author-slugs={pub.data.authors.map(a => alumniNormToSlug[normName(a)] ?? '').filter(Boolean).join('|')}
               >
                 <PublicationCard pub={pub} />
               </div>
@@ -127,18 +140,40 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
   const pubCards     = document.querySelectorAll<HTMLElement>('[data-pub]');
   const yearSections = document.querySelectorAll<HTMLElement>('[data-year-section]');
 
-  let activeType = 'all';
-  let activeYear = 'all';
-  let query      = '';
+  let activeType  = 'all';
+  let activeYear  = 'all';
+  let query       = '';
+  let activeAutor = '';
+
+  // Leer ?autor= y ?nombre= de la URL
+  const params      = new URLSearchParams(location.search);
+  const autorSlug   = params.get('autor') ?? '';
+  const autorNombre = params.get('nombre') ?? '';
+
+  if (autorSlug) {
+    activeAutor = autorSlug;
+    const banner   = document.getElementById('autor-banner')!;
+    const nombreEl = document.getElementById('autor-nombre')!;
+    banner.classList.remove('hidden');
+    nombreEl.textContent = autorNombre || autorSlug;
+    // Scroll a la lista de publicaciones
+    setTimeout(() => {
+      document.querySelector<HTMLElement>('[data-year-section]')
+        ?.closest('.space-y-14')
+        ?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 150);
+  }
 
   function applyFilters() {
     let visible = 0;
 
     pubCards.forEach(card => {
-      const typeMatch = activeType === 'all' || card.dataset.type === activeType;
-      const yearMatch = activeYear === 'all' || card.dataset.year === activeYear;
-      const textMatch = query === '' || card.dataset.text!.includes(query);
-      const show = typeMatch && yearMatch && textMatch;
+      const typeMatch  = activeType  === 'all' || card.dataset.type === activeType;
+      const yearMatch  = activeYear  === 'all' || card.dataset.year === activeYear;
+      const textMatch  = query       === ''    || card.dataset.text!.includes(query);
+      const autorMatch = activeAutor === ''    ||
+        (card.dataset.authorSlugs ?? '').split('|').includes(activeAutor);
+      const show = typeMatch && yearMatch && textMatch && autorMatch;
       card.style.display = show ? '' : 'none';
       if (show) visible++;
     });
@@ -152,6 +187,9 @@ const presentTypes = [...new Set(publications.map(p => p.data.pub_type))].sort()
     countEl.textContent = `${visible} publicacion${visible !== 1 ? 'es' : ''}`;
     noResults.classList.toggle('hidden', visible > 0);
   }
+
+  // Aplicar filtro de autor al cargar si viene en la URL
+  if (autorSlug) applyFilters();
 
   searchInput?.addEventListener('input', () => {
     query = searchInput.value.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();

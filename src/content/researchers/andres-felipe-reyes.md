@@ -28,7 +28,7 @@ education:
     institution: Fundación Universitaria Konrad Lorenz (Bogotá, Colombia)
     year: 2005
 
-orcid:  "0000-0003-1122-9815"
+orcid:  "0009-0008-9137-5639"
 scopus: https://www.scopus.com/authid/detail.uri?authorId=55935438000
 cvlac:  https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000412783
 

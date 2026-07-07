@@ -20,7 +20,7 @@ const { Content } = await lab.render();
 const director = await getEntry(lab.data.director);
 const line     = LINES[research_line as keyof typeof LINES];
 
-const allResearchers = await getCollection('researchers');
+const allResearchers = (await getCollection('researchers')).filter(r => !r.data.draft);
 const members = allResearchers
   .filter(r => r.data.labs?.some(ref => toSlug(ref.id) === toSlug(lab.id)))
   .sort((a, b) => a.data.weight - b.data.weight);

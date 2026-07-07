@@ -32,4 +32,4 @@ semilleros:
   - psicoevo
 ---
 
-*Bio pendiente de actualización.*
+Actualmente desarrollo investigaciones basadas en minería de datos institucionales y poblacionales, utilizando registros nacionales e internacionales para estudiar los fundamentos evolutivos del comportamiento humano. Mi trabajo se centra en el análisis de causas de muerte asociadas al comportamiento, como los homicidios, el suicidio, los accidentes de tránsito y otras formas de mortalidad con marcadas diferencias entre hombres y mujeres. Desde la teoría de historia de vida humana y la selección sexual, busco comprender los mecanismos evolutivos que subyacen a estas diferencias y su interacción con las condiciones ecológicas, sociales y demográficas contemporáneas.

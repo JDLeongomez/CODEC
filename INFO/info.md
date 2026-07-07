@@ -60,16 +60,18 @@
 
 - Bio corta: "Profesora Asociada y directora del semillero NeuroGroup. Investiga el deterioro cognitivo y la neuropsicología del envejecimiento."
 
-- Bio larga: *Pendiente de actualización.*
+- Bio larga: "Mi trayectoria se ha consolidado en la comprensión integral del proceso de envejecimiento, con especial énfasis en la evaluación cognitiva de personas mayores y en el acompañamiento a familias en el cuidado de individuos con dependencia. Mis líneas de investigación abordan problemáticas relevantes para la salud pública y la práctica clínica: evaluación cognitiva con el uso de inteligencia artificial, factores asociados al deterioro cognitivo, diseño y validación de instrumentos de evaluación cognitiva, depresión en la vejez, violencia hacia personas mayores, edadismo y sobrecarga del cuidador informal. Soy autora de cuatro libros en el área de la neuropsicología del adulto mayor y el proceso de envejecimiento."
 
 - Intereses de investigación:
-  - Neuropsicología
+  - Evaluación cognitiva, factores protectores y de riesgo en el envejecimiento y la vejez
   - Deterioro cognitivo
+  - Cuidadores de personas mayores
+  - Violencia y maltrato en personas mayores
   - Edadismo
 
 - Formación académica:
-  - PhD, Neurociencias (Medicina), en curso, Universidad de Granada (Granada, España)
-  - Maestría en Neurociencias, en curso, Universidad de Granada (Granada, España)
+  - PhD, Neurociencias (Medicina), 2009, Universidad de Granada (Granada, España)
+  - Maestría en Neurociencias, 2007, Universidad de Granada (Granada, España)
   - Psicología, 2002, Universidad El Bosque (Bogotá, Colombia)
 
 - Perfiles académicos:
@@ -109,7 +111,7 @@
   - Psicología, 2005, Fundación Universitaria Konrad Lorenz (Bogotá, Colombia)
 
 - Perfiles académicos:
-  - ORCID: <https://orcid.org/0000-0003-1122-9815>
+  - ORCID: <https://orcid.org/0009-0008-9137-5639>
   - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=55935438000>
   - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000412783>
 
@@ -151,6 +153,8 @@
 ---
 
 ### Miguel Puentes-Escamilla
+
+> **Perfil oculto** (`draft: true` en `src/content/researchers/miguel-puentes-escamilla.md`). No aparece en el sitio mientras su continuidad en el grupo no se confirme. Para reactivarlo: cambiar `draft: true` a `draft: false`.
 
 - Nombre completo: Miguel Puentes-Escamilla
 - Cargo académico actual: Profesor Asistente
@@ -229,7 +233,7 @@
 
 - Bio corta: "Profesor Titular y director del Laboratorio EvoCo y del semillero PsicoEvo. Estudia el comportamiento humano desde una perspectiva evolutiva."
 
-- Bio larga: *Pendiente de actualización.*
+- Bio larga: "Actualmente desarrollo investigaciones basadas en minería de datos institucionales y poblacionales, utilizando registros nacionales e internacionales para estudiar los fundamentos evolutivos del comportamiento humano. Mi trabajo se centra en el análisis de causas de muerte asociadas al comportamiento, como los homicidios, el suicidio, los accidentes de tránsito y otras formas de mortalidad con marcadas diferencias entre hombres y mujeres. Desde la teoría de historia de vida humana y la selección sexual, busco comprender los mecanismos evolutivos que subyacen a estas diferencias y su interacción con las condiciones ecológicas, sociales y demográficas contemporáneas."
 
 - Intereses de investigación:
   - Ecología comportamental
@@ -242,6 +246,7 @@
   - Biología Marina, 1985, Universidad de Bogotá Jorge Tadeo Lozano (Bogotá, Colombia)
 
 - Perfiles académicos:
+  - Google Scholar: no tiene perfil (confirmado)
   - ORCID: <https://orcid.org/0000-0003-1122-9815>
   - Scopus: <https://www.scopus.com/authid/detail.uri?authorId=57204241942>
   - CvLAC: <https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoCv.do?cod_rh=0000425524>
@@ -253,11 +258,12 @@
 ### Valentina Cepeda
 
 - Nombre completo: Valentina Cepeda
-- Cargo académico actual: Asistente de investigación
-- Laboratorio: LabPsiExp (supervisora: Milena Vásquez-Amézquita)
+- Cargo académico actual: Profesora Auxiliar
+- Laboratorios: LabPsiExp (supervisora: Milena Vásquez-Amézquita), EvoCo (supervisores: Oscar R. Sánchez y Juan David Leongómez)
+- Semillero: MetaCiencia
 - Foto de perfil: `/fotos/valentina-cepeda.jpg`
 
-- Bio: Psicóloga clínica, asistente de investigación y docente universitaria en la Facultad de Psicología de la Universidad El Bosque. Especializada en psicología clínica y autoeficacia personal. En LabPsiExp colabora en proyectos sobre atención visual, contenido erótico y comportamiento sexual bajo la supervisión de Milena Vásquez-Amézquita. Su trabajo de grado (relación entre pensamientos sexuales y patrones atencionales) fue reconocido con distinción meritoria.
+- Bio: Psicóloga clínica, profesora auxiliar e investigadora en la Facultad de Psicología de la Universidad El Bosque. Especializada en psicología clínica y autoeficacia personal. En LabPsiExp colabora en proyectos sobre atención visual, contenido erótico y comportamiento sexual bajo la supervisión de Milena Vásquez-Amézquita. En EvoCo participa en un proyecto de medición de testosterona en saliva (con Oscar R. Sánchez) y apoya proyectos de Juan David Leongómez. Contribuye al semillero MetaCiencia. Su trabajo de grado (relación entre pensamientos sexuales y patrones atencionales) fue reconocido con distinción meritoria.
 
 - Intereses de investigación:
   - Trastornos afectivos
@@ -364,14 +370,16 @@
 - Nombre completo: NeuroGroup
 - Sigla: NeuroGroup
 - Directora: Ana María Salazar
-- Año de fundación: *pendiente*
+- Año de fundación: 2012 (como grupo de estudio desde 2011; formalizado como semillero en 2012)
 - Línea de investigación: Línea 3 — Neuropsicología
 - Color: #00a6b0
 - Logo: `NeuroGroup_claro.svg` / `NeuroGroup_oscuro.svg`
 - Correo: <salazarana@unbosque.edu.co>
 - Instagram: <https://www.instagram.com/neurogroup.psicologia/>
 
-- Texto de presentación: *Pendiente de actualización.*
+- Objetivo: "Promover la formación investigativa de estudiantes de diferentes disciplinas mediante el estudio de la neuropsicología del envejecimiento."
+
+- Texto de presentación: "NeuroGroup es un espacio académico e interdisciplinario dirigido a estudiantes universitarios de diferentes programas de formación interesados en comprender los cambios cognitivos, emocionales y conductuales asociados al envejecimiento normal y patológico. Desarrolla actividades de formación en investigación, revisión crítica de literatura científica, discusión de casos, diseño y ejecución de proyectos, así como divulgación del conocimiento mediante la participación en eventos científicos y publicaciones académicas. Sus principales líneas de trabajo incluyen el estudio de los procesos cognitivos (memoria, atención, funciones ejecutivas, lenguaje y cognición social), el envejecimiento saludable, el deterioro cognitivo leve, las demencias, la evaluación e intervención neuropsicológica, la salud cerebral y el impacto del cuidado informal de personas mayores."
 
 ---
 
@@ -386,7 +394,9 @@
 - Logo: `PsicoEvo_claro.svg` / `PsicoEvo_oscuro.svg`
 - Correo: <sanchezoscar@unbosque.edu.co>
 
-- Texto de presentación: *Pendiente de actualización.*
+- Objetivo: "Generar y difundir contenidos de divulgación científica sobre el comportamiento humano desde una perspectiva evolutiva a través de redes sociales, fortaleciendo la formación investigativa y las competencias de comunicación científica de estudiantes de Psicología."
+
+- Texto de presentación: "PsicoEvo es un espacio de formación académica y científica orientado al estudio del comportamiento humano desde una perspectiva evolutiva. Su propósito es fortalecer las competencias investigativas de estudiantes de Psicología mediante la revisión crítica de literatura científica, la discusión de problemas de investigación, la producción de contenidos de divulgación y la comunicación del conocimiento a través de redes sociales. De esta manera, busca contribuir tanto a la formación de nuevos investigadores como a la apropiación social del conocimiento científico, promoviendo una comprensión basada en la evidencia de los fenómenos del comportamiento humano."
 
 ---
 

@@ -8,6 +8,7 @@ const researchers = defineCollection({
       codec_role:    z.string(),
       email:         z.string().email(),
       weight:        z.number().default(99),
+      draft:         z.boolean().default(false),
       avatar:        z.string(),
 
       bio_short_es:  z.string().optional(),

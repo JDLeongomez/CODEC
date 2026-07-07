@@ -18,12 +18,37 @@ const lineIds = [...new Set([
   ...labEntries.map(l => l?.data.research_line),
   ...semilleroEntries.map(s => s?.data.research_line),
 ])].filter(Boolean) as string[];
+
+// short_name → href
+const entityMap: Record<string, string> = {
+  ...Object.fromEntries(labEntries.filter(Boolean).map(l => [l!.data.short_name, `/laboratorios/${slug(l!.id)}`])),
+  ...Object.fromEntries(semilleroEntries.filter(Boolean).map(s => [s!.data.short_name, `/semilleros/${slug(s!.id)}`])),
+};
+
+type Segment = { text: string; href?: string };
+function parseRole(role: string): Segment[] {
+  for (const [entityName, href] of Object.entries(entityMap)) {
+    const idx = role.indexOf(entityName);
+    if (idx !== -1) {
+      const parts: Segment[] = [];
+      if (idx > 0) parts.push({ text: role.slice(0, idx) });
+      parts.push({ text: entityName, href });
+      const after = role.slice(idx + entityName.length);
+      if (after) parts.push({ text: after });
+      return parts;
+    }
+  }
+  return [{ text: role }];
+}
+
+const parsedRoles = roles.map(parseRole);
 ---
 
-<a
-  href={`/investigadores/${slug(researcher.id)}`}
-  class="group bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
+<div
+  class="group relative bg-white rounded-2xl border border-gray-100 shadow-sm hover:shadow-md transition-all duration-200 overflow-hidden flex flex-col"
 >
+  <a href={`/investigadores/${slug(researcher.id)}`} class="absolute inset-0" aria-label={name}></a>
+
   <div class="p-6 flex flex-col items-center text-center flex-1">
     <div class="mb-4">
       <img
@@ -52,12 +77,25 @@ const lineIds = [...new Set([
       })}
     </div>
 
-    {roles.length > 0 && (
+    {parsedRoles.length > 0 && (
       <ul class="mt-3 space-y-0.5">
-        {roles.map(role => (
-          <li class="text-xs text-gray-500">{role}</li>
+        {parsedRoles.map(segments => (
+          <li class="text-xs text-gray-500 relative z-10">
+            {segments.map(seg =>
+              seg.href ? (
+                <a
+                  href={seg.href}
+                  class="font-medium underline underline-offset-2 decoration-gray-300 hover:text-codec hover:decoration-codec transition-colors"
+                >
+                  {seg.text}
+                </a>
+              ) : (
+                <span>{seg.text}</span>
+              )
+            )}
+          </li>
         ))}
       </ul>
     )}
   </div>
-</a>
+</div>
