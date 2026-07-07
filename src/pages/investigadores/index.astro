@@ -15,12 +15,38 @@ const members = all.filter(r => !r.data.codec_role.includes('Líder'));
       <p class="text-gray-500 mt-2 text-lg">Conoce al equipo del grupo CODEC</p>
     </div>
 
-    <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
-      <div class="hidden sm:flex items-center gap-2">
+    <!-- Móvil: secciones apiladas -->
+    <div class="sm:hidden space-y-5">
+      {leader.length > 0 && (
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Líder</span>
+            <span class="flex-1 h-px bg-gray-200"></span>
+          </div>
+          <div class="grid grid-cols-2 gap-5">
+            {leader.map(r => <ResearcherCard researcher={r} />)}
+          </div>
+        </div>
+      )}
+      {members.length > 0 && (
+        <div class="space-y-3">
+          <div class="flex items-center gap-2">
+            <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
+            <span class="flex-1 h-px bg-gray-200"></span>
+          </div>
+          <div class="grid grid-cols-2 gap-5">
+            {members.map(r => <ResearcherCard researcher={r} />)}
+          </div>
+        </div>
+      )}
+    </div>
+    <!-- Desktop: grid de 4 columnas -->
+    <div class="hidden sm:grid sm:grid-cols-4 sm:gap-5">
+      <div class="flex items-center gap-2">
         <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Líder</span>
         <span class="flex-1 h-px bg-gray-200"></span>
       </div>
-      <div class="hidden sm:flex sm:col-span-3 items-center gap-2">
+      <div class="col-span-3 flex items-center gap-2">
         <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
         <span class="flex-1 h-px bg-gray-200"></span>
       </div>

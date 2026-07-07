@@ -170,12 +170,38 @@ const semilleros  = await getCollection('semilleros');
         </div>
         <a href="/investigadores" class="text-sm font-semibold text-codec hover:underline">Ver todos →</a>
       </div>
-      <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
-        <div class="hidden sm:flex items-center gap-2">
+      <!-- Móvil: secciones apiladas -->
+      <div class="sm:hidden space-y-5">
+        {resLeader.length > 0 && (
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Líder</span>
+              <span class="flex-1 h-px bg-gray-200"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-5">
+              {resLeader.map(r => <ResearcherCard researcher={r} />)}
+            </div>
+          </div>
+        )}
+        {resMembers.length > 0 && (
+          <div class="space-y-3">
+            <div class="flex items-center gap-2">
+              <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
+              <span class="flex-1 h-px bg-gray-200"></span>
+            </div>
+            <div class="grid grid-cols-2 gap-5">
+              {resMembers.map(r => <ResearcherCard researcher={r} />)}
+            </div>
+          </div>
+        )}
+      </div>
+      <!-- Desktop: grid de 4 columnas -->
+      <div class="hidden sm:grid sm:grid-cols-4 sm:gap-5">
+        <div class="flex items-center gap-2">
           <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Líder</span>
           <span class="flex-1 h-px bg-gray-200"></span>
         </div>
-        <div class="hidden sm:flex sm:col-span-3 items-center gap-2">
+        <div class="col-span-3 flex items-center gap-2">
           <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
           <span class="flex-1 h-px bg-gray-200"></span>
         </div>

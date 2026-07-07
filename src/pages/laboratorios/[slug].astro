@@ -120,23 +120,59 @@ const auxiliares = allAuxiliares
     {(members.length > 0 || auxiliares.length > 0) && (
       <div class="mt-16 pt-12 border-t border-gray-100">
 
-        <div class="grid grid-cols-2 sm:grid-cols-4 gap-5">
+        <!-- Móvil: secciones apiladas -->
+        <div class="sm:hidden space-y-5">
+          {dirMember && (
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Director/a</span>
+                <span class="flex-1 h-px bg-gray-200"></span>
+              </div>
+              <div class="grid grid-cols-2 gap-5">
+                <ResearcherCard researcher={dirMember} />
+              </div>
+            </div>
+          )}
+          {otherMembers.length > 0 && (
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
+                <span class="flex-1 h-px bg-gray-200"></span>
+              </div>
+              <div class="grid grid-cols-2 gap-5">
+                {otherMembers.map(r => <ResearcherCard researcher={r} />)}
+              </div>
+            </div>
+          )}
+          {auxiliares.length > 0 && (
+            <div class="space-y-3">
+              <div class="flex items-center gap-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Auxiliares de investigación</span>
+                <span class="flex-1 h-px bg-gray-200"></span>
+              </div>
+              <div class="grid grid-cols-2 gap-5">
+                {auxiliares.map(a => <AuxiliarCard auxiliar={a} />)}
+              </div>
+            </div>
+          )}
+        </div>
+        <!-- Desktop: grid de 4 columnas -->
+        <div class="hidden sm:grid sm:grid-cols-4 sm:gap-5">
           {members.length > 0 && (
-            <div class="hidden sm:flex items-center gap-2">
+            <div class="flex items-center gap-2">
               <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Director/a</span>
               <span class="flex-1 h-px bg-gray-200"></span>
             </div>
           )}
           {members.length > 0 && (
-            <div class="hidden sm:flex sm:col-span-3 items-center gap-2">
+            <div class="col-span-3 flex items-center gap-2">
               <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Investigadoras/es</span>
               <span class="flex-1 h-px bg-gray-200"></span>
             </div>
           )}
           {[...(dirMember ? [dirMember] : []), ...otherMembers].map(r => <ResearcherCard researcher={r} />)}
-
           {auxiliares.length > 0 && (
-            <div class="col-span-2 sm:col-span-4 flex items-center gap-2">
+            <div class="col-span-4 flex items-center gap-2">
               <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Auxiliares de investigación</span>
               <span class="flex-1 h-px bg-gray-200"></span>
             </div>
