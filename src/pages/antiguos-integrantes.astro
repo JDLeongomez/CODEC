@@ -2,19 +2,13 @@
 import Base from '../layouts/Base.astro';
 import { getCollection } from 'astro:content';
 import { alumni } from '../data/alumni';
+import { slug as toSlug } from '../utils';
 
 const publications = await getCollection('publications');
+const currentYear   = new Date().getFullYear();
 
 function normName(s: string): string {
   return s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase().trim();
-}
-
-const pubCountBySlug: Record<string, number> = {};
-for (const pub of publications) {
-  for (const author of pub.data.authors) {
-    const a = alumni.find(a => normName(a.name) === normName(author));
-    if (a) pubCountBySlug[a.slug] = (pubCountBySlug[a.slug] ?? 0) + 1;
-  }
 }
 
 function parsePeriod(period: string): { start: number; end: number } {
@@ -24,14 +18,51 @@ function parsePeriod(period: string): { start: number; end: number } {
   return { start, end };
 }
 
-const sortedAlumni = [...alumni].sort((a, b) => {
-  const pa = parsePeriod(a.period);
-  const pb = parsePeriod(b.period);
-  return pb.end !== pa.end ? pb.end - pa.end : pb.start - pa.start;
+interface TimelineEntry {
+  name: string;
+  slug: string;
+  start: number;
+  end: number;
+  url?: string;
+  current: boolean;
+}
+
+const alumniEntries: TimelineEntry[] = alumni.map(a => {
+  const { start, end } = parsePeriod(a.period);
+  return { name: a.name, slug: a.slug, start, end, url: a.url, current: false };
 });
 
+const currentResearchers = (await getCollection('researchers'))
+  .filter(r => !r.data.draft && r.data.member_since);
+
+const currentEntries: TimelineEntry[] = currentResearchers
+  .map(r => ({
+    name: r.data.name,
+    slug: toSlug(r.id),
+    start: r.data.member_since!,
+    end: currentYear,
+    url: `/investigadores/${toSlug(r.id)}`,
+    current: true,
+  }))
+  .sort((a, b) => a.start - b.start);
+
+const sortedAlumniEntries = [...alumniEntries].sort((a, b) =>
+  b.end !== a.end ? b.end - a.end : a.start - b.start
+);
+
+// Los integrantes actuales van agrupados arriba (orden alfabético); los antiguos, debajo.
+const timeline = [...currentEntries, ...sortedAlumniEntries];
+
+const pubCountBySlug: Record<string, number> = {};
+for (const pub of publications) {
+  for (const author of pub.data.authors) {
+    const entry = timeline.find(e => normName(e.name) === normName(author));
+    if (entry) pubCountBySlug[entry.slug] = (pubCountBySlug[entry.slug] ?? 0) + 1;
+  }
+}
+
 const AXIS_START = 2004;
-const AXIS_END   = new Date().getFullYear() + 1; // un año de margen a la derecha
+const AXIS_END   = currentYear + 1; // un año de margen a la derecha
 const SPAN       = AXIS_END - AXIS_START;
 
 const TICKS: number[] = [];
@@ -47,19 +78,38 @@ for (let y = AXIS_START; y < AXIS_END; y += 4) TICKS.push(y);
       <p>
         CODEC fue reconocido por Minciencias en <strong>2004</strong> con el nombre
         <em>Procesos Cognoscitivos y Educación</em>. Con el tiempo, su actividad se orientó cada vez
-        más hacia las ciencias cognitivas y del comportamiento, lo que llevó al cambio de nombre actual:
-        <strong>Cognición, Comportamiento y Evolución (CODEC)</strong>.
+        más hacia las neurociencias cognitivas y las ciencias del comportamiento,
+        especialmente desde una mirada evolutiva, lo que llevó al cambio a su nombre actual
+        <strong>CODEC: Ciencias Cognitivas y del Comportamiento</strong>. Desde 2021, el grupo
+        ostenta la máxima categoría otorgada por Minciencias:
+        <strong>
+          <a href="https://scienti.minciencias.gov.co/gruplac/jsp/visualiza/visualizagr.jsp?nro=00000000001446"
+             class="text-codec hover:underline">A1</a>
+        </strong>.
       </p>
       <p>
         A lo largo de más de veinte años han formado parte del grupo investigadores, docentes y
-        colaboradores que contribuyeron a construir su historia. Esta página recoge a quienes
-        participaron en algún momento y cuyo nombre puede aparecer como coautor en las
+        colaboradores que contribuyeron a construir su historia. Esta página recoge tanto a
+        quienes integran el grupo actualmente como a quienes participaron en algún momento, y cuyo
+        nombre puede aparecer como coautor en las
         <a href="/publicaciones" class="text-codec hover:underline">publicaciones del grupo</a>.
       </p>
     </div>
 
     <!-- Timeline -->
     <div class="mt-8">
+
+      <!-- Leyenda -->
+      <div class="flex items-center gap-5 mb-3 text-xs text-gray-500">
+        <span class="flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-sm bg-amber-700/60"></span>
+          Integrante actual
+        </span>
+        <span class="flex items-center gap-1.5">
+          <span class="w-3 h-3 rounded-sm bg-codec/50"></span>
+          Antiguo integrante
+        </span>
+      </div>
 
       <!-- Eje de años -->
       <div class="flex mb-1 select-none">
@@ -77,57 +127,76 @@ for (let y = AXIS_START; y < AXIS_END; y += 4) TICKS.push(y);
       </div>
 
       <!-- Filas -->
-      {sortedAlumni.map(member => {
-        const { start, end } = parsePeriod(member.period);
-        const barLeft  = ((start - AXIS_START) / SPAN) * 100;
-        const barWidth = Math.max(((end + 1 - start) / SPAN) * 100, 1.5);
+      {timeline.map((member, i) => {
+        const barLeft  = ((member.start - AXIS_START) / SPAN) * 100;
+        const barWidth = Math.max(((member.end + 1 - member.start) / SPAN) * 100, 1.5);
         const pubs     = pubCountBySlug[member.slug];
+        const period   = member.current ? `${member.start}–presente` : (member.start === member.end ? `${member.start}` : `${member.start}–${member.end}`);
+        const showCurrentHeader = i === 0 && member.current;
+        const showAlumniHeader  = !member.current && (i === 0 || timeline[i - 1].current);
+        const barStyle = member.current
+          ? `left: ${barLeft}%; width: ${barWidth}%; mask-image: linear-gradient(to right, black 80%, transparent 100%); -webkit-mask-image: linear-gradient(to right, black 80%, transparent 100%);`
+          : `left: ${barLeft}%; width: ${barWidth}%`;
 
         return (
-          <div
-            id={member.slug}
-            class="flex items-center py-1 border-b border-gray-100 group/row"
-          >
-            <!-- Nombre -->
-            <div class="w-2/5 shrink-0 pr-6 flex items-baseline gap-2">
-              {member.url ? (
-                <a
-                  href={member.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="text-sm text-gray-800 underline underline-offset-2 decoration-gray-300 hover:text-codec hover:decoration-codec transition-colors leading-snug"
-                >
-                  {member.name}
-                </a>
-              ) : (
-                <span class="text-sm text-gray-800 leading-snug">{member.name}</span>
-              )}
-              {pubs && (
-                <a
-                  href={`/publicaciones?autor=${member.slug}&nombre=${encodeURIComponent(member.name)}`}
-                  class="text-xs bg-codec text-white shrink-0 tabular-nums px-1.5 py-0.5 rounded font-semibold hover:bg-amber-500 transition-colors"
-                  title={`Ver ${pubs} publicación${pubs !== 1 ? 'es' : ''} en CODEC`}
-                >
-                  {pubs} pub.
-                </a>
-              )}
-            </div>
+          <>
+            {showCurrentHeader && (
+              <div class="flex items-center gap-2 mt-1 mb-2">
+                <span class="text-xs font-bold text-amber-800/70 uppercase tracking-widest shrink-0">Integrantes actuales</span>
+                <span class="flex-1 h-px bg-gray-200"></span>
+              </div>
+            )}
+            {showAlumniHeader && (
+              <div class="flex items-center gap-2 mt-5 mb-2">
+                <span class="text-xs font-bold text-gray-400 uppercase tracking-widest shrink-0">Antiguos integrantes</span>
+                <span class="flex-1 h-px bg-gray-200"></span>
+              </div>
+            )}
+            <div
+              id={member.slug}
+              class="flex items-center py-1 border-b border-gray-100 group/row"
+            >
+              <!-- Nombre -->
+              <div class="w-2/5 shrink-0 pr-6 flex items-baseline gap-2">
+                {member.url ? (
+                  <a
+                    href={member.url}
+                    target={member.current ? undefined : '_blank'}
+                    rel={member.current ? undefined : 'noopener noreferrer'}
+                    class={`text-sm underline underline-offset-2 transition-colors leading-snug ${member.current ? 'text-amber-800 decoration-amber-300 hover:text-amber-600 hover:decoration-amber-600 font-medium' : 'text-gray-800 decoration-gray-300 hover:text-codec hover:decoration-codec'}`}
+                  >
+                    {member.name}
+                  </a>
+                ) : (
+                  <span class="text-sm text-gray-800 leading-snug">{member.name}</span>
+                )}
+                {pubs && (
+                  <a
+                    href={`/publicaciones?autor=${member.slug}&nombre=${encodeURIComponent(member.name)}`}
+                    class="text-xs bg-codec text-white shrink-0 tabular-nums px-1.5 py-0.5 rounded font-semibold hover:bg-amber-500 transition-colors"
+                    title={`Ver ${pubs} publicación${pubs !== 1 ? 'es' : ''} en CODEC`}
+                  >
+                    {pubs} pub.
+                  </a>
+                )}
+              </div>
 
-            <!-- Barra -->
-            <div class="relative flex-1 h-7">
-              {TICKS.map(y => (
+              <!-- Barra -->
+              <div class="relative flex-1 h-7">
+                {TICKS.map(y => (
+                  <div
+                    class="absolute inset-y-0 w-px bg-gray-100"
+                    style={`left: ${((y - AXIS_START) / SPAN) * 100}%`}
+                  />
+                ))}
                 <div
-                  class="absolute inset-y-0 w-px bg-gray-100"
-                  style={`left: ${((y - AXIS_START) / SPAN) * 100}%`}
+                  class={`absolute top-2 bottom-2 rounded transition-colors ${member.current ? 'bg-amber-700/60 group-hover/row:bg-amber-700/85' : 'bg-codec/50 group-hover/row:bg-codec/75'}`}
+                  style={barStyle}
+                  title={period}
                 />
-              ))}
-              <div
-                class="absolute top-2 bottom-2 rounded bg-codec/50 group-hover/row:bg-codec/75 transition-colors"
-                style={`left: ${barLeft}%; width: ${barWidth}%`}
-                title={member.period}
-              />
+              </div>
             </div>
-          </div>
+          </>
         );
       })}
 

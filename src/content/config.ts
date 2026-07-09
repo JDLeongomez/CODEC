@@ -8,6 +8,7 @@ const researchers = defineCollection({
       codec_role:    z.string(),
       email:         z.string().email(),
       weight:        z.number().default(99),
+      member_since:  z.number().optional(),
       draft:         z.boolean().default(false),
       avatar:        z.string(),
 
@@ -73,6 +74,7 @@ const semilleros = defineCollection({
     color:         z.string(),
     logo_light:    z.string().optional(),
     logo_dark:     z.string().optional(),
+    logo_animation: z.string().optional(),
     founded:       z.number().optional(),
 
     objective_es:  z.string().optional(),

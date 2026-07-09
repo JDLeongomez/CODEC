@@ -4,6 +4,7 @@ academic_role: Profesor Titular
 codec_role: Director EvoCo, Director PsicoEvo
 email: sanchezoscar@unbosque.edu.co
 weight: 7
+member_since: 2007
 avatar: /fotos/oscar-sanchez.jpg
 
 bio_short_es: "Profesor Titular y director del Laboratorio EvoCo y del semillero PsicoEvo. Estudia el comportamiento humano desde una perspectiva evolutiva."

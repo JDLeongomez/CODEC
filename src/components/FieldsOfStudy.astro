@@ -1,0 +1,68 @@
+---
+import { getCollection } from 'astro:content';
+
+// Collect all DOIs
+const publications = await getCollection('publications');
+const dois = publications
+  .map(p => p.data.doi)
+  .filter(Boolean)
+  .map(d => d!.trim());
+
+// Fetch from OpenAlex in batches of 25 (avoids URL length issues)
+type OATopic = { field: { display_name: string } };
+type OAWork  = { topics?: OATopic[] };
+const fieldCounts: Record<string, number> = {};
+
+const BATCH = 25;
+try {
+  for (let i = 0; i < dois.length; i += BATCH) {
+    const batch  = dois.slice(i, i + BATCH);
+    const filter = `doi:${batch.join('|')}`;
+    const url    = `https://api.openalex.org/works?filter=${filter}&select=topics&per_page=50&mailto=juanleongomez@gmail.com`;
+    const res    = await fetch(url);
+    if (!res.ok) { console.warn('FieldsOfStudy: HTTP', res.status); continue; }
+    const data   = await res.json() as { results: OAWork[] };
+    for (const work of data.results ?? []) {
+      // Un mismo campo puede repetirse entre los topics de un trabajo: se cuenta una sola vez por publicación.
+      const fieldsInWork = new Set((work.topics ?? []).map(t => t.field?.display_name).filter(Boolean));
+      for (const field of fieldsInWork) {
+        fieldCounts[field as string] = (fieldCounts[field as string] ?? 0) + 1;
+      }
+    }
+  }
+} catch (e) {
+  console.warn('FieldsOfStudy: fetch failed', e);
+}
+
+const fields = Object.entries(fieldCounts)
+  .map(([name, count]) => ({ name, count }))
+  .sort((a, b) => b.count - a.count);
+
+const maxCount = Math.max(...fields.map(f => f.count), 1);
+---
+
+{fields.length > 0 ? (
+  <div>
+    <p class="text-xs text-gray-400 mb-3">
+      <span class="font-semibold text-gray-600">{fields.length} campos de estudio</span>
+      identificados a partir de {dois.length} publicaciones con DOI (datos de OpenAlex).
+    </p>
+    <div class="space-y-1.5">
+      {fields.map(f => (
+        <div class="flex items-center gap-3 group/row">
+          <span class="w-36 sm:w-44 shrink-0 text-xs text-gray-600 truncate" title={f.name}>{f.name}</span>
+          <div class="relative flex-1 h-3.5 rounded bg-gray-50 overflow-hidden">
+            <div
+              class="absolute inset-y-0 left-0 rounded bg-codec/70 group-hover/row:bg-codec transition-colors"
+              style={`width: ${(f.count / maxCount) * 100}%`}
+              title={`${f.name}: ${f.count} publicación${f.count !== 1 ? 'es' : ''}`}
+            />
+          </div>
+          <span class="w-6 shrink-0 text-right text-xs tabular-nums text-gray-500">{f.count}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+) : (
+  <p class="text-sm text-gray-400 italic">Datos de campos de estudio no disponibles.</p>
+)}

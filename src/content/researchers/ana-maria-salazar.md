@@ -4,6 +4,7 @@ academic_role: Profesora Asociada
 codec_role: Directora NeuroGroup
 email: salazarana@unbosque.edu.co
 weight: 1
+member_since: 2010
 avatar: /fotos/ana-maria-salazar.jpg
 
 bio_short_es: "Profesora Asociada y directora del semillero NeuroGroup. Investiga el deterioro cognitivo y la neuropsicología del envejecimiento."

@@ -11,7 +11,7 @@ export async function getStaticPaths() {
 }
 
 const { semillero } = Astro.props;
-const { name, short_name, color, logo_light, logo_dark, research_line,
+const { name, short_name, color, logo_light, logo_dark, logo_animation, research_line,
         founded, objective_es, methods_es, email, website, instagram } = semillero.data;
 
 const { Content } = await semillero.render();
@@ -98,6 +98,25 @@ const line     = LINES[research_line as keyof typeof LINES];
             </p>
           </div>
         )}
+        {logo_animation && (
+          <div class="max-w-sm mx-auto text-center">
+            <button id="anim-btn" class="cursor-zoom-in rounded-xl overflow-hidden block w-full" aria-label="Ver animación a tamaño completo">
+              <video src={logo_animation} autoplay muted loop playsinline class="w-full h-auto rounded-xl" />
+            </button>
+            {director && (
+              <p class="text-xs text-gray-400 mt-2">Animación creada por {director.data.name}.</p>
+            )}
+            <dialog id="anim-dialog"
+              class="backdrop:bg-black/70 bg-transparent p-0 max-w-2xl w-full rounded-2xl shadow-2xl">
+              <button id="anim-close" aria-label="Cerrar"
+                class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
+                ×
+              </button>
+              <video src={logo_animation} autoplay muted loop playsinline class="w-full h-auto rounded-2xl" />
+            </dialog>
+          </div>
+        )}
+
         <div class="prose prose-gray max-w-none">
           <Content />
         </div>
@@ -129,4 +148,11 @@ const line     = LINES[research_line as keyof typeof LINES];
   btn?.addEventListener('click', () => dialog?.showModal());
   close?.addEventListener('click', () => dialog?.close());
   dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+
+  const animBtn    = document.getElementById('anim-btn') as HTMLButtonElement;
+  const animDialog = document.getElementById('anim-dialog') as HTMLDialogElement;
+  const animClose  = document.getElementById('anim-close') as HTMLButtonElement;
+  animBtn?.addEventListener('click', () => animDialog?.showModal());
+  animClose?.addEventListener('click', () => animDialog?.close());
+  animDialog?.addEventListener('click', e => { if (e.target === animDialog) animDialog.close(); });
 </script>

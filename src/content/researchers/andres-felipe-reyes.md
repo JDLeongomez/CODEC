@@ -4,6 +4,7 @@ academic_role: Profesor Asociado
 codec_role: Investigador LabPsiExp, Director DiCoMH
 email: reyesandres@unbosque.edu.co
 weight: 2
+member_since: 2011
 avatar: /fotos/andres-felipe-reyes.jpg
 
 bio_short_es: "Profesor Asociado e investigador de LabPsiExp. Director del semillero DiCoMH."

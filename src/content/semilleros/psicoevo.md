@@ -7,6 +7,7 @@ research_line: line1
 color: "#ff5555"
 logo_light: /logos/PsicoEvo_claro.png
 logo_dark: /logos/PsicoEvo_oscuro.png
+logo_animation: /logos/PsicoEvo_animacion.mp4
 founded: 2025
 
 objective_es: "Generar y difundir contenidos de divulgación científica sobre el comportamiento humano desde una perspectiva evolutiva a través de redes sociales, fortaleciendo la formación investigativa y las competencias de comunicación científica de estudiantes de Psicología."

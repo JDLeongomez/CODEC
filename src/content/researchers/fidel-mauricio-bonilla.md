@@ -4,6 +4,7 @@ academic_role: Profesor Titular
 codec_role: Director LabPsiExp
 email: bonillafidel@unbosque.edu.co
 weight: 3
+member_since: 2007
 avatar: /fotos/fidel-mauricio-bonilla.jpg
 
 bio_short_es: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp). Estudia el procesamiento cortical de rostros, la percepción de emociones y la velocidad de procesamiento de estímulos."

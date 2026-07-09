@@ -55,7 +55,7 @@ const mapDataJson = JSON.stringify(markers);
   <div>
     <p class="text-xs text-gray-400 mb-3">
       Colaboraciones en <span class="font-semibold text-gray-600">{totalCountries} países</span>
-      a partir de {dois.length} publicaciones con DOI.
+      a partir de {dois.length} publicaciones con DOI (datos de OpenAlex).
       Colombia excluida como sede del grupo.
     </p>
     <div
@@ -98,6 +98,18 @@ const mapDataJson = JSON.stringify(markers);
 
         const bounds = L.latLngBounds(markers.map(m => [m.lat, m.lng] as [number, number]));
         map.fitBounds(bounds, { padding: [40, 40] });
+
+        // El mapa puede iniciar dentro de un <details> colapsado (tamaño 0);
+        // hay que recalcular cuando se expande.
+        const detailsEl = el.closest('details');
+        detailsEl?.addEventListener('toggle', () => {
+          if (detailsEl.open) {
+            requestAnimationFrame(() => {
+              map.invalidateSize();
+              map.fitBounds(bounds, { padding: [40, 40] });
+            });
+          }
+        });
       }
     </script>
   </div>
