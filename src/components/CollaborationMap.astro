@@ -75,9 +75,8 @@ const mapDataJson = JSON.stringify(markers);
 
         const map = L.map(el, { scrollWheelZoom: false, zoomControl: true, minZoom: 2 });
 
-        L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-          attribution: '© OpenStreetMap © CARTO',
-          subdomains: 'abcd',
+        L.tileLayer('https://services.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}', {
+          attribution: 'Tiles © Esri — Esri, HERE, Garmin, © OpenStreetMap contributors',
           maxZoom: 10,
         }).addTo(map);
 
