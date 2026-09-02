@@ -33,7 +33,7 @@ const auxiliares = allAuxiliares
   .filter(a => a.data.labs?.some(ref => toSlug(ref.id) === toSlug(lab.id)));
 ---
 
-<Base title={name} description={objective_es} image={logo_light}>
+<Base title={name} description={objective_es} image={`/og/${toSlug(lab.id)}.png`}>
   <div class="max-w-5xl mx-auto px-6 py-16">
 
     <nav class="text-sm text-gray-400 mb-8">
