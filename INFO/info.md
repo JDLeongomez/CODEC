@@ -121,11 +121,11 @@
 
 - Nombre completo: Fidel Mauricio Bonilla
 - Cargo académico actual: Profesor Titular
-- Rol dentro de CODEC: Director LabPsiExp
+- Rol dentro de CODEC: Director LabPsiExp, Director EnCogU
 - Correo institucional: <bonillafidel@unbosque.edu.co>
 - Foto de perfil: `/fotos/fidel-mauricio-bonilla.jpg`
 - Laboratorios: LabPsiExp
-- Semilleros: —
+- Semilleros: EnCogU
 
 - Bio corta: "Profesor Titular y director del Laboratorio de Psicología Experimental (LabPsiExp). Estudia el procesamiento cortical de rostros, la percepción de emociones y la velocidad de procesamiento de estímulos."
 
@@ -344,6 +344,33 @@
 - Objetivo: "Explorar la información disponible que dé cuenta de cuáles son las diferencias reales entre hombres y mujeres que se expresan a través de las emociones, las características de personalidad, los intereses diferenciados y otros aspectos, basados en la neurociencia, la neuropsicología y la psicología."
 
 - Texto de presentación: "DiCoMH es un semillero multidisciplinario enmarcado en las ciencias sociales y las ciencias de la salud. Su misión es crear un espacio educativo científicamente respaldado a través de revisiones de literatura que expliquen de manera comprensible los problemas sociales complejos, promoviendo la toma de decisiones informadas y el bienestar de las comunidades globales."
+
+---
+
+### EnCogU
+
+- Nombre completo: Programa de entrenamiento cognitivo en jovenes universitarios
+- Sigla: EnCogU
+- Director: Fidel Mauricio Bonilla
+- Año de fundación: 2026
+- Línea de investigación: Línea 2 — Neurociencias cognitivo-afectivas
+- Color: #a451ff
+- Logo: `EnCogU_claro.svg` / `EnCogU_oscuro.svg`
+- Correo: <bonillafidel@unbosque.edu.co>
+
+- Objetivo: "Entrenar procesos cognitivos en jóvenes universitarios para proteger la salud cognitiva y mejorar el desempeño académico.."
+
+- Métodos principales:
+  - Diseño de evaluación pre-post con grupo de control
+  - Evaluación neurocognitiva (NeuronUp, Cognifit, D2, Potencial P300)
+  - Entrenamiento con realidad virtual (Gradior)
+  - Entrenamiento cognitivo-motor (Mototiles)
+  - Biofeedback 2000
+  - Material didáctico interactivo
+
+- Redes/sitio web: no tiene (confirmado por Mauricio)
+
+- Texto de presentación: "El semillero EnCogU realiza evaluaciones cognitivas con plataformas virtuales y pruebas neuropsicológicas para determinar el perfil cognitivo del joven universitario. A partir del perfil arrojado por la evaluación, se desarrolla un programa personalizado de entrenamiento cognitivo con el apoyo de plataformas virtuales, registros electroencefalográficos y material didáctico interactivo.."
 
 ---
 

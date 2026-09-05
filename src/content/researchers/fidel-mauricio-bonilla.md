@@ -1,7 +1,7 @@
 ---
 name: Fidel Mauricio Bonilla
 academic_role: Profesor Titular
-codec_role: Director LabPsiExp
+codec_role: Director LabPsiExp, Director EnCogU
 email: bonillafidel@unbosque.edu.co
 weight: 3
 member_since: 2007
@@ -41,6 +41,8 @@ cvlac:   https://scienti.minciencias.gov.co/cvlac/visualizador/generarCurriculoC
 
 labs:
   - labpsiexp
+semilleros:
+  - encogu
 ---
 
 Investigo el procesamiento cortical de rostros, la función del potencial P300 en la velocidad de procesamiento de información visual y auditiva, y la percepción de emociones expresadas a través de las unidades de acción facial. También abordo el entrenamiento cognitivo en estudiantes universitarios con dificultades ejecutivas y atencionales que afectan su rendimiento académico.
