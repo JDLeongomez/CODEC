@@ -90,6 +90,9 @@ gen_card "psicoevo" "#ff5555" "$LOGOS/PsicoEvo_claro.png" \
 gen_card "sexcog" "#a451ff" "$LOGOS/SexCog_claro.png" \
   "NEUROCIENCIAS COGNITIVO-AFECTIVAS" "SexCog" "Sexualidad y afectividad humana"
 
+gen_card "encogu" "#a451ff" "$LOGOS/EnCogU_claro.png" \
+  "NEUROCIENCIAS COGNITIVO-AFECTIVAS" "EnCogU" "Entrenamiento cognitivo en jóvenes universitarios"
+
 gen_card "evoco" "#ff5555" "$LOGOS/EvoCo_claro.png" \
   "LABORATORIO" "EvoCo" "Laboratorio de Evolución y Comportamiento Humano"
 
