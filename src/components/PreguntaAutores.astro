@@ -1,0 +1,67 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { slug } from '../utils';
+
+interface Props {
+  pregunta: CollectionEntry<'que-investigamos'>;
+}
+
+const { pregunta: entry } = Astro.props;
+const { investigador, auxiliar, lab, semillero } = entry.data;
+
+const investigadorEntry = investigador ? await getEntry(investigador) : null;
+const auxiliarEntry     = auxiliar ? await getEntry(auxiliar) : null;
+
+const autores: { nombre: string; href: string; avatar?: string }[] = [
+  investigadorEntry && {
+    nombre: investigadorEntry.data.name,
+    href: `/investigadores/${slug(investigadorEntry.id)}`,
+    avatar: investigadorEntry.data.avatar,
+  },
+  auxiliarEntry && {
+    nombre: auxiliarEntry.data.name,
+    href: `/auxiliares/${slug(auxiliarEntry.id)}`,
+    avatar: auxiliarEntry.data.avatar,
+  },
+].filter(Boolean) as { nombre: string; href: string; avatar?: string }[];
+
+const labEntry       = lab ? await getEntry(lab) : null;
+const semilleroEntry = semillero ? await getEntry(semillero) : null;
+
+const grupos: { nombre: string; href: string; color: string; logo?: string }[] = [
+  labEntry && {
+    nombre: labEntry.data.short_name,
+    href: `/laboratorios/${slug(labEntry.id)}`,
+    color: labEntry.data.color,
+    logo: labEntry.data.logo_light,
+  },
+  semilleroEntry && {
+    nombre: semilleroEntry.data.short_name,
+    href: `/semilleros/${slug(semilleroEntry.id)}`,
+    color: semilleroEntry.data.color,
+    logo: semilleroEntry.data.logo_light,
+  },
+].filter(Boolean) as { nombre: string; href: string; color: string; logo?: string }[];
+---
+
+<div class="flex flex-wrap items-center gap-2">
+  {autores.map(({ nombre, href, avatar }) => (
+    <a
+      href={href}
+      class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-codec transition-colors"
+    >
+      {avatar && <img src={avatar} alt="" class="w-6 h-6 rounded-full object-cover ring-1 ring-gray-100" />}
+      <span class="underline underline-offset-2 decoration-gray-300 hover:decoration-codec">{nombre}</span>
+    </a>
+  ))}
+  {grupos.map(({ nombre, href, color, logo }) => (
+    <a
+      href={href}
+      class="inline-flex items-center gap-1.5 text-xs pl-1 pr-2 py-1 rounded-full font-medium hover:opacity-80 transition-opacity"
+      style={`background-color: ${color}18; color: ${color}`}
+    >
+      {logo && <img src={logo} alt="" class="h-5 w-auto rounded-sm" />}
+      {nombre}
+    </a>
+  ))}
+</div>

@@ -5,15 +5,18 @@ import PreguntaAccordion from '../components/PreguntaAccordion.astro';
 import Icon from '../components/Icon.astro';
 import { LINES } from '../data/lines';
 
-const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data.orden - b.data.orden);
+const preguntas = (await getCollection('que-investigamos')).sort((a, b) => a.data.orden - b.data.orden);
+const mid  = Math.ceil(preguntas.length / 2);
+const colA = preguntas.slice(0, mid);
+const colB = preguntas.slice(mid);
 ---
 
 <Base
   title="¿Qué investigamos en CODEC?"
   description="Preguntas y respuestas de divulgación científica del grupo de investigación CODEC."
 >
-  <div class="max-w-3xl mx-auto px-6 py-16">
-    <div class="mb-12 text-center">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
       <h1 class="text-4xl font-extrabold text-gray-900">¿Qué investigamos en CODEC?</h1>
       <p class="text-gray-500 mt-4 text-lg leading-relaxed">
         En CODEC estudiamos cómo pensamos, sentimos y nos comportamos, desde la evolución humana
@@ -21,18 +24,33 @@ const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data
       </p>
     </div>
 
+    <!-- TEMPORAL: quitar este bloque (y public/feria-ctei-ii.jpg) cuando termine la feria -->
+    <img
+      src="/feria-ctei-ii.jpg"
+      alt="II Feria CTeI: Ciencia, Tecnología e Innovación, 14 y 15 de septiembre"
+      class="w-full max-w-xl mx-auto rounded-2xl shadow-lg mb-12"
+    />
+
     {preguntas.length > 0 ? (
       <>
-        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-8">
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
           {Object.values(LINES).map(line => (
-            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600">
-              <span class="w-2.5 h-2.5 rounded-full shrink-0" style={`background-color: ${line.color}`}></span>
-              {line.name_es}
+            <span
+              class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full font-medium"
+              style={`background-color: ${line.color}18; color: ${line.color}`}
+            >
+              <span class="w-2 h-2 rounded-full shrink-0" style={`background-color: ${line.color}`}></span>
+              {line.id === 'transversal' ? line.name_es : `Línea ${line.id.replace('line', '')} · ${line.name_es}`}
             </span>
           ))}
         </div>
-        <div class="space-y-3">
-          {preguntas.map(p => <PreguntaAccordion pregunta={p} />)}
+        <div class="grid lg:grid-cols-2 gap-4 items-start">
+          <div class="space-y-4">
+            {colA.map(p => <PreguntaAccordion pregunta={p} />)}
+          </div>
+          <div class="space-y-4">
+            {colB.map(p => <PreguntaAccordion pregunta={p} />)}
+          </div>
         </div>
       </>
     ) : (
@@ -53,7 +71,7 @@ const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data
       </button>
 
       <dialog id="organigrama-dialog"
-        class="backdrop:bg-black/70 bg-transparent p-0 max-w-6xl w-full rounded-2xl shadow-2xl">
+        class="backdrop:bg-black/70 bg-transparent p-0 rounded-2xl shadow-2xl">
         <button id="organigrama-close" aria-label="Cerrar"
           class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
           ×
@@ -61,7 +79,7 @@ const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data
         <img
           src="/estructura-grupo.webp"
           alt="Organigrama del grupo CODEC: jerarquía y relación entre laboratorios, semilleros e integrantes"
-          class="w-full h-auto rounded-2xl"
+          class="block max-w-[95vw] max-h-[95vh] w-auto h-auto object-contain rounded-2xl"
         />
       </dialog>
     </div>

@@ -1,0 +1,94 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import PreguntaAutores from '../../components/PreguntaAutores.astro';
+import Icon from '../../components/Icon.astro';
+import { slug as toSlug } from '../../utils';
+
+export async function getStaticPaths() {
+  const preguntas = await getCollection('que-investigamos');
+  return preguntas.map(p => ({ params: { slug: toSlug(p.id) }, props: { pregunta: p } }));
+}
+
+const { pregunta } = Astro.props;
+const { pregunta: texto, respuesta_url, video_url, audio_url, ia_nota } = pregunta.data;
+const respuestaEsLocal = respuesta_url?.startsWith('/');
+
+const sectionLabel = 'text-xs font-bold text-gray-400 uppercase tracking-widest mb-3';
+---
+
+<Base title={texto} description={texto}>
+  <div class="max-w-3xl mx-auto px-6 py-16">
+    <a
+      href="/que-investigamos"
+      class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-codec transition-colors mb-8"
+    >
+      ← Volver a preguntas
+    </a>
+
+    <h1 class="text-2xl font-bold text-gray-900 mb-8 leading-snug">{texto}</h1>
+
+    <div class="space-y-10">
+      {video_url && (
+        <div>
+          <h2 class={sectionLabel}>Video</h2>
+          <div class="aspect-video rounded-2xl overflow-hidden shadow-sm bg-black">
+            <iframe
+              title={texto}
+              src={video_url}
+              class="w-full h-full"
+              frameborder="0"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      )}
+
+      {audio_url && (
+        <div>
+          <h2 class={sectionLabel}>Podcast</h2>
+          <audio controls preload="metadata" class="w-full" src={audio_url}>
+            Tu navegador no soporta la reproducción de audio.
+          </audio>
+        </div>
+      )}
+
+      {respuesta_url && (
+        <div>
+          <h2 class={sectionLabel}>Presentación</h2>
+          {respuestaEsLocal ? (
+            <div class="aspect-video rounded-2xl overflow-hidden shadow-sm border border-gray-100 bg-gray-50">
+              <iframe
+                title={texto}
+                src={`${respuesta_url}#toolbar=1&view=FitH`}
+                class="w-full h-full"
+                frameborder="0"
+              ></iframe>
+            </div>
+          ) : (
+            <a
+              href={respuesta_url}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-sm bg-gray-900 hover:bg-gray-800 text-white px-4 py-2.5 rounded-lg font-medium transition-colors"
+            >
+              <Icon name="link" class="w-4 h-4 shrink-0" /> Abrir presentación
+            </a>
+          )}
+        </div>
+      )}
+    </div>
+
+    <div class="mt-10 pt-6 border-t border-gray-100">
+      <PreguntaAutores pregunta={pregunta} />
+      {ia_nota && (
+        <p class="mt-4 flex items-start gap-1.5 text-xs text-gray-500 bg-gray-50 border border-gray-100 rounded-lg px-3 py-2">
+          <Icon name="info" class="w-3.5 h-3.5 shrink-0 mt-0.5" />
+          <span>{ia_nota}</span>
+        </p>
+      )}
+    </div>
+  </div>
+</Base>
