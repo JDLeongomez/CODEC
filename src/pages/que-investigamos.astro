@@ -1,0 +1,49 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import PreguntaAccordion from '../components/PreguntaAccordion.astro';
+
+const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data.orden - b.data.orden);
+---
+
+<Base
+  title="¿Qué investigamos en CODEC?"
+  description="Preguntas y respuestas de divulgación científica del grupo de investigación CODEC."
+>
+  <div class="max-w-3xl mx-auto px-6 py-16">
+    <div class="mb-12 text-center">
+      <h1 class="text-4xl font-extrabold text-gray-900">¿Qué investigamos en CODEC?</h1>
+      <p class="text-gray-500 mt-4 text-lg leading-relaxed">
+        En CODEC estudiamos cómo pensamos, sentimos y nos comportamos, desde la evolución humana
+        hasta la cognición y la neuropsicología. Haz clic en una pregunta y descubre más de lo que hacemos.
+      </p>
+    </div>
+
+    {preguntas.length > 0 ? (
+      <div class="space-y-3">
+        {preguntas.map(p => <PreguntaAccordion pregunta={p} />)}
+      </div>
+    ) : (
+      <p class="text-center text-gray-400 italic py-8">Próximamente...</p>
+    )}
+
+    <div class="mt-16 pt-12 border-t border-gray-100">
+      <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Estructura del grupo</h2>
+      <img
+        src="/estructura-grupo.png"
+        alt="Organigrama del grupo CODEC: jerarquía y relación entre laboratorios, semilleros e integrantes"
+        class="w-full rounded-2xl border border-gray-100 shadow-sm"
+      />
+    </div>
+
+    <div class="mt-16 text-center">
+      <p class="text-gray-500 mb-4 text-sm">¿Tienes curiosidad por algo más?</p>
+      <a
+        href="/"
+        class="inline-flex items-center gap-3 rounded-2xl border border-codec/25 bg-codec/5 hover:bg-codec/10 px-5 py-3 transition-colors"
+      >
+        <span class="text-sm font-semibold text-codec">Conoce todo el grupo aquí</span>
+      </a>
+    </div>
+  </div>
+</Base>

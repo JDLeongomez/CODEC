@@ -1,5 +1,5 @@
 ---
-name: "EnCogU: Programa de entrenamiento cognitivo en jovenes universitarios"
+name: "EnCogU: Programa de entrenamiento cognitivo en jóvenes universitarios"
 short_name: EnCogU
 director: fidel-mauricio-bonilla
 lab: labpsiexp

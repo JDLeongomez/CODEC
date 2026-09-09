@@ -143,4 +143,20 @@ const auxiliares = defineCollection({
   }),
 });
 
-export const collections = { researchers, labs, semilleros, publications, auxiliares };
+const preguntasFeria = defineCollection({
+  type: 'content',
+  schema: z.object({
+      pregunta:      z.string(),
+      investigador:  reference('researchers').optional(),
+      auxiliar:      reference('auxiliares').optional(),
+      lab:           reference('labs').optional(),
+      semillero:     reference('semilleros').optional(),
+      respuesta_url: z.string().url(),
+      orden:         z.number(),
+    })
+    .refine(data => Boolean(data.investigador) !== Boolean(data.auxiliar), {
+      message: 'Debe especificarse exactamente uno de "investigador" o "auxiliar".',
+    }),
+});
+
+export const collections = { researchers, labs, semilleros, publications, auxiliares, 'preguntas-feria': preguntasFeria };
