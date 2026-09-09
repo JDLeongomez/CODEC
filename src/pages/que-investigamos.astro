@@ -2,6 +2,8 @@
 import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PreguntaAccordion from '../components/PreguntaAccordion.astro';
+import Icon from '../components/Icon.astro';
+import { LINES } from '../data/lines';
 
 const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data.orden - b.data.orden);
 ---
@@ -20,20 +22,48 @@ const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data
     </div>
 
     {preguntas.length > 0 ? (
-      <div class="space-y-3">
-        {preguntas.map(p => <PreguntaAccordion pregunta={p} />)}
-      </div>
+      <>
+        <div class="flex flex-wrap justify-center gap-x-5 gap-y-2 mb-8">
+          {Object.values(LINES).map(line => (
+            <span class="inline-flex items-center gap-1.5 text-xs font-medium text-gray-600">
+              <span class="w-2.5 h-2.5 rounded-full shrink-0" style={`background-color: ${line.color}`}></span>
+              {line.name_es}
+            </span>
+          ))}
+        </div>
+        <div class="space-y-3">
+          {preguntas.map(p => <PreguntaAccordion pregunta={p} />)}
+        </div>
+      </>
     ) : (
       <p class="text-center text-gray-400 italic py-8">Próximamente...</p>
     )}
 
     <div class="mt-16 pt-12 border-t border-gray-100">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Estructura del grupo</h2>
-      <img
-        src="/estructura-grupo.png"
-        alt="Organigrama del grupo CODEC: jerarquía y relación entre laboratorios, semilleros e integrantes"
-        class="w-full rounded-2xl border border-gray-100 shadow-sm"
-      />
+      <button id="organigrama-btn" class="group cursor-zoom-in relative block w-full" aria-label="Ver organigrama a tamaño completo">
+        <img
+          src="/estructura-grupo.webp"
+          alt="Organigrama del grupo CODEC: jerarquía y relación entre laboratorios, semilleros e integrantes"
+          class="w-full rounded-2xl border border-gray-100 shadow-sm group-hover:opacity-90 transition-opacity"
+        />
+        <span class="absolute bottom-4 right-4 inline-flex items-center gap-1.5 text-xs font-medium bg-gray-900/80 group-hover:bg-gray-900 text-white px-3 py-1.5 rounded-full shadow-lg backdrop-blur-sm transition-colors">
+          <Icon name="search" class="w-3.5 h-3.5 shrink-0" /> Ampliar
+        </span>
+      </button>
+
+      <dialog id="organigrama-dialog"
+        class="backdrop:bg-black/70 bg-transparent p-0 max-w-6xl w-full rounded-2xl shadow-2xl">
+        <button id="organigrama-close" aria-label="Cerrar"
+          class="absolute top-3 right-3 text-white bg-black/50 hover:bg-black/70 rounded-full w-8 h-8 flex items-center justify-center text-lg leading-none transition-colors">
+          ×
+        </button>
+        <img
+          src="/estructura-grupo.webp"
+          alt="Organigrama del grupo CODEC: jerarquía y relación entre laboratorios, semilleros e integrantes"
+          class="w-full h-auto rounded-2xl"
+        />
+      </dialog>
     </div>
 
     <div class="mt-16 text-center">
@@ -47,3 +77,12 @@ const preguntas = (await getCollection('preguntas-feria')).sort((a, b) => a.data
     </div>
   </div>
 </Base>
+
+<script>
+  const btn    = document.getElementById('organigrama-btn') as HTMLButtonElement;
+  const dialog = document.getElementById('organigrama-dialog') as HTMLDialogElement;
+  const close  = document.getElementById('organigrama-close') as HTMLButtonElement;
+  btn?.addEventListener('click', () => dialog?.showModal());
+  close?.addEventListener('click', () => dialog?.close());
+  dialog?.addEventListener('click', e => { if (e.target === dialog) dialog.close(); });
+</script>

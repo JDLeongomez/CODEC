@@ -4,13 +4,16 @@ academic_role: Profesor Asistente
 codec_role: Investigador EvoCo
 email: pescamil@unbosque.edu.co
 weight: 5
-draft: true
+draft: false
 avatar: /fotos/miguel-puentes-escamilla.jpg
 
 bio_short_es: "Profesor Asistente e investigador de EvoCo, actualmente finalizando su doctorado en la University of Groningen."
 
 interests_es:
-  - Pendiente de actualización
+  - Comportamiento social y sexual
+  - Auto-Organización de sistemas sociales
+  - Aprendizaje y comportamiento animal
+  - Historia de la psicología comparada
 
 education:
   - degree: PhD (en finalización)
@@ -31,4 +34,6 @@ labs:
   - evoco
 ---
 
-*Bio pendiente de actualización.*
+Psicólogo y Magíster en Psicología con énfasis en aprendizaje y evolución del comportamiento de la Universidad Nacional de Colombia. Candidato a doctor en Biología teórica y del comportamiento de la Universidad de Groningen (Países Bajos), con una tesis enfocada en el estudio de patrones emergentes de comportamiento social desde una perspectiva de Auto-Organización.
+
+Profesor de la Facultad de Psicología, de la Universidad El Bosque, e Investigador de EvoCo: Laboratorio de Evolución y Comportamiento Humano, en Bogotá, Colombia.

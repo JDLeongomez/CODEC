@@ -151,11 +151,19 @@ const preguntasFeria = defineCollection({
       auxiliar:      reference('auxiliares').optional(),
       lab:           reference('labs').optional(),
       semillero:     reference('semilleros').optional(),
-      respuesta_url: z.string().url(),
+      // Opcional si la pregunta solo tiene video_url. Puede ser una URL absoluta (externa) o una
+      // ruta relativa a un archivo en public/ (ej. "/respuestas/pregunta1.pdf").
+      respuesta_url: z.string().min(1).optional(),
+      // URL de embed del reproductor (ej. "https://player.vimeo.com/video/ID?h=HASH"), no la página del video.
+      // Se muestra en una página propia del sitio (/video/[slug]) para no salir a Vimeo.
+      video_url:     z.string().url().optional(),
       orden:         z.number(),
     })
-    .refine(data => Boolean(data.investigador) !== Boolean(data.auxiliar), {
-      message: 'Debe especificarse exactamente uno de "investigador" o "auxiliar".',
+    .refine(data => Boolean(data.investigador) || Boolean(data.auxiliar), {
+      message: 'Debe especificarse al menos uno de "investigador" o "auxiliar".',
+    })
+    .refine(data => Boolean(data.respuesta_url) || Boolean(data.video_url), {
+      message: 'Debe especificarse al menos uno de "respuesta_url" o "video_url".',
     }),
 });
 

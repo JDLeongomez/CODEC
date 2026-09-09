@@ -9,29 +9,51 @@ interface Props {
 }
 
 const { pregunta: entry } = Astro.props;
-const { pregunta, investigador, auxiliar, lab, semillero, respuesta_url } = entry.data;
+const { pregunta, investigador, auxiliar, lab, semillero, respuesta_url, video_url } = entry.data;
 
 const investigadorEntry = investigador ? await getEntry(investigador) : null;
 const auxiliarEntry     = auxiliar ? await getEntry(auxiliar) : null;
-const autor     = investigadorEntry ?? auxiliarEntry;
-const autorHref = investigadorEntry
-  ? `/investigadores/${slug(investigadorEntry.id)}`
-  : auxiliarEntry
-    ? `/auxiliares/${slug(auxiliarEntry.id)}`
-    : null;
+
+const autores: { nombre: string; href: string; avatar?: string }[] = [
+  investigadorEntry && {
+    nombre: investigadorEntry.data.name,
+    href: `/investigadores/${slug(investigadorEntry.id)}`,
+    avatar: investigadorEntry.data.avatar,
+  },
+  auxiliarEntry && {
+    nombre: auxiliarEntry.data.name,
+    href: `/auxiliares/${slug(auxiliarEntry.id)}`,
+    avatar: auxiliarEntry.data.avatar,
+  },
+].filter(Boolean) as { nombre: string; href: string; avatar?: string }[];
 
 const labEntry       = lab ? await getEntry(lab) : null;
 const semilleroEntry = semillero ? await getEntry(semillero) : null;
-const grupoEntry = labEntry ?? semilleroEntry;
-const grupoHref  = labEntry
-  ? `/laboratorios/${slug(labEntry.id)}`
-  : semilleroEntry
-    ? `/semilleros/${slug(semilleroEntry.id)}`
-    : null;
-const grupoLine = grupoEntry ? LINES[grupoEntry.data.research_line as keyof typeof LINES] : null;
+
+const grupos: { nombre: string; href: string; color: string; logo?: string }[] = [
+  labEntry && {
+    nombre: labEntry.data.short_name,
+    href: `/laboratorios/${slug(labEntry.id)}`,
+    color: labEntry.data.color,
+    logo: labEntry.data.logo_light,
+  },
+  semilleroEntry && {
+    nombre: semilleroEntry.data.short_name,
+    href: `/semilleros/${slug(semilleroEntry.id)}`,
+    color: semilleroEntry.data.color,
+    logo: semilleroEntry.data.logo_light,
+  },
+].filter(Boolean) as { nombre: string; href: string; color: string; logo?: string }[];
+
+const lineaColor = grupos[0]
+  ? LINES[(labEntry ?? semilleroEntry)!.data.research_line as keyof typeof LINES]?.color
+  : null;
 ---
 
-<details class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
+<details
+  class="group bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden"
+  style={lineaColor ? `border-left: 4px solid ${lineaColor}` : undefined}
+>
   <summary class="list-none cursor-pointer select-none px-6 py-4 flex items-center justify-between gap-4 hover:bg-gray-50/70 transition-colors [&::-webkit-details-marker]:hidden">
     <span class="font-semibold text-gray-900">{pregunta}</span>
     <svg class="w-4 h-4 text-gray-400 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
@@ -41,32 +63,55 @@ const grupoLine = grupoEntry ? LINES[grupoEntry.data.research_line as keyof type
 
   <div class="px-6 pb-6 pt-1 border-t border-gray-50">
     <div class="flex flex-wrap items-center gap-2 mb-4">
-      {autor && autorHref && (
+      {autores.map(({ nombre, href, avatar }) => (
         <a
-          href={autorHref}
-          class="text-sm font-medium text-gray-700 hover:text-codec underline underline-offset-2 decoration-gray-300 hover:decoration-codec transition-colors"
+          href={href}
+          class="inline-flex items-center gap-1.5 text-sm font-medium text-gray-700 hover:text-codec transition-colors"
         >
-          {autor.data.name}
+          {avatar && <img src={avatar} alt="" class="w-6 h-6 rounded-full object-cover ring-1 ring-gray-100" />}
+          <span class="underline underline-offset-2 decoration-gray-300 hover:decoration-codec">{nombre}</span>
         </a>
-      )}
-      {grupoEntry && grupoHref && grupoLine && (
+      ))}
+      {grupos.map(({ nombre, href, color, logo }) => (
         <a
-          href={grupoHref}
-          class="text-xs px-2 py-0.5 rounded-full font-medium hover:opacity-80 transition-opacity"
-          style={`background-color: ${grupoLine.color}18; color: ${grupoLine.color}`}
+          href={href}
+          class="inline-flex items-center gap-1.5 text-xs pl-1 pr-2 py-1 rounded-full font-medium hover:opacity-80 transition-opacity"
+          style={`background-color: ${color}18; color: ${color}`}
         >
-          {grupoEntry.data.short_name}
+          {logo && <img src={logo} alt="" class="h-5 w-auto rounded-sm" />}
+          {nombre}
+        </a>
+      ))}
+    </div>
+
+    <div class="flex flex-wrap gap-2">
+      {respuesta_url && (
+        respuesta_url.startsWith('/') ? (
+          <a
+            href={`/pdf/${slug(entry.id)}`}
+            class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium"
+          >
+            <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> Ver respuesta
+          </a>
+        ) : (
+          <a
+            href={respuesta_url}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium"
+          >
+            <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> Ver respuesta
+          </a>
+        )
+      )}
+      {video_url && (
+        <a
+          href={`/video/${slug(entry.id)}`}
+          class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium"
+        >
+          <Icon name="video" class="w-3.5 h-3.5 shrink-0" /> Ver video
         </a>
       )}
     </div>
-
-    <a
-      href={respuesta_url}
-      target="_blank"
-      rel="noopener noreferrer"
-      class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium"
-    >
-      <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> Ver respuesta
-    </a>
   </div>
 </details>

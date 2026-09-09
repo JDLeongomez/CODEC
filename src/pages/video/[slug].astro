@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { slug as toSlug } from '../../utils';
+
+export async function getStaticPaths() {
+  const preguntas = await getCollection('preguntas-feria');
+  return preguntas
+    .filter(p => p.data.video_url)
+    .map(p => ({ params: { slug: toSlug(p.id) }, props: { pregunta: p } }));
+}
+
+const { pregunta } = Astro.props;
+const { pregunta: texto, video_url } = pregunta.data;
+---
+
+<Base title={texto} description={texto}>
+  <div class="max-w-3xl mx-auto px-6 py-16">
+    <a
+      href="/que-investigamos"
+      class="inline-flex items-center gap-1.5 text-sm text-gray-500 hover:text-codec transition-colors mb-8"
+    >
+      ← Volver a preguntas
+    </a>
+
+    <h1 class="text-2xl font-bold text-gray-900 mb-6 leading-snug">{texto}</h1>
+
+    <div class="aspect-video rounded-2xl overflow-hidden shadow-sm bg-black">
+      <iframe
+        title={texto}
+        src={video_url}
+        class="w-full h-full"
+        frameborder="0"
+        referrerpolicy="strict-origin-when-cross-origin"
+        allow="autoplay; fullscreen; picture-in-picture; clipboard-write; encrypted-media; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</Base>

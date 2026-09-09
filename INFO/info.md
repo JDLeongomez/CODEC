@@ -154,8 +154,6 @@
 
 ### Miguel Puentes-Escamilla
 
-> **Perfil oculto** (`draft: true` en `src/content/researchers/miguel-puentes-escamilla.md`). No aparece en el sitio mientras su continuidad en el grupo no se confirme. Para reactivarlo: cambiar `draft: true` a `draft: false`.
-
 - Nombre completo: Miguel Puentes-Escamilla
 - Cargo académico actual: Profesor Asistente
 - Rol dentro de CODEC: Investigador EvoCo
@@ -166,9 +164,13 @@
 
 - Bio corta: "Profesor Asistente e investigador de EvoCo, actualmente finalizando su doctorado en la University of Groningen."
 
-- Bio larga: *Pendiente de actualización.*
+- Bio larga: "Psicólogo y Magíster en Psicología con énfasis en aprendizaje y evolución del comportamiento de la Universidad Nacional de Colombia. Candidato a doctor en Biología teórica y del comportamiento de la Universidad de Groningen (Países Bajos), con una tesis enfocada en el estudio de patrones emergentes de comportamiento social desde una perspectiva de Auto-Organización. Profesor de la Facultad de Psicología, de la Universidad El Bosque, e Investigador de EvoCo: Laboratorio de Evolución y Comportamiento Humano, en Bogotá, Colombia."
 
-- Intereses de investigación: *Pendiente de actualización.*
+- Intereses de investigación:
+  - Comportamiento social y sexual
+  - Auto-Organización de sistemas sociales
+  - Aprendizaje y comportamiento animal
+  - Historia de la psicología comparada
 
 - Formación académica:
   - PhD (en finalización), ~2026, University of Groningen (Groningen, Países Bajos)
