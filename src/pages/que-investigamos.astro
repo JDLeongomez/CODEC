@@ -1,26 +1,45 @@
 ---
-import { getCollection } from 'astro:content';
+import { getCollection, getEntry } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import Base from '../layouts/Base.astro';
 import PreguntaAccordion from '../components/PreguntaAccordion.astro';
 import Icon from '../components/Icon.astro';
-import { LINES } from '../data/lines';
+import { LINES, type LineId } from '../data/lines';
 
 const preguntas = (await getCollection('que-investigamos')).sort((a, b) => a.data.orden - b.data.orden);
-const mid  = Math.ceil(preguntas.length / 2);
-const colA = preguntas.slice(0, mid);
-const colB = preguntas.slice(mid);
+
+// La línea de una pregunta se toma del lab si lo tiene; si no, del semillero (igual que PreguntaAccordion).
+async function lineaDe(entry: CollectionEntry<'que-investigamos'>): Promise<LineId | null> {
+  const { lab, semillero } = entry.data;
+  const grupo = lab ? await getEntry(lab) : semillero ? await getEntry(semillero) : null;
+  return (grupo?.data.research_line as LineId) ?? null;
+}
+
+const conLinea = await Promise.all(preguntas.map(async p => ({ p, lineId: await lineaDe(p) })));
+
+const ordenLineas: (LineId | null)[] = ['line1', 'line2', 'line3', 'transversal', null];
+const grupos = ordenLineas
+  .map(lineId => ({ lineId, items: conLinea.filter(c => c.lineId === lineId).map(c => c.p) }))
+  .filter(g => g.items.length > 0);
+
+// Dentro de cada grupo, se reparte en dos columnas "de arriba a abajo" (no fila por fila),
+// para que el orden de lectura sea el mismo que si fuera una sola columna.
+function enColumnas<T>(items: T[]) {
+  const mid = Math.ceil(items.length / 2);
+  return [items.slice(0, mid), items.slice(mid)];
+}
 ---
 
 <Base
   title="¿Qué investigamos en CODEC?"
   description="Preguntas y respuestas de divulgación científica del grupo de investigación CODEC."
 >
-  <div class="max-w-6xl mx-auto px-6 py-16">
-    <div class="max-w-4xl mx-auto mb-12 text-center">
+  <div class="max-w-6xl mx-auto px-6 pt-8 pb-16">
+    <div class="max-w-4xl mx-auto mb-8 text-center">
       <h1 class="text-4xl font-extrabold text-gray-900">¿Qué investigamos en CODEC?</h1>
       <p class="text-gray-500 mt-4 text-lg leading-relaxed">
         En CODEC estudiamos cómo pensamos, sentimos y nos comportamos, desde la evolución humana
-        hasta la cognición y la neuropsicología. Haz clic en una pregunta y descubre más de lo que hacemos.
+        hasta la cognición y la neuropsicología. Haz clic en una pregunta y descubre ejemplos de lo que hacemos.
       </p>
     </div>
 
@@ -28,36 +47,43 @@ const colB = preguntas.slice(mid);
     <img
       src="/feria-ctei-ii.jpg"
       alt="II Feria CTeI: Ciencia, Tecnología e Innovación, 14 y 15 de septiembre"
-      class="w-full max-w-xl mx-auto rounded-2xl shadow-lg mb-12"
+      class="w-full max-w-xl mx-auto rounded-2xl shadow-lg mb-8"
     />
 
     {preguntas.length > 0 ? (
-      <>
-        <div class="flex flex-wrap justify-center gap-2 mb-8">
-          {Object.values(LINES).map(line => (
-            <span
-              class="inline-flex items-center gap-1.5 text-xs px-2.5 py-1 rounded-full font-medium"
-              style={`background-color: ${line.color}18; color: ${line.color}`}
-            >
-              <span class="w-2 h-2 rounded-full shrink-0" style={`background-color: ${line.color}`}></span>
-              {line.id === 'transversal' ? line.name_es : `Línea ${line.id.replace('line', '')} · ${line.name_es}`}
-            </span>
-          ))}
-        </div>
-        <div class="grid lg:grid-cols-2 gap-4 items-start">
-          <div class="space-y-4">
-            {colA.map(p => <PreguntaAccordion pregunta={p} />)}
-          </div>
-          <div class="space-y-4">
-            {colB.map(p => <PreguntaAccordion pregunta={p} />)}
-          </div>
-        </div>
-      </>
+      <div class="space-y-8">
+        {grupos.map(({ lineId, items }) => {
+          const line = lineId ? LINES[lineId] : null;
+          const [colA, colB] = enColumnas(items);
+          return (
+            <div>
+              <div class="flex items-center gap-2 mb-3">
+                <span class="w-2.5 h-2.5 rounded-full shrink-0" style={`background-color: ${line?.color ?? '#9ca3af'}`}></span>
+                <h2 class="text-sm font-bold uppercase tracking-widest" style={`color: ${line?.color ?? '#6b7280'}`}>
+                  {!line
+                    ? 'Otras preguntas'
+                    : line.id === 'transversal'
+                      ? line.name_es
+                      : `Línea ${line.id.replace('line', '')} · ${line.name_es}`}
+                </h2>
+              </div>
+              <div class="grid lg:grid-cols-2 gap-4 items-start">
+                <div class="space-y-4">
+                  {colA.map(p => <PreguntaAccordion pregunta={p} />)}
+                </div>
+                <div class="space-y-4">
+                  {colB.map(p => <PreguntaAccordion pregunta={p} />)}
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     ) : (
       <p class="text-center text-gray-400 italic py-8">Próximamente...</p>
     )}
 
-    <div class="mt-16 pt-12 border-t border-gray-100">
+    <div class="mt-12 pt-8 border-t border-gray-100">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Estructura del grupo</h2>
       <button id="organigrama-btn" class="group cursor-zoom-in relative block w-full" aria-label="Ver organigrama a tamaño completo">
         <img
@@ -84,7 +110,7 @@ const colB = preguntas.slice(mid);
       </dialog>
     </div>
 
-    <div class="mt-16 text-center">
+    <div class="mt-12 text-center">
       <p class="text-gray-500 mb-4 text-sm">¿Tienes curiosidad por algo más?</p>
       <a
         href="/"
