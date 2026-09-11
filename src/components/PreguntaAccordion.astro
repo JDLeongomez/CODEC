@@ -39,8 +39,8 @@ const cardStyle = lineaColor
   : undefined;
 
 const btnColor = lineaColor ?? '#111827';
-const btnClass = 'inline-flex items-center gap-1.5 text-xs px-3 py-1.5 rounded-lg font-medium hover:opacity-75 transition-opacity';
-const btnStyle = `background-color: ${btnColor}26; color: ${btnColor}`;
+const btnClass = 'ver-respuesta-btn inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-xl border-2 bg-white transition-colors';
+const btnStyle = `--btn-color: ${btnColor}; border-color: ${btnColor}; color: ${btnColor}`;
 ---
 
 <details
@@ -58,15 +58,19 @@ const btnStyle = `background-color: ${btnColor}26; color: ${btnColor}`;
     </svg>
   </summary>
 
-  <div class="px-6 pb-6 pt-1 border-t border-gray-50">
-    <div class="mb-4">
-      <PreguntaAutores pregunta={entry} />
-    </div>
-
-    <div class="flex flex-wrap gap-2">
+  <div class="px-6 pb-6 pt-4 border-t border-gray-50">
+    <div class="flex justify-center mb-4">
       <a href={`/respuesta/${slug(entry.id)}`} class={btnClass} style={btnStyle}>
-        <Icon name="link" class="w-3.5 h-3.5 shrink-0" /> Ver respuesta
+        <Icon name="link" class="w-4 h-4 shrink-0" /> Ver respuesta
       </a>
     </div>
+
+    <PreguntaAutores pregunta={entry} />
   </div>
 </details>
+
+<style>
+  .ver-respuesta-btn:hover {
+    background-color: color-mix(in srgb, var(--btn-color) 12%, white);
+  }
+</style>

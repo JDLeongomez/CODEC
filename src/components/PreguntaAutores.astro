@@ -44,7 +44,7 @@ const grupos: { nombre: string; href: string; color: string; logo?: string }[] =
 ].filter(Boolean) as { nombre: string; href: string; color: string; logo?: string }[];
 ---
 
-<div class="flex flex-wrap items-center gap-2">
+<div class="flex flex-wrap items-center justify-center gap-2">
   {autores.map(({ nombre, href, avatar }) => (
     <a
       href={href}
