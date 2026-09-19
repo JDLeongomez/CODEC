@@ -386,7 +386,7 @@
 - Color: #d400aa
 - Logo: `MetaCiencia_claro.svg` / `MetaCiencia_oscuro.svg`
 - Correo: <jleongomez@unbosque.edu.co>
-- Sitio web: <https://jdleongomez.github.io/MetaCiencia/>
+- Sitio web: <https://mc-ueb.netlify.app/>
 
 - Texto de presentación: "MetaCiencia es un semillero de investigación de la Universidad El Bosque, adscrito a la Facultad de Psicología, dedicado a promover prácticas científicas abiertas, reproducibles y transparentes. Abierto a personas de todas las facultades. Trabaja en torno a tres líneas: (1) reproducibilidad y transparencia, (2) prácticas de ciencia abierta, (3) educación en metaciencia y alfabetización científica."
 

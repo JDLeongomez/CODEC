@@ -18,7 +18,7 @@ methods_es:
   - Revisión sistemática y meta-análisis
 
 email: jleongomez@unbosque.edu.co
-website: https://jdleongomez.github.io/MetaCiencia/
+website: https://mc-ueb.netlify.app/
 ---
 
 **MetaCiencia** es un semillero de investigación de la Universidad El Bosque, adscrito a la Facultad de Psicología, dedicado a promover prácticas científicas abiertas, reproducibles y transparentes. Estamos abiertos a personas de todas las facultades interesadas en estos temas.
@@ -33,7 +33,7 @@ El semillero trabaja en torno a tres líneas principales:
 
 <div class="not-prose mt-6 p-4 rounded-xl border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3" style="background-color: #d400aa18; border-color: #d400aa33;">
   <p class="text-sm text-gray-700">¿Quieres conocer más sobre nuestro semillero, proyectos y actividades?</p>
-  <a href="https://jdleongomez.github.io/MetaCiencia/" target="_blank" rel="noopener noreferrer"
+  <a href="https://mc-ueb.netlify.app/" target="_blank" rel="noopener noreferrer"
      class="shrink-0 inline-flex items-center gap-2 text-white text-sm font-semibold px-4 py-2 rounded-lg transition-colors"
      style="background-color: #d400aa;">
     Visita nuestro sitio web →
