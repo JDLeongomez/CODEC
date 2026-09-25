@@ -34,21 +34,14 @@ function enColumnas<T>(items: T[]) {
   title="¿Qué investigamos en CODEC?"
   description="Preguntas y respuestas de divulgación científica del grupo de investigación CODEC."
 >
-  <div class="max-w-6xl mx-auto px-6 pt-8 pb-16">
-    <div class="max-w-4xl mx-auto mb-8 text-center">
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="max-w-4xl mx-auto mb-12 text-center">
       <h1 class="text-4xl font-extrabold text-gray-900">¿Qué investigamos en CODEC?</h1>
       <p class="text-gray-500 mt-4 text-lg leading-relaxed">
         En CODEC estudiamos cómo pensamos, sentimos y nos comportamos, desde la evolución humana
         hasta la cognición y la neuropsicología. <strong>Haz clic en una pregunta y descubre ejemplos de lo que hacemos</strong>.
       </p>
     </div>
-
-    <!-- TEMPORAL: quitar este bloque (y public/feria-ctei-ii.jpg) cuando termine la feria -->
-    <img
-      src="/feria-ctei-ii.jpg"
-      alt="II Feria CTeI: Ciencia, Tecnología e Innovación, 14 y 15 de septiembre"
-      class="w-full max-w-xl mx-auto rounded-2xl shadow-lg mb-8"
-    />
 
     {preguntas.length > 0 ? (
       <div class="space-y-8">
@@ -83,7 +76,7 @@ function enColumnas<T>(items: T[]) {
       <p class="text-center text-gray-400 italic py-8">Próximamente...</p>
     )}
 
-    <div class="mt-12 pt-8 border-t border-gray-100">
+    <div class="mt-16 pt-12 border-t border-gray-100">
       <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center">Estructura del grupo</h2>
       <button id="organigrama-btn" class="group cursor-zoom-in relative block w-full" aria-label="Ver organigrama a tamaño completo">
         <img
