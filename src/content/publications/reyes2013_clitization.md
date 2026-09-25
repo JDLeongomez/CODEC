@@ -2,7 +2,7 @@
 title: "When object clitization and climbing happen alone, and when they dance cheek to cheek: Selective impairment in Spanish agrammatism"
 year: 2013
 authors:
-  - "Andrés Felipe Reyes Gómez"
+  - "Andrés Felipe Reyes"
   - "Roelien Bastiaanse"
 internal_authors:
   - andres-felipe-reyes

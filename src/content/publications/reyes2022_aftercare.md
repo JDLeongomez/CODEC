@@ -2,7 +2,7 @@
 title: "The Aftercare Survey: Assessment and intervention practices after brain tumor surgery in Europe"
 year: 2022
 authors:
-  - "Andrés Felipe Reyes Gómez"
+  - "Andrés Felipe Reyes"
   - "Philip De Witt Hamer"
   - "Christian F. Freyschlag"
   - "European Low Grade Glioma Network"
