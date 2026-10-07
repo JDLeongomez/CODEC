@@ -23,6 +23,28 @@ const alumniByNorm: Record<string, string> = Object.fromEntries(
   alumni.map(a => [normName(a.name), a.slug])
 );
 
+const EDGE_KEEP = 3;
+const TRUNCATE_THRESHOLD = 12;
+
+function isKeptAuthor(author: string, index: number, total: number): boolean {
+  if (index < EDGE_KEEP || index >= total - EDGE_KEEP) return true;
+  return !!(internalByName[author] || auxiliarByName[author] || alumniByNorm[normName(author)]);
+}
+
+type DisplayItem = { author: string; index: number } | { ellipsis: true };
+
+const displayItems: DisplayItem[] =
+  authors.length < TRUNCATE_THRESHOLD
+    ? authors.map((author, index) => ({ author, index }))
+    : authors.reduce<DisplayItem[]>((acc, author, index) => {
+        if (isKeptAuthor(author, index, authors.length)) {
+          acc.push({ author, index });
+        } else if (!acc.length || !('ellipsis' in acc[acc.length - 1])) {
+          acc.push({ ellipsis: true });
+        }
+        return acc;
+      }, []);
+
 const typeLabels: Record<string, string> = {
   article:       'Artículo',
   'book-chapter': 'Capítulo',
@@ -61,7 +83,12 @@ const typeLabels: Record<string, string> = {
     </a>
 
     <p class="text-xs text-gray-500 leading-relaxed mb-1.5">
-      {authors.map((author, i) => {
+      {displayItems.map((item, i) => {
+        const isLast = i === displayItems.length - 1;
+        if ('ellipsis' in item) {
+          return <span>…{!isLast ? ', ' : ''}</span>;
+        }
+        const { author } = item;
         const currentSlug  = internalByName[author];
         const auxiliarSlug = !currentSlug ? auxiliarByName[author] : undefined;
         const alumniSlug   = !currentSlug && !auxiliarSlug ? alumniByNorm[normName(author)] : undefined;
@@ -77,7 +104,7 @@ const typeLabels: Record<string, string> = {
                   ? <a href={`/antiguos-integrantes#${alumniSlug}`}
                       class="font-semibold text-gray-500 hover:text-codec transition-colors">{author}</a>
                   : <span>{author}</span>
-            }{i < authors.length - 1 ? ', ' : ''}
+            }{!isLast ? ', ' : ''}
           </span>
         );
       })}

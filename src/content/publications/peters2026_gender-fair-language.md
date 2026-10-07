@@ -390,6 +390,7 @@ issue: "6"
 pages: "101991"
 pub_type: article
 featured: false
+cover: "/portadas/peters2026_gender-fair-language.jpg"
 abstract: "Women are greatly underrepresented in positions of political leadership around the world. In seeking to explain this underrepresentation, some researchers have pointed to people's tendencies to stereotype leaders as more similar to men than women, as these tendencies can support the belief that women are unsuited to leadership. This project tested whether a subtle linguistic intervention is able to ameliorate this gender bias in political leadership stereotypes across different languages and national contexts. Specifically, this project examined whether gender-fair language (e.g., the use of paired pronouns 'he or she') can reduce the tendency for people to stereotype political leaders as more similar to men than women. To increase the rigor with which these stereotypes are measured, this project complemented the dominant 'cheap talk' measure of stereotype content with a novel incentivised measure of this content. This project supports an understanding of the capacity for gender-fair language interventions to shift gender bias in the political leadership domain in different regions of the world."
 url: "https://www.sciencedirect.com/science/article/pii/S1048984326000500"
 ---
