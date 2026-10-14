@@ -10,4 +10,5 @@ journal: "PCI Registered Reports"
 pub_type: other
 featured: false
 abstract: "A recommendation of: Guérin, S. M. R., Coulon, E., Lenc, T., Polak, R., Keller, P. E., & Nozaradan, S. (2026). *Imprints of Body-Movement Timing onto Subsequent Processing of Musical Rhythm*. https://doi.org/10.5281/zenodo.23104572."
+pdf: "http://rr.peercommunityin.org/articles/rec?asPDF=True&id=1844"
 ---
