@@ -5,7 +5,7 @@ import DOIBadges from '../../components/DOIBadges.astro';
 import ResearcherCard from '../../components/ResearcherCard.astro';
 import AuxiliarCard from '../../components/AuxiliarCard.astro';
 import Icon from '../../components/Icon.astro';
-import { slug as toSlug } from '../../utils';
+import { slug as toSlug, inlineMarkdown } from '../../utils';
 import { alumni } from '../../data/alumni';
 
 export async function getStaticPaths() {
@@ -159,7 +159,7 @@ const citation = [
         <h2 class="text-lg font-bold text-gray-900 mb-3">Resumen</h2>
         <div class="text-gray-600 leading-relaxed p-5 bg-gray-50 rounded-xl border-l-4 border-codec space-y-3">
           {abstract.split('\n').filter(Boolean).map((line: string) => (
-            <p>{line}</p>
+            <p set:html={inlineMarkdown(line)} />
           ))}
         </div>
       </div>
