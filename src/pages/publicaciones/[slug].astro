@@ -39,6 +39,8 @@ const typeLabels: Record<string, string> = {
   conference:     'Artículo de conferencia',
   preprint:       'Preprint',
   thesis:         'Tesis',
+  software:       'Software',
+  'social-appropriation': 'Proceso de Apropiación Social del Conocimiento',
   other:          'Otro',
 };
 
@@ -125,7 +127,11 @@ const citation = [
               <a href={url} target="_blank" rel="noopener noreferrer"
                 class="inline-flex items-center gap-1.5 text-xs bg-codec/10 hover:bg-codec/20 text-codec px-3 py-1.5 rounded-lg transition-colors font-medium">
                 <Icon name="link" class="w-3.5 h-3.5 shrink-0" />
-                {pub_type === 'book' || pub_type === 'book-chapter' ? 'Ver libro' : 'Ver publicación'}
+                {pub_type === 'book' || pub_type === 'book-chapter'
+                  ? 'Ver libro'
+                  : pub_type === 'social-appropriation'
+                    ? 'Ver proceso'
+                    : 'Ver publicación'}
               </a>
             )}
             {pdf && (

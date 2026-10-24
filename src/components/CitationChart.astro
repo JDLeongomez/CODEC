@@ -11,7 +11,7 @@ type Group = 'articles' | 'books' | 'other';
 const GROUPS: { key: Group; label: string; color: string; types: string[] }[] = [
   { key: 'articles', label: 'Artículos / Preprints', color: '#ffb600', types: ['article', 'preprint']           },
   { key: 'books',    label: 'Libros / Capítulos',    color: '#00a6b0', types: ['book', 'book-chapter']          },
-  { key: 'other',    label: 'Otros',                  color: '#a451ff', types: ['conference', 'thesis', 'software', 'other'] },
+  { key: 'other',    label: 'Otros',                  color: '#a451ff', types: ['conference', 'thesis', 'software', 'social-appropriation', 'other'] },
 ];
 
 const counts: Record<number, Record<Group, number>> = {};

@@ -53,6 +53,7 @@ const typeLabels: Record<string, string> = {
   preprint:      'Preprint',
   thesis:        'Tesis',
   software:      'Software',
+  'social-appropriation': 'Proceso de Apropiación Social del Conocimiento',
   other:         'Otro',
 };
 ---
@@ -122,7 +123,11 @@ const typeLabels: Record<string, string> = {
       {url && (
         <a href={url} target="_blank" rel="noopener noreferrer"
           class="text-xs font-medium text-codec/80 hover:text-codec transition-colors">
-          {pub_type === 'book' || pub_type === 'book-chapter' ? 'Ver libro →' : 'Ver publicación →'}
+          {pub_type === 'book' || pub_type === 'book-chapter'
+            ? 'Ver libro →'
+            : pub_type === 'social-appropriation'
+              ? 'Ver proceso →'
+              : 'Ver publicación →'}
         </a>
       )}
     </div>
